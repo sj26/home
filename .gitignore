@@ -1,1 +1,3 @@
 .vim/.netrwhist
+.vim/autoload/pathogen.vim
+.vim/colors/solarized.vim
