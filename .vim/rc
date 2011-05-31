@@ -1,0 +1,26 @@
+" Don't nerf for compatibility
+set nocompatible
+
+" Syntax highlighting, number gutter and rule on by default
+syntax on
+set number
+set ruler
+
+" Whitespace stuff
+set nowrap
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set list listchars=tab:\ \ ,trail:·
+
+" Searching
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+" Color scheme
+color solarized
+
+" Load other rc files
+runtime! rc.d/**/*.vim
