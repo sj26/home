@@ -2,13 +2,27 @@
 
 pushd
 
+pushd .home
+
+git submodule update
+
+pushd .vim/colors
+ln -s ../../solarized/vim-colors-solarized/colors/solarized.vim
+popd
+
+pushd .vim/autoload
+ln -s ../../vim-pathogen/autoload/pathogen.vim
+popd
+
+popd
+
 ln -s .home/.ackrc
 ln -s .home/.bin
 ln -s .home/.vim
-ln -s .home/.vimrc
+ln -s .vim/rc .vimrc
 ln -s .home/.zsh
-ln -s .home/.zshenv
-ln -s .home/.zshprofile
-ln -s .home/.zshrc
+ln -s .zsh/env .zshenv
+ln -s .zsh/profile .zshprofile
+ln -s .zsh/rc .zshrc
 
 popd
