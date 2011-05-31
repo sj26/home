@@ -11,6 +11,7 @@ set nowrap
 set tabstop=2
 set shiftwidth=2
 set expandtab
+" Show trailing whitespace
 set list listchars=tab:\ \ ,trail:·
 
 " Searching
