@@ -6,10 +6,12 @@ pushd .home
 
 git submodule update
 
+mkdir -p .vim/colors
 pushd .vim/colors
 ln -s ../../solarized/vim-colors-solarized/colors/solarized.vim
 popd
 
+mkdir -p .vim/autoload
 pushd .vim/autoload
 ln -s ../../vim-pathogen/autoload/pathogen.vim
 popd
