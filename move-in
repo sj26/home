@@ -1,30 +1,32 @@
-#!/usr/bin/env zsh -D
+#!/usr/bin/zsh
 
-pushd
+pushd $HOME
 
-pushd .home
+	pushd $HOME/.home
+		git pull
+		git submodule update
+	popd
 
-git submodule update
+	for file in .ackrc .bin .vim .zsh
+		[ -L $file ] || ln -fs .home/$file
+	for suffix in rc
+		[ -L .vim$suffix ] || ln -fs .vim/$suffix .vim$suffix
+	for suffix in env profile rc
+		[ -L .zsh$suffix ] || ln -fs .zsh/$prefix .zsh$prefix
 
-mkdir -p .vim/colors
-pushd .vim/colors
-ln -s ../../solarized/vim-colors-solarized/colors/solarized.vim
+	if [ ! -e $HOME/.vim/colors/solarized.vim ]; then
+		mkdir -p $HOME/.vim/colors
+		pushd $HOME/.vim/colors
+			ln -s $HOME/.home/solarized/vim-colors-solarized/colors/solarized.vim
+		popd
+	fi
+
+	if [ ! -e $HOME/.vim/autoload/pathogen.vim ]; then
+		mkdir -p $HOME/.vim/autoload
+		pushd $HOME/.vim/autoload
+			ln -s $HOME/.home/vim-pathogen/autoload/pathogen.vim
+		popd
+	fi
+
 popd
 
-mkdir -p .vim/autoload
-pushd .vim/autoload
-ln -s ../../vim-pathogen/autoload/pathogen.vim
-popd
-
-popd
-
-ln -s .home/.ackrc
-ln -s .home/.bin
-ln -s .home/.vim
-ln -s .vim/rc .vimrc
-ln -s .home/.zsh
-ln -s .zsh/env .zshenv
-ln -s .zsh/profile .zshprofile
-ln -s .zsh/rc .zshrc
-
-popd
