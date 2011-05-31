@@ -1,0 +1,2 @@
+# Hitch if already hitched
+[[ -s "$HOME/.hitch_export_authors" ]] && . "$HOME/.hitch_export_authors"
