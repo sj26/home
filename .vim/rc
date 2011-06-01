@@ -1,3 +1,6 @@
+" Pathogen early
+call pathogen#infect()
+
 " Don't nerf for compatibility
 set nocompatible
 
