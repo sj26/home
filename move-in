@@ -14,19 +14,5 @@ pushd $HOME
 	for suffix in env profile rc
 		[ -L .zsh$suffix ] || ln -fs .zsh/$prefix .zsh$prefix
 
-	if [ ! -e $HOME/.vim/colors/solarized.vim ]; then
-		mkdir -p $HOME/.vim/colors
-		pushd $HOME/.vim/colors
-			ln -s $HOME/.home/solarized/vim-colors-solarized/colors/solarized.vim
-		popd
-	fi
-
-	if [ ! -e $HOME/.vim/autoload/pathogen.vim ]; then
-		mkdir -p $HOME/.vim/autoload
-		pushd $HOME/.vim/autoload
-			ln -s $HOME/.home/vim-pathogen/autoload/pathogen.vim
-		popd
-	fi
-
 popd
 
