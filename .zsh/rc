@@ -1,7 +1,4 @@
-. ~/.zsh/aliases.zsh
 . ~/.zsh/colors.zsh
-. ~/.zsh/keys.zsh
-. ~/.zsh/hitch.zsh
 . ~/.zsh/completion.zsh
-. ~/.zsh/prompt.zsh
-. ~/.zsh/hub.zsh
+for rc_file (~/.zsh/rc.d/*.zsh) . $rc_file
+
