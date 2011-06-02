@@ -1,10 +1,10 @@
+" Don't nerf for compatibility
+set nocompatible
+
 " Pathogen early
 filetype off
 call pathogen#infect()
 call pathogen#helptags()
-
-" Don't nerf for compatibility
-set nocompatible
 
 " Syntax highlighting, number gutter and rule on by default
 syntax on
