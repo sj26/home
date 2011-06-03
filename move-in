@@ -2,17 +2,26 @@
 
 pushd $HOME
 
-	pushd $HOME/.home
-		git pull
-		git submodule update
-	popd
+  if [ -e $HOME/.home ]; then
+    pushd $HOME/.home
+      git pull
+      git submodule update --recursive
+    popd
+  else
+    git clone --recursive https://github.com/sj26/home.git .home
+  fi
 
-	for file in .ackrc .bin .vim .zsh
-		[ -L $file ] || ln -fs .home/$file
-	for suffix in rc
-		[ -L .vim$suffix ] || ln -fs .vim/$suffix .vim$suffix
-	for suffix in env profile rc
-		[ -L .zsh$suffix ] || ln -fs .zsh/$prefix .zsh$prefix
+  pushd $HOME/.home
+    git pull
+    git submodule update
+  popd
+
+  for file in .ackrc .bin .vim .zsh
+    [ -L $file ] || ln -fs .home/$file
+  for suffix in rc
+    [ -L .vim$suffix ] || ln -fs .vim/$suffix .vim$suffix
+  for suffix in env profile rc
+    [ -L .zsh$suffix ] || ln -fs .zsh/$prefix .zsh$prefix
 
 popd
 
