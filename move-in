@@ -8,7 +8,7 @@ pushd $HOME
       git submodule update --recursive
     popd
   else
-    git clone --recursive https://github.com/sj26/home.git .home
+    git clone --recursive ssh://git@github.com/sj26/home.git .home
   fi
 
   pushd $HOME/.home
