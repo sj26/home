@@ -8,7 +8,7 @@ pushd $HOME
       git submodule update --recursive
     popd
   else
-    git clone --recursive https://github.com/sj26/home.git .home
+    git clone --recursive ssh://git@github.com/sj26/home.git .home
   fi
 
   pushd $HOME/.home
@@ -21,7 +21,7 @@ pushd $HOME
   for suffix in rc
     [ -L .vim$suffix ] || ln -fs .vim/$suffix .vim$suffix
   for suffix in env profile rc
-    [ -L .zsh$suffix ] || ln -fs .zsh/$prefix .zsh$prefix
+    [ -L .zsh$suffix ] || ln -fs .zsh/$suffix .zsh$suffix
 
 popd
 
