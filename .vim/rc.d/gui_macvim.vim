@@ -5,8 +5,8 @@ if has("gui_macvim")
   set fuoptions=maxhorz,maxvert
 
   " Command-T bindings
-  map <D-J> :CommandT<CR>
-  imap <D-J> <Esc>:CommandT<CR>
-  map <D-S-J> :CommandTBuffer<CR>
-  imap <D-S-J> <Esc>:CommandTBuffer<CR>
+  nmap <D-j> :CommandT<CR>
+  imap <D-j> <Esc>:CommandT<CR>
+  nmap <D-J> :CommandTBuffer<CR>
+  imap <D-J> <Esc>:CommandTBuffer<CR>
 endif
