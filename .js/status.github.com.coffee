@@ -4,7 +4,7 @@ FaviconSwitcher =
   check: ->
     if $('body').hasClass 'majorproblem'
       status = 'major'
-    else if $('body').hasClass 'majorproblem'
+    else if $('body').hasClass 'minorproblem'
       status = 'minor'
     else
       status = 'ok'
