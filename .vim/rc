@@ -16,6 +16,7 @@ set nowrap
 set tabstop=2
 set shiftwidth=2
 set expandtab
+set autoindent
 " Show trailing whitespace
 set list listchars=tab:\ \ ,trail:·
 
