@@ -42,6 +42,10 @@ alias fu='sudo $(fc -ln -1)'
 
 alias genpass="head -c64 /dev/urandom | openssl enc -base64 | head -c32 | tee /dev/tty | pbcopy"
 
+# Dig/Host via Google
+alias gig="dig @8.8.8.8"
+function gost() { host $* 8.8.8.8 }
+
 function power_sword() {
 	cat <<-"BANNER"
 	.----..-.  .-.    .-----..-. .-..----.    .-.-.  .---. .-.  .-..----..---.
