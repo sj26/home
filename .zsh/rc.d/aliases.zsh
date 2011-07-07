@@ -32,6 +32,8 @@ alias rr='mkdir -p tmp && touch tmp/restart.txt'
 alias rl='tail -f log/*.log'
 alias rrl='rr && rl'
 
+alias be="bundle exec"
+
 # Derail
 function derail() {
   rails new $1 --skip-test-unit --database=postgresql --template http://sj26.com/derail $@[2,-1]
