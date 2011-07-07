@@ -5,8 +5,8 @@
 # Keep detailed track of time in history
 export HISTTIMEFORMAT='%Y-%b-%d %a %H:%M:%S - '
 
-# Make MacVim the default editor if it's installed, otherwise vim
-[[ -d /Applications/MacVim.app ]] && export EDITOR=mvim || export EDITOR=vim
+# Make TextMate the default editor if it's installed, otherwise vim
+[[ -d /Applications/TextMate.app ]] && export EDITOR=mate || export EDITOR=vim
 
 export PATH="/usr/local/depot_tools:$PATH"
 
