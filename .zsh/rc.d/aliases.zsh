@@ -23,7 +23,7 @@ r() {
 
 # Time saving shortcuts
 #alias rs="r server"
-alias rs="passenger start"
+alias rs="echo Aren't you using pow?!"
 alias rc="r console"
 alias rp='r plugin'
 alias rg='r generate'
@@ -35,6 +35,11 @@ alias rrl='rr && rl'
 # Derail
 function derail() {
   rails new $1 --skip-test-unit --database=postgresql --template http://sj26.com/derail $@[2,-1]
+}
+
+# You've got the powah!
+function powify() {
+  ln -s $PWD ~/.pow/$(basename $PWD | tr A-Z a-z)
 }
 
 # Repeat command prefixed with sudo
