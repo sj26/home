@@ -34,6 +34,21 @@ alias rrl='rr && rl'
 
 alias be="bundle exec"
 
+# Git aliases
+alias ga="git add"
+alias gap="git add -p"
+alias gb="git branch"
+alias gba="git branch -a"
+alias gc="git commit -v"
+alias gd="git diff | \$EDITOR"
+alias gf="git fetch"
+alias gl="git log"
+alias gm="git merge origin/develop"
+alias gp="git push"
+alias gr="git remote -v"
+alias gs="git status -sb"
+alias gu="git pull"
+
 # Derail
 function derail() {
   rails new $1 --skip-test-unit --database=postgresql --template http://sj26.com/derail $@[2,-1]
