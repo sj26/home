@@ -33,6 +33,7 @@ alias rl='tail -f log/*.log'
 alias rrl='rr && rl'
 
 alias be="bundle exec"
+alias bi="bundle install"
 
 # Git aliases
 alias ga="git add"
@@ -40,8 +41,8 @@ alias gap="git add -p"
 alias gb="git branch"
 alias gba="git branch -a"
 alias gc="git commit -v"
-alias gd="git diff | \$EDITOR"
-alias gf="git fetch"
+function gd() { git diff $* | $EDITOR }
+alias gf="git flow"
 alias gl="git log"
 alias gm="git merge origin/develop"
 alias gp="git push"
@@ -51,12 +52,12 @@ alias gu="git pull"
 
 # Derail
 function derail() {
-  rails new $1 --skip-test-unit --database=postgresql --template http://sj26.com/derail $@[2,-1]
+  rails new $1 --skip-test-unit --skip-bundle --database=postgresql --template ~/Development/Derail/lib/generators/derail/app/bootstrap.rb $@[2,-1]
 }
 
 # You've got the powah!
 function powify() {
-  ln -s $PWD ~/.pow/$(basename $PWD | tr A-Z a-z)
+  ln -s $PWD ~/.pow/${1:-$(basename $PWD | tr A-Z a-z)}
 }
 
 # Repeat command prefixed with sudo
