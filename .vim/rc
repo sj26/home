@@ -27,12 +27,7 @@ set ignorecase
 set smartcase
 
 " Color scheme
-if has('gui_running')
-  set background=light
-else
-  set background=dark
-endif
-colorscheme solarized
+color solarized
 
 " Load other rc files
 runtime! rc.d/**/*.vim
