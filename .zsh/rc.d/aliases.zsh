@@ -94,3 +94,7 @@ function using_gcc() {
 function using_gcc_64() {
   env CC="/usr/bin/gcc-4.2" ARCHFLAGS="-arch x86_64" ARCHS="x86_64" $*
 }
+
+function killdb() {
+  kill $(psgrep -n postgres: | grep $1 | awk '{ print $2 }')
+}
