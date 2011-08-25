@@ -21,3 +21,4 @@ if slashcount >= 5 # we are in a repo
         .fadeIn("slow")
 
 # credit https://twitter.com/#!/tcurdt/status/86193273055612929
+# nabbed from https://github.com/freelancing-god/.js/blob/master/github.com.js
