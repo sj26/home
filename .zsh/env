@@ -8,5 +8,7 @@ export HISTTIMEFORMAT='%Y-%b-%d %a %H:%M:%S - '
 # Make TextMate the default editor if it's installed, otherwise vim
 [[ -d /Applications/TextMate.app ]] && export EDITOR=mate || export EDITOR=vim
 
-export PATH="/usr/local/depot_tools:$PATH"
+# Add depot tools to path if present
+[[ -d /usr/local/depot_tools ]] && export PATH="/usr/local/depot_tools:$PATH"
+
 
