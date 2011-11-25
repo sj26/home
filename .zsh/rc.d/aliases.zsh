@@ -60,7 +60,7 @@ alias gu="git pull"
 
 # Derail
 function derail() {
-  rails new $1 --skip-test-unit --skip-bundle --database=postgresql --template ~/Development/Derail/lib/generators/derail/app/bootstrap.rb $@[2,-1]
+  rails new $1 --skip-test-unit --skip-bundle --database=postgresql --template ~/Projects/Derail/lib/generators/derail/app/bootstrap.rb $@[2,-1]
 }
 
 # You've got the powah!
