@@ -35,16 +35,24 @@ alias rrl='rr && rl'
 alias be="bundle exec"
 alias bi="bundle install"
 
+# so I can `be migrated`
+alias migrated="rake db:migrate"
+
+alias fuspec="rspec --require fuubar --format Fuubar --color"
+alias fucumber="cucumber --require fuubar --format fuubar"
+
 # Git aliases
 alias ga="git add"
 alias gap="git add -p"
 alias gb="git branch"
 alias gba="git branch -a"
 alias gc="git commit -v"
-function gd() { git diff $* | $EDITOR }
+alias gd="git diff"
+function gde() { git diff $* | $EDITOR }
 alias gf="git flow"
 alias gl="git log"
 alias gm="git merge origin/develop"
+alias go="git checkout"
 alias gp="git push"
 alias gr="git remote -v"
 alias gs="git status -sb"
