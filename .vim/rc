@@ -29,5 +29,8 @@ set smartcase
 " Color scheme
 color solarized
 
+" Clear highlighted search items by pressing space
+nmap <SPACE> <SPACE>:noh<CR>
+
 " Load other rc files
 runtime! rc.d/**/*.vim
