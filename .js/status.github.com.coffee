@@ -1,5 +1,6 @@
 FaviconSwitcher =
   title: document.title
+  head: document.getElementsByTagName("head")[0]
   status: null
   check: ->
     if $('body').hasClass 'majorproblem'
@@ -8,25 +9,24 @@ FaviconSwitcher =
       status = 'minor'
     else
       status = 'ok'
-    if status != this.status
-      this.change "http://dl.dropbox.com/u/9509054/github-favicon-#{status}.ico", "(#{status}) #{this.title}"
+    if status != @status
+      @change "http://dl.dropbox.com/u/9509054/github-favicon-#{status}.ico", "(#{status}) #{@title}"
   change: (iconURL, optionalDocTitle) ->
     if optionalDocTitle
       document.title = optionalDocTitle
-    this.addLink(iconURL, true)
+    @addLink(iconURL, true)
   addLink: (iconURL) ->
     link = document.createElement("link")
     link.type = "image/x-icon"
     link.rel = "shortcut icon"
     link.href = iconURL
-    this.removeLinkIfExists()
-    this.docHead.appendChild(link)
+    @removeLinkIfExists()
+    @head.appendChild(link)
   removeLinkIfExists: ->
-    links = this.docHead.getElementsByTagName("link")
+    links = @head.getElementsByTagName("link")
     for link in links
       if (link.type=="image/x-icon" && link.rel=="shortcut icon")
-        this.docHead.removeChild(link)
-  docHead: document.getElementsByTagName("head")[0]
+        @head.removeChild(link)
 
 # Run the first time straight away
 $ -> FaviconSwitcher.check()
