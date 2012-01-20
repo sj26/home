@@ -106,3 +106,7 @@ function using_gcc_64() {
 function killdb() {
   kill $(psgrep -n postgres: | grep $1 | awk '{ print $2 }')
 }
+
+pman () {
+  man -t "${1}" | open -f -a /Applications/Preview.app
+}
