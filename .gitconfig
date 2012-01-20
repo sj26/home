@@ -1,0 +1,10 @@
+[user]
+	name = Samuel Cochran
+	email = sj26@sj26.com
+[color]
+	ui = auto
+[core]
+	editor = vim
+	excludesfile = /Users/sj26/.gitignore
+[alias]
+	blame = blame --abbrev=6
