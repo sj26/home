@@ -1,4 +1,6 @@
+.zsh/rc.d/github-credentials.zsh
 .vim/.netrwhist
+
 .*.swp
 .rbenv-version
 
