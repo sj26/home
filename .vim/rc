@@ -8,7 +8,7 @@ call pathogen#helptags()
 
 " Syntax highlighting, number gutter and rule on by default
 syntax on
-"set number
+set number
 "set ruler
 
 " Whitespace stuff
