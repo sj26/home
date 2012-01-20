@@ -1,12 +1,8 @@
-# RVM magic
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-[[ -s "/usr/local/rvm/scripts/rvm" ]] && source "/usr/local/rvm/scripts/rvm"
-
 # Keep detailed track of time in history
 export HISTTIMEFORMAT='%Y-%b-%d %a %H:%M:%S - '
 
-# Make TextMate the default editor if it's installed, otherwise vim
-[[ -d /Applications/TextMate.app ]] && export EDITOR=mate || export EDITOR=vim
+# Make MacVim the default editor if it's installed, otherwise normal vim
+[[ -d /Applications/MacVim.app ]] && export EDITOR=mvim || export EDITOR=vim
 
 export PATH="/usr/local/depot_tools:$PATH"
 
