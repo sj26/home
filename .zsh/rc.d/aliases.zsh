@@ -110,3 +110,6 @@ function killdb() {
 pman () {
   man -t "${1}" | open -f -a /Applications/Preview.app
 }
+
+# Pretty colours
+alias tmux="TERM=screen-256color-bce tmux"
