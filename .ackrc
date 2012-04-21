@@ -1,2 +1,2 @@
---type-add=ruby=.haml,.sass
+--type-add=ruby=.haml,.sass,.scss
 --type-add=js=.coffee
