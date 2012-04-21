@@ -1,4 +1,4 @@
-#compdef psql pg_dump createdb dropdb
+#compdef psql pg_dump createdb dropdb killdb
 
 #
 # zsh completion functions for PostgreSQL client programs.  Based on
@@ -160,6 +160,14 @@ _dropdb () {
         ':PostgreSQL database:_postgresql_databases'
 }
 
+_killdb () {
+    local curcontext="$curcontext" state line expl
+    typeset -A opt_args
+
+    _arguments -C -s \
+        ':PostgreSQL database:_postgresql_databases'
+}
+
 _postgresql_utils () {
     local _postgresql_common_opts _postgresql_encodings
 
@@ -200,6 +208,7 @@ _postgresql_utils () {
         pg_dump)  _pg_dump "$@"  ;;
         createdb) _createdb "$@" ;;
         dropdb)   _dropdb "$@"   ;;
+        killdb)   _killdb "$@"   ;;
     esac
 }
 
