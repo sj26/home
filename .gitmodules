@@ -1,13 +1,10 @@
-[submodule ".vim/bundle/command-t"]
-	path = .vim/bundle/command-t
-	url = git://git.wincent.com/command-t.git
 [submodule ".vim/bundle/solarized"]
 	path = .vim/bundle/solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule ".vim/bundle/rails"]
 	path = .vim/bundle/rails
 	url = http://github.com/tpope/vim-rails.git
-[submodule "fugitive"]
+[submodule ".vim/bundle/fugitive"]
 	path = .vim/bundle/fugitive
 	url = http://github.com/tpope/vim-fugitive.git
 [submodule ".vim/bundle/surround"]
@@ -73,3 +70,9 @@
 [submodule ".vim/bundle/tcomment"]
 	path = .vim/bundle/tcomment
 	url = https://github.com/tomtom/tcomment_vim
+[submodule ".vim/bundle/ctrl-p"]
+	path = .vim/bundle/ctrl-p
+	url = https://github.com/kien/ctrlp.vim.git
+[submodule ".vim/bundle/camelcasemotion"]
+	path = .vim/bundle/camelcasemotion
+	url = git://github.com/vim-scripts/camelcasemotion.git
