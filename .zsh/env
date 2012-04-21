@@ -4,5 +4,7 @@ export HISTTIMEFORMAT='%Y-%b-%d %a %H:%M:%S - '
 # Make MacVim the default editor if it's installed, otherwise normal vim
 [[ -d /Applications/MacVim.app ]] && export EDITOR=mvim || export EDITOR=vim
 
-export PATH="/usr/local/depot_tools:$PATH"
+# Add depot tools to path if present
+[[ -d /usr/local/depot_tools ]] && export PATH="/usr/local/depot_tools:$PATH"
+
 
