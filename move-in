@@ -5,7 +5,7 @@ pushd $HOME
   if [ -e $HOME/.home ]; then
     pushd $HOME/.home
       git pull
-      git submodule update --recursive
+      git submodule update --init --recursive
     popd
   else
     git clone --recursive ssh://git@github.com/sj26/home.git .home
