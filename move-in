@@ -23,5 +23,6 @@ pushd $HOME
   for suffix in env profile rc
     [ -L .zsh$suffix ] || ln -fs .zsh/$suffix .zsh$suffix
 
-popd
+  [ "$(uname -s)" = "Darwin" ] && .home/move-in-osx
 
+popd
