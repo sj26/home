@@ -4,9 +4,6 @@
 [submodule ".vim/bundle/rails"]
 	path = .vim/bundle/rails
 	url = http://github.com/tpope/vim-rails.git
-[submodule ".vim/bundle/fugitive"]
-	path = .vim/bundle/fugitive
-	url = http://github.com/tpope/vim-fugitive.git
 [submodule ".vim/bundle/surround"]
 	path = .vim/bundle/surround
 	url = https://github.com/tpope/vim-surround.git
@@ -76,3 +73,6 @@
 [submodule ".vim/bundle/camelcasemotion"]
 	path = .vim/bundle/camelcasemotion
 	url = git://github.com/vim-scripts/camelcasemotion.git
+[submodule ".vim/bundle/bundler"]
+	path = .vim/bundle/bundler
+	url = https://github.com/tpope/vim-bundler.git
