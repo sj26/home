@@ -1,1 +1,1 @@
-whence hub > /dev/null && eval $(hub alias -s zsh)
+whence hub > /dev/null && eval "$(hub alias)"
