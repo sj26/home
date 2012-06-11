@@ -25,5 +25,8 @@ if slashcount >= 5 # we are in a repo
         .prependTo($('body'))
         .fadeIn("slow")
 
+$('body.page-pullrequest, body.page-commit-show').live 'click', '.diff-view .file .meta .info', (e) ->
+  $(e.target).parents('.file').first().find('.data').toggle()
+
 # credit https://twitter.com/#!/tcurdt/status/86193273055612929
 # nabbed from https://github.com/freelancing-god/.js/blob/master/github.com.js
