@@ -25,8 +25,13 @@ if slashcount >= 5 # we are in a repo
         .prependTo($('body'))
         .fadeIn("slow")
 
-$('body.page-pullrequest, body.page-commit-show').delegate '.diff-view .file .meta .info', 'click', (e) ->
-  $(e.target).parents('.file').first().find('.data').toggle()
+jQuery ($) ->
+  $('body.page-pullrequest, body.page-commit-show')
+    # Suppress VCR cassettes
+    .find('.diff-view .file:has(.meta[data-path^="spec/fixtures/cassettes"]) .data').addClass('suppressed').end()
+    # Make file suppression toggleable
+    .delegate '.diff-view .file .meta .info', 'click', (e) ->
+      $(e.target).parents('.file').first().find('.data').toggleClass('suppressed')
 
 # credit https://twitter.com/#!/tcurdt/status/86193273055612929
 # nabbed from https://github.com/freelancing-god/.js/blob/master/github.com.js
