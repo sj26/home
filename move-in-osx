@@ -116,5 +116,8 @@ chflags nohidden ~/Library
 # Disable local Time Machine backups
 hash tmutil &> /dev/null && sudo tmutil disablelocal
 
+# Add patched Menlo for vim powerline awesomeness
+mkdir -p ~/Library/Fonts && curl https://gist.github.com/raw/1595572/417a3fa36e35ca91d6d23ac961071094c26e5fad/Menlo-Powerline.otf -o ~/Library/Fonts/Menlo-Powerline.otf
+
 # Kill affected applications
 for app in Safari Finder Dock Mail SystemUIServer; do killall $app >/dev/null 2>&1; done
