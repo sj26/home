@@ -28,7 +28,7 @@ set smartcase
 
 " Color scheme
 color solarized
-set bg=light
+set bg=dark
 
 " Clear highlighted search items by pressing space
 nmap <SPACE> <SPACE>:noh<CR>
