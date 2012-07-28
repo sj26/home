@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+pushd $HOME
+
+  [ "$(uname -s)" = "Darwin" ] && .home/bootstrap-osx
+
+popd
