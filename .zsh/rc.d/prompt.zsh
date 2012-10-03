@@ -4,6 +4,33 @@
 # red: 39,139,210 or #278bd2
 # green: 39,139,210 or #278bd2
 
+
+setopt PROMPT_SUBST
+
+if [ "$TERM" = "xterm-256color" ]; then
+  POWERLINE_LEFT_SEP=$'\u2b80'
+  POWERLINE_RIGHT_SEP=$'\u2b82'
+  POWERLINE_BRANCH=$'\u2b60'
+else
+  POWERLINE_LEFT_SEP=$'\u25b6'
+  POWERLINE_RIGHT_SEP=$'\u25c0'
+  POWERLINE_BRANCH=$'\u26a1'
+fi
+
+POWERLINE_COLOR_BG_GRAY=%K{240}
+POWERLINE_COLOR_BG_LIGHT_GRAY=%K{240}
+POWERLINE_COLOR_BG_WHITE=%K{255}
+
+POWERLINE_COLOR_FG_GRAY=%F{240}
+POWERLINE_COLOR_FG_LIGHT_GRAY=%F{240}
+POWERLINE_COLOR_FG_WHITE=%F{255}
+
+if [ "$SSH_CONNECTION" ]; then
+  PROMPT_HOST="%K{green}%F{black} %n@%m %k%f%F{green}%K{blue}$POWERLINE_LEFT_SEP"
+else
+  PROMP_HOST=""
+fi
+
 function prompt_git {
   git rev-parse --git-dir &> /dev/null
   git_status="$(git status 2> /dev/null)"
@@ -25,26 +52,9 @@ function prompt_git {
   fi
   if [[ ${git_status} =~ $'^# On branch ([^ \t\r\n]+)' ]]; then
     branch=${match[1]}
-    echo " ${color}\u2b60 ${branch}${remote}"
+    echo " ${color}${POWERLINE_BRANCH} ${branch}${remote}"
   fi
 }
 
-setopt PROMPT_SUBST
-#export PROMPT=$'%{\033[0;34m%}['${PROMPT_HOST}$'%{\033[0;31m%}%~`prompt_git`%{\e[0;34m%}]%{\e[0m%}%{\e[0;%(?.32.31)m%}%#%{\e[0m%} '
-
-POWERLINE_COLOR_BG_GRAY=%K{240}
-POWERLINE_COLOR_BG_LIGHT_GRAY=%K{240}
-POWERLINE_COLOR_BG_WHITE=%K{255}
-
-POWERLINE_COLOR_FG_GRAY=%F{240}
-POWERLINE_COLOR_FG_LIGHT_GRAY=%F{240}
-POWERLINE_COLOR_FG_WHITE=%F{255}
-
-if [ "$SSH_CONNECTION" ]; then
-  PROMPT_HOST="%K{green}%F{black} %n@%m %k%f%F{green}%K{blue}"$'\u2b80'
-else
-  PROMP_HOST=""
-fi
-
-export PROMPT="$PROMPT_HOST%k%f%F{white}%K{blue} %1~"'`prompt_git`'" %k%f%F{blue}"$'\u2b80'"%f "
-export RPROMPT=$POWERLINE_COLOR_FG_WHITE$'\u2b82'"%f$POWERLINE_COLOR_BG_WHITE $POWERLINE_COLOR_FG_GRAY%D{%H:%M:%S}  "$'\u2b82'"%f%k$POWERLINE_COLOR_BG_GRAY$POWERLINE_COLOR_FG_WHITE %D{%Y-%m-%d} %f%k"
+export PROMPT="$PROMPT_HOST%k%f%F{white}%K{blue} %1~"'`prompt_git`'" %k%f%F{blue}$POWERLINE_LEFT_SEP%f "
+export RPROMPT="${POWERLINE_COLOR_FG_WHITE}${POWERLINE_RIGHT_SEP}%f${POWERLINE_COLOR_BG_WHITE} ${POWERLINE_COLOR_FG_GRAY}%D{%H:%M:%S}  ${POWERLINE_RIGHT_SEP}%f%k${POWERLINE_COLOR_BG_GRAY}${POWERLINE_COLOR_FG_WHITE} %D{%Y-%m-%d} %f%k"
