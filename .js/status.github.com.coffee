@@ -1,7 +1,12 @@
 FaviconSwitcher =
-  title: document.title
-  head: document.getElementsByTagName("head")[0]
   status: null
+  init: ->
+    @title = document.title
+    @icon = $(document.head).find("link[rel=icon]")
+    @checker()
+  checker: ->
+    @check()
+    setTimeout((=> @checker()), 1000)
   check: ->
     if $('body').hasClass 'majorproblem'
       status = 'major'
@@ -10,27 +15,17 @@ FaviconSwitcher =
     else
       status = 'ok'
     if status != @status
+      @status = status
       @change "http://dl.dropbox.com/u/9509054/github-favicon-#{status}.ico", "(#{status}) #{@title}"
   change: (iconURL, optionalDocTitle) ->
-    if optionalDocTitle
-      document.title = optionalDocTitle
-    @addLink(iconURL, true)
-  addLink: (iconURL) ->
-    link = document.createElement("link")
-    link.type = "image/x-icon"
-    link.rel = "shortcut icon"
-    link.href = iconURL
-    @removeLinkIfExists()
-    @head.appendChild(link)
-  removeLinkIfExists: ->
-    links = @head.getElementsByTagName("link")
-    for link in links
-      if (link.type=="image/x-icon" && link.rel=="shortcut icon")
-        @head.removeChild(link)
+    document.title = optionalDocTitle if optionalDocTitle
+    @icon.attr(href: iconURL)
 
 # Run the first time straight away
-$ -> FaviconSwitcher.check()
+$ -> FaviconSwitcher.init()
 
-# Guarateed to run after local callbacks
-$(window).ajaxComplete -> FaviconSwitcher.check()
+# Guaranteed to run after local callbacks
+$(document).ajaxComplete ->
+  console.log arguments
+  FaviconSwitcher.check()
 
