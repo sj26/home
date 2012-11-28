@@ -52,7 +52,7 @@ function gde() { git diff $* | $EDITOR }
 alias gf="git flow"
 alias gl="git log"
 alias gm="git merge"
-alias go="git checkout"
+alias gco="git checkout"
 alias gp="git push"
 alias gr="git remote -v"
 alias gs="git status -sb"
