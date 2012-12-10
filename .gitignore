@@ -9,3 +9,7 @@
 ehthumbs.db
 Icon?
 Thumbs.db
+
+# for Sublime Text 2
+*.cache
+*.pyc
