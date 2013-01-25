@@ -78,7 +78,7 @@
 	url = https://github.com/tpope/vim-bundler.git
 [submodule ".vim/bundle/slim"]
 	path = .vim/bundle/slim
-	url = git://github.com/bbommarito/vim-slim.git
+	url = git://github.com/slim-template/vim-slim.git
 [submodule ".vim/bundle/vroom"]
 	path = .vim/bundle/vroom
 	url = git://github.com/skalnik/vim-vroom.git
