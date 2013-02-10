@@ -1,8 +1,13 @@
 # Keep detailed track of time in history
 export HISTTIMEFORMAT='%Y-%b-%d %a %H:%M:%S - '
 
-# Make MacVim the default editor if it's installed, otherwise normal vim
-[[ -d /Applications/MacVim.app ]] && export EDITOR=mvim || export EDITOR=vim
+# Make Sublime the default editor if it's installed, otherwise vim
+if [[ -d "/Applications/Sublime Text 2.app" ]]; then
+  export EDITOR=sub
+  export GIT_EDITOR="sub -w"
+else
+  export EDITOR=vim
+fi
 
 # Add depot tools to path if present
 [[ -d /usr/local/depot_tools ]] && export PATH="/usr/local/depot_tools:$PATH"
