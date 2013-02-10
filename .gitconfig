@@ -1,13 +1,20 @@
 [user]
-	name = Samuel Cochran
-	email = sj26@sj26.com
+  name = Samuel Cochran
+  email = sj26@sj26.com
+
 [color]
-	ui = auto
+  ui = auto
+
 [core]
-	editor = vim
-	excludesfile = /Users/sj26/.gitignore
+  excludesfile = /Users/sj26/.gitignore
+
 [alias]
-	blame = blame --abbrev=6
+  blame = blame --abbrev=6
+
+[merge "bundleinstall"]
+  name = bundle install
+  driver = bundle install
+
 [merge "railsschema"]
   name = newer Rails schema version
   driver = "ruby -e '\n\
@@ -18,4 +25,3 @@
     end\n\
     File.open(%(%A), %(w)) {|f| f.write(b)}\n\
     exit 1 if b.include?(%(<)*%L)'"
-
