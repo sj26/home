@@ -48,15 +48,17 @@ alias gb="git branch -v"
 alias gba="git branch -av"
 alias gc="git commit -v"
 alias gd="git diff"
+alias gd.="git diff --color-words=."
 function gde() { git diff $* | $EDITOR }
 alias gf="git flow"
-alias gl="git log"
-alias gm="git merge"
+alias gl="git smart-log"
+alias gm="git smart-merge"
 alias gco="git checkout"
 alias gp="git push"
 alias gr="git remote -v"
 alias gs="git status -sb"
 alias gu="git pull"
+alias gup="git smart-pull"
 
 # Derail
 function derail() {
