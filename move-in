@@ -16,7 +16,7 @@ pushd $HOME
     git submodule update
   popd
 
-  for file in .ackrc .bin .gemrc .gitconfig .gitignore .js .pryrc .railsrc .tmux.conf .vim .zsh
+  for file in .ackrc .bin .gemrc .git{config,ignore,attributes} .js .pryrc .railsrc .tmux.conf .vim .zsh
     [ -L $file ] || ln -fs .home/$file
   for suffix in rc
     [ -L .vim$suffix ] || ln -fs .vim/$suffix .vim$suffix
