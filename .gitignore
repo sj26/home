@@ -3,13 +3,18 @@
 
 .*.sw?
 .sw?
-.rbenv-version
 
 .DS_Store*
 ehthumbs.db
 Icon?
 Thumbs.db
 
+*.pyc
+
+.rbenv-version
+.rbenv-vars
+
+.powenv
+
 # for Sublime Text 2
 *.cache
-*.pyc
