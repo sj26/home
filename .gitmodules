@@ -94,3 +94,12 @@
 [submodule ".vim/bundle/scala"]
 	path = .vim/bundle/scala
 	url = git://github.com/derekwyatt/vim-scala.git
+[submodule "Sublime Text 2/Packages/Vintage Surround"]
+	path = Sublime Text 2/Packages/Vintage Surround
+	url = git://github.com/jcartledge/vintage-sublime-surround.git
+[submodule "Sublime Text 2/Packages/Sublime Surround"]
+	path = Sublime Text 2/Packages/Sublime Surround
+	url = git://github.com/jcartledge/sublime-surround.git
+[submodule "Sublime Text 2/Packages/DashDoc"]
+	path = Sublime Text 2/Packages/DashDoc
+	url = git://github.com/Kapeli/DashDoc.git
