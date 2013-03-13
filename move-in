@@ -11,11 +11,6 @@ pushd $HOME
     git clone --recursive ssh://git@github.com/sj26/home.git .home
   fi
 
-  pushd $HOME/.home
-    git pull
-    git submodule update
-  popd
-
   for file in .ackrc .bin .gemrc .git{config,ignore,attributes} .js .pryrc .railsrc .tmux.conf .vim .zsh
     [ -L $file ] || ln -fs .home/$file
   for suffix in rc
