@@ -1,4 +1,6 @@
 [
   { "keys": ["super+v"], "command": "paste_and_indent"},
-  { "keys": ["shift+super+v"], "command": "paste"}
+  { "keys": ["shift+super+v"], "command": "paste"},
+  { "keys": ["super+l"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"} },
+  { "keys": ["super+ctrl+r"], "command": "reveal_in_side_bar"}
 ]
