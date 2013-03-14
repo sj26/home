@@ -32,7 +32,6 @@ else
 fi
 
 function prompt_git {
-  git rev-parse --git-dir &> /dev/null
   git_status="$(git status 2> /dev/null)"
   if [[ $git_status =~ "working directory clean" ]]; then
     color=%F{148} # green
