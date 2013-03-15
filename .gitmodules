@@ -103,3 +103,6 @@
 [submodule "Sublime Text 2/Packages/DashDoc"]
 	path = Sublime Text 2/Packages/DashDoc
 	url = git://github.com/Kapeli/DashDoc.git
+[submodule "Sublime Text 2/Packages/RubyTest"]
+	path = Sublime Text 2/Packages/RubyTest
+	url = git://github.com/maltize/sublime-text-2-ruby-tests.git
