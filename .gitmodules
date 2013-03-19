@@ -106,3 +106,6 @@
 [submodule "Sublime Text 2/Packages/RubyTest"]
 	path = Sublime Text 2/Packages/RubyTest
 	url = git://github.com/maltize/sublime-text-2-ruby-tests.git
+[submodule "Sublime Text 2/Packages/Vintage"]
+	path = Sublime Text 2/Packages/Vintage
+	url = git://github.com/sublimehq/Vintage.git
