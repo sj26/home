@@ -1,0 +1,6 @@
+[
+  {
+    "caption": ":wq - Save and close",
+    "command": "save_and_close"
+  }
+]
