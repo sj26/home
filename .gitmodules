@@ -109,3 +109,6 @@
 [submodule "Sublime Text 2/Packages/Vintage"]
 	path = Sublime Text 2/Packages/Vintage
 	url = git://github.com/sublimehq/Vintage.git
+[submodule "Sublime Text 2/Packages/CoffeeScript"]
+	path = Sublime Text 2/Packages/CoffeeScript
+	url = git://github.com/Xavura/CoffeeScript-Sublime-Plugin.git
