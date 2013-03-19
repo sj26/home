@@ -5,5 +5,6 @@
   {"keys": ["super+ctrl+r"], "command": "reveal_in_side_bar"},
   {"keys": ["shift+super+,"], "command": "open_file", "args": {"file": "${packages}/User/Default ($platform).sublime-keymap"}},
   {"keys": ["ctrl+w"], "command": "delete_word", "args": {"forward": false, "sub_words": true}},
-  {"keys": ["super+shift+r"], "command": "reindent"}
+  {"keys": ["super+shift+r"], "command": "reindent"},
+  {"keys": ["shift+super+'"], "command": "cycle_quotes"}
 ]
