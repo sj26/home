@@ -15,7 +15,7 @@ class CycleQuotesCommand(sublime_plugin.TextCommand):
     )
 
     # Make sure we have an immutable ordered list of quote styles
-    style_keys = CycleQuotesStyles.keys()
+    style_keys = styles.keys()
 
     def run(self, edit):
         for region in self.view.sel():
