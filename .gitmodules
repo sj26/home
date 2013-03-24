@@ -112,3 +112,6 @@
 [submodule "Sublime Text 2/Packages/CoffeeScript"]
 	path = Sublime Text 2/Packages/CoffeeScript
 	url = git://github.com/Xavura/CoffeeScript-Sublime-Plugin.git
+[submodule "Sublime Text 2/Packages/Ruby-Slim.tmBundle"]
+	path = Sublime Text 2/Packages/Ruby-Slim.tmBundle
+	url = git://github.com/slim-template/ruby-slim.tmbundle.git
