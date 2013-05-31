@@ -115,3 +115,6 @@
 [submodule "Sublime Text 2/Packages/Ruby-Slim.tmBundle"]
 	path = Sublime Text 2/Packages/Ruby-Slim.tmBundle
 	url = git://github.com/slim-template/ruby-slim.tmbundle.git
+[submodule "Sublime Text 2/Packages/GitGutter"]
+	path = Sublime Text 2/Packages/GitGutter
+	url = git://github.com/jisaacks/GitGutter.git
