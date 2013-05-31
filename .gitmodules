@@ -121,3 +121,6 @@
 [submodule "Sublime Text 2/Packages/StringEncode"]
 	path = Sublime Text 2/Packages/StringEncode
 	url = git://github.com/colinta/SublimeStringEncode.git
+[submodule "Sublime Text 2/Packages/GoToFile"]
+	path = Sublime Text 2/Packages/GoToFile
+	url = git://github.com/gs/sublime-text-go-to-file.git
