@@ -124,3 +124,6 @@
 [submodule "Sublime Text 2/Packages/GoToFile"]
 	path = Sublime Text 2/Packages/GoToFile
 	url = git://github.com/gs/sublime-text-go-to-file.git
+[submodule "Sublime Text 2/Packages/AdvancedNewFile"]
+	path = Sublime Text 2/Packages/AdvancedNewFile
+	url = git://github.com/skuroda/Sublime-AdvancedNewFile.git
