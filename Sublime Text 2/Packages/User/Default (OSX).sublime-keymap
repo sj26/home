@@ -13,5 +13,8 @@
 
   // GoToFile
   {"keys": ["alt+d"], "command": "go_to_file"},
-  {"keys": ["alt+i"], "command": "file_info"}
+  {"keys": ["alt+i"], "command": "file_info"},
+
+  // Un-override RubyTest
+  {"keys": ["super+shift+t"], "command": "reopen_last_file"}
 ]
