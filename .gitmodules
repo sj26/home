@@ -127,3 +127,6 @@
 [submodule "Sublime Text 2/Packages/AdvancedNewFile"]
 	path = Sublime Text 2/Packages/AdvancedNewFile
 	url = git://github.com/skuroda/Sublime-AdvancedNewFile.git
+[submodule "Sublime Text 2/Packages/SASS"]
+	path = Sublime Text 2/Packages/SASS
+	url = git://github.com/WhatWeDo/Sublime-Text-2-SASS-Package.git
