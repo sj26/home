@@ -34,6 +34,9 @@ alias rrl='rr && rl'
 
 alias be="bundle exec"
 alias bi="bundle install"
+back() {
+  ack "$@" `bundle show --paths`
+}
 
 # so I can `be migrated`
 alias migrated="rake db:migrate"
