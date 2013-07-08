@@ -1,15 +1,7 @@
 # Hitch if already hitched
 [[ -s "$HOME/.hitch_export_authors" ]] && . "$HOME/.hitch_export_authors"
 
-# rbenv, if we rbenv
-
-if [ -d "$HOME/.rbenv/bin" ]
-then
-  export PATH="$HOME/.rbenv/bin:$PATH"
-fi
-
-if which "rbenv" > /dev/null
-then
+# rbenv, if we rbenv (the interactive part)
+if which "rbenv" > /dev/null; then
   eval "$(rbenv init -)"
 fi
-

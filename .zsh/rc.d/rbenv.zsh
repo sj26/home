@@ -1,11 +1,7 @@
 # rbenv, if we rbenv
-
-if [ -d "$HOME/.rbenv/bin" ]
-then
-  export PATH="$HOME/.rbenv/bin:$PATH"
-fi
-
-if which "rbenv" > /dev/null
-then
+if which "rbenv" > /dev/null; then
   eval "$(rbenv init -)"
 fi
+
+# Rails puts scripts in bin now which should override rbenv
+export PATH="./bin:$PATH"

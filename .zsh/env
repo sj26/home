@@ -12,7 +12,3 @@ fi
 # Add depot tools to path if present
 [[ -d /usr/local/depot_tools ]] && export PATH="/usr/local/depot_tools:$PATH"
 
-# Rails puts scripts in bin now which should override defaults
-export PATH="./bin:$PATH"
-
-
