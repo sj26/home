@@ -1,5 +1,5 @@
-.zsh/rc.d/github-credentials.zsh
-.vim/.netrwhist
+/.zsh/rc.d/github-credentials.zsh
+/.vim/.netrwhist
 
 .*.sw?
 .sw?
@@ -16,6 +16,12 @@ Thumbs.db
 
 .powenv
 
-# for Sublime Text 2
+# for Sublime Text
 *.cache
-Sublime Text 2/Packages/User/RubyTest.last-run
+
+/Sublime Text 2/Packages/User/RubyTest.last-run
+
+/Sublime Text 3/Index
+/Sublime Text 3/Local
+/Sublime Text 3/Default Packages
+/Sublime Text 3/Packages/User/RubyTest.last-run

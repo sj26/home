@@ -1,0 +1,13 @@
+[
+  // Open keybindings file
+	{"keys": ["shift+super+,"], "command": "open_file", "args": {"file": "${packages}/User/Default ($platform).sublime-keymap"}},
+
+  // Ctrl+W like readline
+	{"keys": ["ctrl+w"], "command": "delete_word", "args": {"forward": false, "sub_words": true}},
+
+  // Reveal in Sidebar
+  {"keys": ["super+ctrl+r"], "command": "reveal_in_side_bar"},
+
+  // Undo RubyTest overriding Reopen Closed File
+  {"keys": ["super+shift+t"], "command": "reopen_last_file"},
+]
