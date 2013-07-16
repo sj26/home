@@ -29,7 +29,9 @@ alias rp='r plugin'
 alias rg='r generate'
 alias rd="r dbconsole"
 alias rr='mkdir -p tmp && touch tmp/restart.txt'
-alias rl='tail -f log/*.log'
+rl() {
+  tail -F "log/${RAILS_ENV:=${RACK_ENV:=development}}.log" "$(test -d "$HOME/Library/Logs/Pow/apps" && echo "$HOME/Library/Logs/Pow/apps/$(basename "$PWD").log")"
+}
 alias rrl='rr && rl'
 
 alias be="bundle exec"
