@@ -19,6 +19,9 @@ defaults write com.apple.dock showhidden -bool true
 # Enable iTunes track notifications in the Dock
 defaults write com.apple.dock itunes-notifications -bool true
 
+# Disable Dashboard
+defaults write com.apple.dashboard mcx-disabled -bool true
+
 # Disable window animations and Get Info animations in Finder
 defaults write com.apple.finder DisableAllAnimations -bool true
 
