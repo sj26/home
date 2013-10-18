@@ -72,7 +72,10 @@ function derail() {
 
 # You've got the powah!
 function powify() {
-  ln -s $PWD ~/.pow/${1:-$(basename $PWD | tr A-Z a-z)}
+  host="${1:-$(basename $PWD | tr A-Z a-z)}"
+  link="$HOME/.pow/$host"
+  [ -L $link ] || ln -s "$PWD" "$link"
+  echo "http://$host.dev"
 }
 
 # Repeat command prefixed with sudo
