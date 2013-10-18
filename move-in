@@ -8,7 +8,7 @@ pushd $HOME
       git submodule update --init --recursive
     popd
   else
-    git clone --recursive ssh://git@github.com/sj26/home.git .home
+    git clone --recursive https://github.com/sj26/home .home
   fi
 
   for file in .ackrc .bin .gemrc .git{config,ignore,attributes} .js .pryrc .railsrc .tmux.conf .vim .zsh
