@@ -6,8 +6,7 @@
   "dictionary": "Packages/Language - English/en_GB.dic",
   "draw_white_space": "all",
   "ensure_newline_at_eof_on_save": true,
-  "file_exclude_patterns":
-  [
+  "file_exclude_patterns": [
     "*.pyc",
     "*.pyo",
     "*.exe",
@@ -32,8 +31,7 @@
     "*.rbc",
   ],
   "fold_buttons": false,
-  "folder_exclude_patterns":
-  [
+  "folder_exclude_patterns": [
     ".bundle",
     ".svn",
     ".git",
@@ -42,14 +40,16 @@
     "tmp"
   ],
   "font_face": "Meslo LG M DZ",
-  "font_options":
-  [
+  "font_options": [
   ],
   "font_size": 16,
   "gpg_command": "gpg2",
   "highlight_line": true,
   "highlight_modified_tabs": true,
-  "ignored_packages": ["Rails", "Vintage"],
+  "ignored_packages": [
+    "Rails",
+    "Vintage"
+  ],
   "margin": 1,
   "show_tab_close_buttons": false,
   "soda_classic_tabs": true,
