@@ -1,3 +1,6 @@
+# OS X isn't getting this right:
+export SHELL=/bin/zsh
+
 . ~/.zsh/colors.zsh
 . ~/.zsh/completion.zsh
 for rc_file (~/.zsh/rc.d/*.zsh) . $rc_file
