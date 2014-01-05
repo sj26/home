@@ -1,3 +1,6 @@
+[submodule ".vim/bundle/airline"]
+	path = .vim/bundle/airline
+	url = https://github.com/bling/vim-airline
 [submodule ".vim/bundle/solarized"]
 	path = .vim/bundle/solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
@@ -134,6 +137,6 @@
 [submodule "Sublime Text 3/Packages/GPG"]
 	path = Sublime Text 3/Packages/GPG
 	url = https://github.com/crowsonkb/SublimeGPG.git
-[submodule ".vim/bundle/airline"]
-	path = .vim/bundle/airline
-	url = https://github.com/bling/vim-airline
+[submodule "Sublime Text 3/Packages/ERB"]
+	path = Sublime Text 3/Packages/ERB
+	url = git://github.com/eddorre/SublimeERB.git
