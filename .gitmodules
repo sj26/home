@@ -140,3 +140,6 @@
 [submodule "Sublime Text 3/Packages/ERB"]
 	path = Sublime Text 3/Packages/ERB
 	url = git://github.com/eddorre/SublimeERB.git
+[submodule "Sublime Text 3/Packages/Markdown Preview.sublime-package"]
+	path = Sublime Text 3/Packages/Markdown Preview.sublime-package
+	url = git://github.com/revolunet/sublimetext-markdown-preview.git
