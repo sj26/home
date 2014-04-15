@@ -94,42 +94,6 @@
 [submodule ".vim/bundle/scala"]
 	path = .vim/bundle/scala
 	url = git://github.com/derekwyatt/vim-scala.git
-[submodule "Sublime Text 2/Packages/Vintage Surround"]
-	path = Sublime Text 2/Packages/Vintage Surround
-	url = git://github.com/jcartledge/vintage-sublime-surround.git
-[submodule "Sublime Text 2/Packages/Sublime Surround"]
-	path = Sublime Text 2/Packages/Sublime Surround
-	url = git://github.com/jcartledge/sublime-surround.git
-[submodule "Sublime Text 2/Packages/DashDoc"]
-	path = Sublime Text 2/Packages/DashDoc
-	url = git://github.com/Kapeli/DashDoc.git
-[submodule "Sublime Text 2/Packages/RubyTest"]
-	path = Sublime Text 2/Packages/RubyTest
-	url = git://github.com/maltize/sublime-text-2-ruby-tests.git
-[submodule "Sublime Text 2/Packages/Vintage"]
-	path = Sublime Text 2/Packages/Vintage
-	url = git://github.com/sublimehq/Vintage.git
-[submodule "Sublime Text 2/Packages/CoffeeScript"]
-	path = Sublime Text 2/Packages/CoffeeScript
-	url = git://github.com/Xavura/CoffeeScript-Sublime-Plugin.git
-[submodule "Sublime Text 2/Packages/Ruby-Slim.tmBundle"]
-	path = Sublime Text 2/Packages/Ruby-Slim.tmBundle
-	url = git://github.com/slim-template/ruby-slim.tmbundle.git
-[submodule "Sublime Text 2/Packages/GitGutter"]
-	path = Sublime Text 2/Packages/GitGutter
-	url = git://github.com/jisaacks/GitGutter.git
-[submodule "Sublime Text 2/Packages/StringEncode"]
-	path = Sublime Text 2/Packages/StringEncode
-	url = git://github.com/colinta/SublimeStringEncode.git
-[submodule "Sublime Text 2/Packages/GoToFile"]
-	path = Sublime Text 2/Packages/GoToFile
-	url = git://github.com/gs/sublime-text-go-to-file.git
-[submodule "Sublime Text 2/Packages/AdvancedNewFile"]
-	path = Sublime Text 2/Packages/AdvancedNewFile
-	url = git://github.com/skuroda/Sublime-AdvancedNewFile.git
-[submodule "Sublime Text 2/Packages/SASS"]
-	path = Sublime Text 2/Packages/SASS
-	url = git://github.com/WhatWeDo/Sublime-Text-2-SASS-Package.git
 [submodule "Sublime Text 3/Packages/Package Control"]
 	path = Sublime Text 3/Packages/Package Control
 	url = git://github.com/wbond/sublime_package_control.git
