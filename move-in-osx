@@ -119,8 +119,18 @@ chflags nohidden ~/Library
 # Disable local Time Machine backups
 hash tmutil &> /dev/null && sudo tmutil disablelocal
 
-# Add patched Menlo for vim powerline awesomeness
-mkdir -p ~/Library/Fonts && curl https://gist.github.com/raw/1595572/417a3fa36e35ca91d6d23ac961071094c26e5fad/Menlo-Powerline.otf -o ~/Library/Fonts/Menlo-Powerline.otf
+# Add patched Menlo and Meslo for vim powerline awesomeness
+mkdir -p ~/Library/Fonts
+pushd ~/Library/Fonts
+  curl https://gist.github.com/raw/1595572/417a3fa36e35ca91d6d23ac961071094c26e5fad/Menlo-Powerline.otf -o Menlo-Powerline.otf
+
+  curl https://github.com/Lokaltog/powerline-fonts/raw/master/Meslo/Meslo%20LG%20S%20Regular%20for%20Powerline.otf -o "Meslo LG S Regular for Powerline.otf"
+  curl https://github.com/Lokaltog/powerline-fonts/raw/master/Meslo/Meslo%20LG%20S%20DZ%20Regular%20for%20Powerline.otf -o "Meslo LG S DZ Regular for Powerline.otf"
+  curl https://github.com/Lokaltog/powerline-fonts/raw/master/Meslo/Meslo%20LG%20M%20Regular%20for%20Powerline.otf -o "Meslo LG M Regular for Powerline.otf"
+  curl https://github.com/Lokaltog/powerline-fonts/raw/master/Meslo/Meslo%20LG%20M%20DZ%20Regular%20for%20Powerline.otf -o "Meslo LG M DZ Regular for Powerline.otf"
+  curl https://github.com/Lokaltog/powerline-fonts/raw/master/Meslo/Meslo%20LG%20L%20Regular%20for%20Powerline.otf -o "Meslo LG L Regular for Powerline.otf"
+  curl https://github.com/Lokaltog/powerline-fonts/raw/master/Meslo/Meslo%20LG%20L%20DZ%20Regular%20for%20Powerline.otf -o "Meslo LG L DZ Regular for Powerline.otf"
+popd
 
 # Kill affected applications
 for app in Safari Finder Dock Mail SystemUIServer; do killall $app >/dev/null 2>&1; done
