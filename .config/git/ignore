@@ -1,0 +1,25 @@
+# Global gitignore
+
+# Vim swap files
+.*.sw?
+.sw?
+
+# OS junk
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Rubinius bytecode
+*.rbc
+
+# Python bytecode
+*.pyc
+
+# rbenv
+.rbenv-version
+.rbenv-vars
+
+# pow
+# (.powrc should be checked in, .powenv not)
+.powenv

@@ -11,8 +11,10 @@ pushd $HOME
     git clone --recursive https://github.com/sj26/home .home
   fi
 
-  for file in .ackrc .bin .gemrc .git{config,ignore,attributes} .js .pryrc .railsrc .tmux.conf .vim .zsh
+  for file in .ackrc .bin .gemrc .gitconfig .js .pryrc .railsrc .tmux.conf .vim .zsh
     [ -L $file ] || ln -fs .home/$file
+  for file in .config/git/{ignore,attributes}
+    mkdir -p "${file%/*}" && [ -L "$file" ] || ln -fs "$HOME/.home/$file" "$HOME/$file"
   for suffix in rc
     [ -L .vim$suffix ] || ln -fs .vim/$suffix .vim$suffix
   for suffix in env profile rc

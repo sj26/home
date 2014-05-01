@@ -5,8 +5,6 @@
 [color]
   ui = auto
 
-[core]
-  excludesfile = /Users/sj26/.gitignore
 
 [alias]
   blame = blame --abbrev=6
