@@ -128,3 +128,12 @@
 [submodule "Sublime Text 3/Packages/Theme - Soda"]
 	path = Sublime Text 3/Packages/Theme - Soda
 	url = git://github.com/buymeasoda/soda-theme.git
+[submodule "Sublime Text 3/Packages/Puppet"]
+	path = Sublime Text 3/Packages/Puppet
+	url = https://github.com/eklein/sublime-text-puppet.git
+[submodule "Sublime Text 3/Packages/Markdown Preview"]
+	path = Sublime Text 3/Packages/Markdown Preview
+	url = https://github.com/revolunet/sublimetext-markdown-preview.git
+[submodule "Sublime Text 3/Packages/GPG"]
+	path = Sublime Text 3/Packages/GPG
+	url = https://github.com/crowsonkb/SublimeGPG.git
