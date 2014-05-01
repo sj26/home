@@ -11,6 +11,8 @@
   ui = auto
 
 
+[push]
+  default = simple
 
 [merge "bundleinstall"]
   name = bundle install
