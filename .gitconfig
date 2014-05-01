@@ -10,6 +10,11 @@
 [color]
   ui = auto
 
+[column]
+  ui = auto,dense
+
+[diff]
+  submodule = log
 
 [push]
   default = simple
@@ -28,7 +33,3 @@
     end\n\
     File.open(%(%A), %(w)) {|f| f.write(b)}\n\
     exit 1 if b.include?(%(<)*%L)'"
-[column]
-	ui = auto,dense
-[diff]
-	submodule = log
