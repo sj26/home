@@ -2,12 +2,15 @@
   name = Samuel Cochran
   email = sj26@sj26.com
 
+[alias]
+  blame = blame --abbrev=6
+  to-deploy = log --merges --grep='pull request' --format='%s (%cN)' origin/production..origin/master
+  ff = pull --ff-only
+
 [color]
   ui = auto
 
 
-[alias]
-  blame = blame --abbrev=6
 
 [merge "bundleinstall"]
   name = bundle install
