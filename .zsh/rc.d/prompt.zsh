@@ -49,7 +49,7 @@ function prompt_git {
   if [[ ${git_status} =~ "Your branch and (.*) have diverged" ]]; then
     remote=" ↕"
   fi
-  if [[ ${git_status} =~ $'^On branch ([^ \t\r\n]+)' ]]; then
+  if [[ ${git_status} =~ $'On branch ([^ \t\r\n]+)' ]]; then
     branch=${match[1]}
     echo " ${color}${POWERLINE_BRANCH} ${branch}${remote}"
   fi
