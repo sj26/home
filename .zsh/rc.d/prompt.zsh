@@ -39,17 +39,17 @@ function prompt_git {
     color=%F{220} # yellow (not red = bad, just yellow = caution)
   fi
   # add an else if or two here if you want to get more specific
-  if [[ ${git_status} =~ "# Your branch is (.*) of" ]]; then
+  if [[ ${git_status} =~ "Your branch is (.*) of" ]]; then
     if [[ ${BASH_REMATCH[1]} == "ahead" ]]; then
       remote=" ↑"
     else
       remote=""
     fi
   fi
-  if [[ ${git_status} =~ "# Your branch and (.*) have diverged" ]]; then
+  if [[ ${git_status} =~ "Your branch and (.*) have diverged" ]]; then
     remote=" ↕"
   fi
-  if [[ ${git_status} =~ $'^# On branch ([^ \t\r\n]+)' ]]; then
+  if [[ ${git_status} =~ $'^On branch ([^ \t\r\n]+)' ]]; then
     branch=${match[1]}
     echo " ${color}${POWERLINE_BRANCH} ${branch}${remote}"
   fi
