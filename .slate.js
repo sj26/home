@@ -88,8 +88,8 @@ slate.bindAll({
   "[:ctrl,alt,cmd": fillLeftHalf,
   "]:ctrl,alt,cmd": fillRightHalf,
 
-  "o:ctrl,alt,cmd": fillTopLeftQuarter,
-  "p:ctrl,alt,cmd": fillTopRightQuarter,
+  "i:ctrl,alt,cmd": fillTopLeftQuarter,
+  "o:ctrl,alt,cmd": fillTopRightQuarter,
   "k:ctrl,alt,cmd": fillBottomLeftQuarter,
   "l:ctrl,alt,cmd": fillBottomRightQuarter,
 
