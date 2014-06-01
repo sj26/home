@@ -134,3 +134,6 @@
 [submodule "Sublime Text 3/Packages/GPG"]
 	path = Sublime Text 3/Packages/GPG
 	url = https://github.com/crowsonkb/SublimeGPG.git
+[submodule ".vim/bundle/airline"]
+	path = .vim/bundle/airline
+	url = https://github.com/bling/vim-airline
