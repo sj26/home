@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 /usr/bin/ruby -e "$(/usr/bin/curl -fsSL https://raw.github.com/mxcl/homebrew/master/Library/Contributions/install_homebrew.rb)"
 
 brew tap homebrew/dupes
