@@ -12,17 +12,18 @@ brew install postgresql geos postgis geoip
 brew install redis
 brew install node
 brew install ffmpeg
-brew install rbenv rbenv-default-gems rbenv-gem-rehash rbenv-vars ruby-build
-brew install imagemagick json-c libffi sqlite3
+brew install rbenv rbenv-default-gems rbenv-communal-gems rbenv-gem-rehash rbenv-vars ruby-build
+brew install imagemagick json-c libffi sqlite3 exiv2
 
-rbenv install 2.0.0-p247
-rbenv global 2.0.0-p247
+rbenv install 2.1.2
+rbenv global 2.1.2
 
-rbenv install 1.8.7-p358
-rbenv install 1.9.3-p448
+rbenv install 1.8.7-p375
+rbenv install 1.9.3-p545
+rbenv install 2.0.0-p451
 rbenv install jruby-1.6.8
-rbenv install jruby-1.7.4
+rbenv install jruby-1.7.12
 rbenv install rbx-1.2.4
-rbenv install rbx-2.0.0-dev
+rbenv install rbx-2.2.6
 
 rbenv exec gem install bundler
