@@ -17,6 +17,12 @@ brew install imagemagick json-c libffi sqlite3 exiv2
 
 mkdir -p ~/.rbenv/cache
 
+for gem in gem-open bundler foreman; do
+  if ! grep -q $gem $(rbenv root)/default-gems; then
+    echo $gem >> ~/.rbenv/default-gems
+  fi
+done
+
 rbenv install 2.1.2
 rbenv global 2.1.2
 
