@@ -5,7 +5,7 @@
 brew tap homebrew/dupes
 brew install brew-gem
 
-brew install ack curl git gh psgrep pstree watch wget
+brew install ack curl git gh gnupg2 psgrep pstree watch wget
 brew install apple-gcc42 automake autoconf
 brew install mysql
 brew install postgresql geos postgis geoip
