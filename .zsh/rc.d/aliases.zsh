@@ -121,5 +121,14 @@ pman () {
   man -t "${1}" | open -f -a /Applications/Preview.app
 }
 
+btmm-domain() {
+  scutil <<< "show Setup:/Network/BackToMyMac" | sed -n 's/.* : *\(.*\).$/\1/p'
+}
+
+ssh-btmm() {
+  local host=$1 && shift
+  ssh "$host.$(btmm-domain)" $*
+}
+
 # Pretty colours
 alias tmux="TERM=screen-256color-bce tmux"
