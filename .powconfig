@@ -1,1 +1,2 @@
 export PATH="$(rbenv root)/shims:$(rbenv root)/bin:$PATH"
+export POW_EXT_DOMAINS="local.sj26.com"
