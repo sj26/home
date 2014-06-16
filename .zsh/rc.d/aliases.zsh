@@ -56,7 +56,7 @@ alias gd="git diff"
 alias gd.="git diff --color-words=."
 function gde() { git diff $* | $EDITOR }
 alias gf="git flow"
-alias gl="git smart-log"
+alias gl="git log --pretty='format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset' --graph"
 alias gm="git smart-merge"
 alias gco="git checkout"
 alias gp="git push"
