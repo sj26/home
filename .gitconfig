@@ -16,9 +16,6 @@
 [diff]
   submodule = log
 
-[gh]
-  protocol = https
-
 [push]
   default = simple
 
