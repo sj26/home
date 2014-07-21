@@ -7,12 +7,21 @@ var resizeSmall = slate.operation("move", {
     width: "1600", height: "1000"
   }),
 
+  fillTopHalf = slate.operation("move", {
+    x: "(screenOriginX)", y: "(screenOriginY)",
+    width: "(screenSizeX)", height: "(screenSizeY / 2)"
+  }),
+  fillBottomHalf = slate.operation("move", {
+    x: "(screenOriginX)", y: "(screenOriginY + screenSizeY / 2)",
+    width: "(screenSizeX)", height: "(screenSizeY / 2)"
+  }),
+
   fillLeftHalf = slate.operation("move", {
     x: "(screenOriginX)", y: "(screenOriginY)",
     width: "(screenSizeX / 2)", height: "(screenSizeY)"
   }),
   fillRightHalf = slate.operation("move", {
-    /**/x: "(screenOriginX + screenSizeX / 2)", y: "(screenOriginY)",
+    x: "(screenOriginX + screenSizeX / 2)", y: "(screenOriginY)",
     width: "(screenSizeX / 2)", height: "(screenSizeY)"
   }),
 
@@ -85,6 +94,8 @@ slate.bindAll({
   "-:ctrl,alt,cmd": resizeSmall,
   "=:ctrl,alt,cmd": resizeBig,
 
+  "p:ctrl,alt,cmd": fillTopHalf,
+  ";:ctrl,alt,cmd": fillBottomHalf,
   "[:ctrl,alt,cmd": fillLeftHalf,
   "]:ctrl,alt,cmd": fillRightHalf,
 
