@@ -143,3 +143,6 @@
 [submodule "Sublime Text 3/Packages/Markdown Preview.sublime-package"]
 	path = Sublime Text 3/Packages/Markdown Preview.sublime-package
 	url = git://github.com/revolunet/sublimetext-markdown-preview.git
+[submodule ".vim/bundle/sleuth"]
+	path = .vim/bundle/sleuth
+	url = git://github.com/tpope/vim-sleuth.git
