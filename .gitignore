@@ -2,3 +2,6 @@
 /Sublime Text 3/Cache
 /Sublime Text 3/Index
 /Sublime Text 3/Local
+
+# Vim junk
+/.vim/.netrwhist
