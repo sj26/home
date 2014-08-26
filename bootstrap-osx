@@ -1,19 +1,31 @@
 #!/usr/bin/env zsh
 
-/usr/bin/ruby -e "$(/usr/bin/curl -fsSL https://raw.github.com/mxcl/homebrew/master/Library/Contributions/install_homebrew.rb)"
+[ -d /usr/local/Cellar ] ||
+  ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 
-brew tap homebrew/dupes
-brew install brew-gem
+[ -d /usr/local/Library/Taps/homebrew/homebrew-dupes ] ||
+  brew tap homebrew/dupes
 
-brew install ack curl git gh gnupg2 psgrep pstree watch wget
-brew install apple-gcc42 automake autoconf
-brew install mysql
-brew install postgresql geos postgis geoip
-brew install redis
-brew install node
-brew install ffmpeg
-brew install rbenv rbenv-default-gems rbenv-communal-gems rbenv-gem-rehash rbenv-vars ruby-build
-brew install imagemagick json-c libffi sqlite3 exiv2
+brew update
+
+for formula in \
+  brew-gem \
+  curl git gh gnupg2 psgrep pstree pv tree watch wget \
+  apple-gcc42 automake autoconf \
+  mysql \
+  postgresql geos postgis geoip \
+  redis \
+  node \
+  ffmpeg \
+  rbenv rbenv-default-gems rbenv-communal-gems rbenv-gem-rehash rbenv-vars ruby-build \
+  imagemagick json-c libffi libmaxminddb sqlite3 exiv2; do
+
+  [ -d "$(brew --prefix $formula)" ] ||
+    brew install $formula
+
+done
+
+eval "$(rbenv init -)"
 
 mkdir -p ~/.rbenv/cache
 
@@ -23,15 +35,20 @@ for gem in gem-open bundler foreman; do
   fi
 done
 
-rbenv install 2.1.2
+[ -d ~/.rbenv/versions/2.1.2 ] ||
+  rbenv install 2.1.2
+
 rbenv global 2.1.2
 
-rbenv install 1.8.7-p375
-rbenv install 1.9.3-p545
-rbenv install 2.0.0-p451
-rbenv install jruby-1.6.8
-rbenv install jruby-1.7.12
-rbenv install rbx-1.2.4
-rbenv install rbx-2.2.6
+for version in \
+  1.8.7-p375 1.9.3-p547 2.0.0-p481 \
+  jruby-1.6.8 jruby-1.7.12 \
+  rbx-1.2.4 rbx-2.2.6; do
 
-rbenv exec gem install bundler
+  [ -d ~/.rbenv/versions/$version ] ||
+    rbenv install $version
+
+  # Sometimes the hook fails, do it again
+  rbenv communize $version
+
+done
