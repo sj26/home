@@ -3,6 +3,6 @@
 if has("gui_running")
   " Start without the toolbar
   set guioptions-=T
-  set guifont=Menlo:h14
+  set guifont=Monaco\ for\ Powerline:h16
   set background=light
 end
