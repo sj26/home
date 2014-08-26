@@ -4,11 +4,51 @@
 #   https://github.com/mathiasbynens/dotfiles/blob/master/.osx
 #   https://gist.github.com/2264647
 
-# Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)
-defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+# Global
 
 # Enable subpixel font rendering on non-Apple LCDs
 defaults write NSGlobalDomain AppleFontSmoothing -int 2
+
+# Increase window resize speed for Cocoa applications
+defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
+
+# Expand save panel by default
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+
+# Expand print panel by default
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+
+# Disable opening and closing window animations
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+
+# Require password immediately after sleep or screen saver begins
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+# Reset Launchpad
+rm -f ~/Library/Application\ Support/Dock/*.db
+
+# Disable local Time Machine backups
+#hash tmutil &> /dev/null && sudo tmutil disablelocal
+
+# Keyboard
+
+# Use all F1, F2, etc. keys as standard function keys
+defaults write NSGlobalDomain com.apple.keyboard.fnState -int 1
+
+# Set a blazingly fast keyboard repeat rate
+defaults write NSGlobalDomain KeyRepeat -int 0.1
+
+# Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+# Set a shorter Delay until key repeat
+defaults write NSGlobalDomain InitialKeyRepeat -int 25
+
+# Disable auto-correct
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+
+# Dock
 
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
@@ -22,32 +62,16 @@ defaults write com.apple.dock itunes-notifications -bool true
 # Disable Dashboard
 defaults write com.apple.dashboard mcx-disabled -bool true
 
+# Finder.app
+
 # Disable window animations and Get Info animations in Finder
 defaults write com.apple.finder DisableAllAnimations -bool true
 
 # Use current directory as default search scope in Finder
 defaults write com.apple.finder FXDefaultSearchScope -string SCcf
 
-# Expand save panel by default
-defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
-
-# Expand print panel by default
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
-
-# Set a blazingly fast keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 0.1
-
-# Set a shorter Delay until key repeat
-defaults write NSGlobalDomain InitialKeyRepeat -int 25
-
-# Use all F1, F2, etc. keys as standard function keys
-defaults write NSGlobalDomain com.apple.keyboard.fnState -int 1
-
-# Disable auto-correct
-defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
-
-# Disable opening and closing window animations
-defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+# Open new finder windows in home folder
+defaults write com.apple.finder NewWindowTarget PfHm
 
 # Enable AirDrop over Ethernet and on unsupported Macs running Lion
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
@@ -65,8 +89,8 @@ defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 # Allow quitting Finder via ⌘ + Q; doing so will also hide desktop icons
 defaults write com.apple.finder QuitMenuItem -bool true
 
-# Increase window resize speed for Cocoa applications
-defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
+# Show the ~/Library folder
+chflags nohidden ~/Library
 
 # Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
@@ -80,9 +104,7 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 # Enable snap-to-grid for desktop icons
 /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 
-# Require password immediately after sleep or screen saver begins
-defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 0
+# Safari
 
 # Enable Safari’s Develop and Debug menus
 defaults write com.apple.Safari IncludeDevelopMenu -bool true
@@ -94,8 +116,12 @@ defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
 # Add a context menu item for showing the Web Inspector in web views
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
+# Terminal.app
+
 # Only use UTF-8 in Terminal.app
 defaults write com.apple.terminal StringEncodings -array 4
+
+# iTunes.app
 
 # Disable the Ping sidebar in iTunes
 defaults write com.apple.iTunes disablePingSidebar -bool true
@@ -106,34 +132,61 @@ defaults write com.apple.iTunes disablePing -bool true
 # Make ⌘ + F focus the search input in iTunes
 defaults write com.apple.iTunes NSUserKeyEquivalents -dict-add "Target Search Field" "@F"
 
+# Mail.app
+
 # Disable send and reply animations in Mail.app
 defaults write com.apple.Mail DisableReplyAnimations -bool true
 defaults write com.apple.Mail DisableSendAnimations -bool true
 
-# Reset Launchpad
-[ -e ~/Library/Application\ Support/Dock/*.db ] && rm ~/Library/Application\ Support/Dock/*.db
+# Menu Extras
 
-# Show the ~/Library folder
-chflags nohidden ~/Library
+# Add the date to the clock
+defaults write com.apple.menuextra.clock DateFormat "EEE d MMM  h:mm a"
 
-# Disable local Time Machine backups
-hash tmutil &> /dev/null && sudo tmutil disablelocal
+# Fonts
+
+# Make sure we have a fonts directory
+mkdir -p ~/Library/Fonts
+
+# Download Meslo font
+pushd -q $TEMP
+  if [ ! -f "$HOME/Library/Fonts/MesloLGM-Regular.ttf" ]; then
+    curl -L "https://github.com/andreberg/Meslo-Font/raw/master/dist/v1.2.1/Meslo%20LG%20v1.2.1.zip" -o "Meslo LG v1.2.1.zip"
+    unzip -j "Meslo LG v1.2.1.zip" "*.ttf" -d "$HOME/Library/Fonts"
+  fi
+
+  if [ ! -f "$HOME/Library/Fonts/MesloLGM-Regular.ttf" ]; then
+    curl -L "https://github.com/andreberg/Meslo-Font/raw/master/dist/v1.2.1/Meslo%20LG%20DZ%20v1.2.1.zip" -o "Meslo LG DZ v1.2.1.zip"
+    unzip -j "Meslo LG DZ v1.2.1.zip" "*.ttf" -d "$HOME/Library/Fonts"
+  fi
+popd -q
 
 # Add patched Menlo and Meslo for vim powerline awesomeness
 mkdir -p ~/Library/Fonts
-pushd ~/Library/Fonts
-  curl https://gist.github.com/raw/1595572/417a3fa36e35ca91d6d23ac961071094c26e5fad/Menlo-Powerline.otf -o Menlo-Powerline.otf
+pushd -q ~/Library/Fonts
 
-  curl https://github.com/Lokaltog/powerline-fonts/raw/master/Meslo/Meslo%20LG%20S%20Regular%20for%20Powerline.otf -o "Meslo LG S Regular for Powerline.otf"
-  curl https://github.com/Lokaltog/powerline-fonts/raw/master/Meslo/Meslo%20LG%20S%20DZ%20Regular%20for%20Powerline.otf -o "Meslo LG S DZ Regular for Powerline.otf"
-  curl https://github.com/Lokaltog/powerline-fonts/raw/master/Meslo/Meslo%20LG%20M%20Regular%20for%20Powerline.otf -o "Meslo LG M Regular for Powerline.otf"
-  curl https://github.com/Lokaltog/powerline-fonts/raw/master/Meslo/Meslo%20LG%20M%20DZ%20Regular%20for%20Powerline.otf -o "Meslo LG M DZ Regular for Powerline.otf"
-  curl https://github.com/Lokaltog/powerline-fonts/raw/master/Meslo/Meslo%20LG%20L%20Regular%20for%20Powerline.otf -o "Meslo LG L Regular for Powerline.otf"
-  curl https://github.com/Lokaltog/powerline-fonts/raw/master/Meslo/Meslo%20LG%20L%20DZ%20Regular%20for%20Powerline.otf -o "Meslo LG L DZ Regular for Powerline.otf"
-popd
+  if [ ! -f "Monaco for Powerline.otf" ]; then
+    curl -L "https://github.com/supermarin/powerline-fonts/raw/master/Monaco/Monaco%20for%20Powerline.otf" -o "Monaco for Powerline.otf"
+  fi
+
+  if [ ! -f "Menlo for Powerline.otf" ]; then
+    curl -L "https://gist.github.com/raw/1595572/417a3fa36e35ca91d6d23ac961071094c26e5fad/Menlo-Powerline.otf" -o "Menlo for Powerline.otf"
+  fi
+
+  if [ ! -f "Meslo LG M Regular for Powerline.otf" ]; then
+    curl -L "https://github.com/Lokaltog/powerline-fonts/raw/master/Meslo/Meslo%20LG%20S%20Regular%20for%20Powerline.otf" -o "Meslo LG S Regular for Powerline.otf"
+    curl -L "https://github.com/Lokaltog/powerline-fonts/raw/master/Meslo/Meslo%20LG%20S%20DZ%20Regular%20for%20Powerline.otf" -o "Meslo LG S DZ Regular for Powerline.otf"
+    curl -L "https://github.com/Lokaltog/powerline-fonts/raw/master/Meslo/Meslo%20LG%20M%20Regular%20for%20Powerline.otf" -o "Meslo LG M Regular for Powerline.otf"
+    curl -L "https://github.com/Lokaltog/powerline-fonts/raw/master/Meslo/Meslo%20LG%20M%20DZ%20Regular%20for%20Powerline.otf" -o "Meslo LG M DZ Regular for Powerline.otf"
+    curl -L "https://github.com/Lokaltog/powerline-fonts/raw/master/Meslo/Meslo%20LG%20L%20Regular%20for%20Powerline.otf" -o "Meslo LG L Regular for Powerline.otf"
+    curl -L "https://github.com/Lokaltog/powerline-fonts/raw/master/Meslo/Meslo%20LG%20L%20DZ%20Regular%20for%20Powerline.otf" -o "Meslo LG L DZ Regular for Powerline.otf"
+  fi
+popd -q
 
 # Kill affected applications
 for app in Safari Finder Dock Mail SystemUIServer; do killall $app >/dev/null 2>&1; done
+
+# Setup mac-specific parts of ~/.home
 
 [ -L "$HOME/Library/Application Support/Sublime Text 3" ] || ln -fs "$HOME/.home/Sublime Text 3" "$HOME/Library/Application Support/Sublime Text 3"
 
