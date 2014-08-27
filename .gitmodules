@@ -149,3 +149,6 @@
 [submodule ".vim/bundle/ctrlp-cmatcher"]
 	path = .vim/bundle/ctrlp-cmatcher
 	url = git://github.com/JazzCore/ctrlp-cmatcher.git
+[submodule ".vim/bundle/ruby"]
+	path = .vim/bundle/ruby
+	url = git://github.com/vim-ruby/vim-ruby.git
