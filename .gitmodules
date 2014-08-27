@@ -152,3 +152,6 @@
 [submodule ".vim/bundle/ruby"]
 	path = .vim/bundle/ruby
 	url = git://github.com/vim-ruby/vim-ruby.git
+[submodule ".vim/bundle/vinegar"]
+	path = .vim/bundle/vinegar
+	url = git://github.com/tpope/vim-vinegar.git
