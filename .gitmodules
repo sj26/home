@@ -155,3 +155,6 @@
 [submodule ".vim/bundle/vinegar"]
 	path = .vim/bundle/vinegar
 	url = git://github.com/tpope/vim-vinegar.git
+[submodule ".vim/bundle/projectionist"]
+	path = .vim/bundle/projectionist
+	url = git://github.com/tpope/vim-projectionist.git
