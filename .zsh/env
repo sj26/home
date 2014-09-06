@@ -1,13 +1,8 @@
 # Keep detailed track of time in history
 export HISTTIMEFORMAT='%Y-%b-%d %a %H:%M:%S - '
 
-# Make Sublime the default editor if it's installed, otherwise vim
-if [[ -d "/Applications/Sublime Text.app" ]]; then
-  export EDITOR=sub
-  export GIT_EDITOR="sub -w"
-else
-  export EDITOR=vim
-fi
+# Use vim, always vim, forever vim. Forgive me.
+export EDITOR=vim
 
 # Add depot tools to path if present
 [[ -d /usr/local/depot_tools ]] && export PATH="/usr/local/depot_tools:$PATH"
