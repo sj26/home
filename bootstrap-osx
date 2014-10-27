@@ -11,9 +11,11 @@ brew update
 for formula in \
   brew-gem \
   curl git gh gnupg2 psgrep pstree pv tree watch wget \
+  vim \
   apple-gcc42 automake autoconf \
   mysql \
   postgresql geos postgis geoip \
+  elasticsearch \
   redis \
   node \
   ffmpeg \
