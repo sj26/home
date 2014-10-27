@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 [ -d /usr/local/Cellar ] ||
-  ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 [ -d /usr/local/Library/Taps/homebrew/homebrew-dupes ] ||
   brew tap homebrew/dupes
