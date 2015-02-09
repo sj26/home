@@ -7,5 +7,4 @@
 /.vim/.netrwhist
 
 # Zsh secrets
-/.zsh/rc.d/aws.zsh
-/.zsh/rc.d/buildbox.zsh
+/.zsh/secrets.d/*
