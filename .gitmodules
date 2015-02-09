@@ -98,51 +98,15 @@
 	path = Sublime Text 3/Packages/Package Control
 	url = git://github.com/wbond/sublime_package_control.git
 	branch = python3
-[submodule "Sublime Text 3/Packages/Vintageous"]
-	path = Sublime Text 3/Packages/Vintageous
-	url = git://github.com/guillermooo/Vintageous.git
-[submodule "Sublime Text 3/Packages/GitGutter"]
-	path = Sublime Text 3/Packages/GitGutter
-	url = git://github.com/jisaacks/GitGutter.git
 [submodule "Sublime Text 3/Packages/RubyTest"]
 	path = Sublime Text 3/Packages/RubyTest
 	url = git://github.com/maltize/sublime-text-2-ruby-tests.git
-[submodule "Sublime Text 3/Packages/Surround"]
-	path = Sublime Text 3/Packages/Surround
-	url = git://github.com/jcartledge/sublime-surround.git
 [submodule "Sublime Text 3/Packages/Vintageous Surround"]
 	path = Sublime Text 3/Packages/Vintageous Surround
 	url = git://github.com/jcartledge/vintage-sublime-surround.git
-[submodule "Sublime Text 3/Packages/Ruby Slim.tmBundle"]
-	path = Sublime Text 3/Packages/Ruby Slim.tmBundle
-	url = git://github.com/slim-template/ruby-slim.tmbundle.git
-[submodule "Sublime Text 3/Packages/Sass.tmBundle"]
-	path = Sublime Text 3/Packages/Sass.tmBundle
-	url = git://github.com/nathos/sass-textmate-bundle.git
-[submodule "Sublime Text 3/Packages/CoffeeScript"]
-	path = Sublime Text 3/Packages/CoffeeScript
-	url = git://github.com/Xavura/CoffeeScript-Sublime-Plugin.git
-[submodule "Sublime Text 3/Packages/HAML.tmBundle"]
-	path = Sublime Text 3/Packages/HAML.tmBundle
-	url = git://github.com/phuibonhoa/handcrafted-haml-textmate-bundle.git
-[submodule "Sublime Text 3/Packages/Theme - Soda"]
-	path = Sublime Text 3/Packages/Theme - Soda
-	url = git://github.com/buymeasoda/soda-theme.git
-[submodule "Sublime Text 3/Packages/Puppet"]
-	path = Sublime Text 3/Packages/Puppet
-	url = https://github.com/eklein/sublime-text-puppet.git
-[submodule "Sublime Text 3/Packages/Markdown Preview"]
-	path = Sublime Text 3/Packages/Markdown Preview
-	url = https://github.com/revolunet/sublimetext-markdown-preview.git
-[submodule "Sublime Text 3/Packages/GPG"]
-	path = Sublime Text 3/Packages/GPG
-	url = https://github.com/crowsonkb/SublimeGPG.git
 [submodule "Sublime Text 3/Packages/ERB"]
 	path = Sublime Text 3/Packages/ERB
 	url = git://github.com/eddorre/SublimeERB.git
-[submodule "Sublime Text 3/Packages/Markdown Preview.sublime-package"]
-	path = Sublime Text 3/Packages/Markdown Preview.sublime-package
-	url = git://github.com/revolunet/sublimetext-markdown-preview.git
 [submodule ".vim/bundle/sleuth"]
 	path = .vim/bundle/sleuth
 	url = git://github.com/tpope/vim-sleuth.git
