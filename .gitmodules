@@ -125,3 +125,6 @@
 [submodule ".vim/bundle/netrw"]
 	path = .vim/bundle/netrw
 	url = git://github.com/eiginn/netrw.git
+[submodule ".vim/bundle/rbenv"]
+	path = .vim/bundle/rbenv
+	url = git://github.com/tpope/vim-rbenv.git
