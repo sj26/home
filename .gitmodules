@@ -128,3 +128,6 @@
 [submodule ".vim/bundle/rbenv"]
 	path = .vim/bundle/rbenv
 	url = git://github.com/tpope/vim-rbenv.git
+[submodule ".vim/bundle/haystack"]
+	path = .vim/bundle/haystack
+	url = git://github.com/tpope/vim-haystack.git
