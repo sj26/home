@@ -149,7 +149,7 @@ defaults write com.apple.menuextra.clock DateFormat "EEE d MMM  h:mm a"
 mkdir -p ~/Library/Fonts
 
 # Download Meslo font
-pushd -q $TEMP
+pushd /tmp
   if [ ! -f "$HOME/Library/Fonts/MesloLGM-Regular.ttf" ]; then
     curl -L "https://github.com/andreberg/Meslo-Font/raw/master/dist/v1.2.1/Meslo%20LG%20v1.2.1.zip" -o "Meslo LG v1.2.1.zip"
     unzip -j "Meslo LG v1.2.1.zip" "*.ttf" -d "$HOME/Library/Fonts"
@@ -159,11 +159,11 @@ pushd -q $TEMP
     curl -L "https://github.com/andreberg/Meslo-Font/raw/master/dist/v1.2.1/Meslo%20LG%20DZ%20v1.2.1.zip" -o "Meslo LG DZ v1.2.1.zip"
     unzip -j "Meslo LG DZ v1.2.1.zip" "*.ttf" -d "$HOME/Library/Fonts"
   fi
-popd -q
+popd
 
 # Add patched Menlo and Meslo for vim powerline awesomeness
 mkdir -p ~/Library/Fonts
-pushd -q ~/Library/Fonts
+pushd ~/Library/Fonts
 
   if [ ! -f "Monaco for Powerline.otf" ]; then
     curl -L "https://github.com/supermarin/powerline-fonts/raw/master/Monaco/Monaco%20for%20Powerline.otf" -o "Monaco for Powerline.otf"
@@ -181,7 +181,7 @@ pushd -q ~/Library/Fonts
     curl -L "https://github.com/Lokaltog/powerline-fonts/raw/master/Meslo/Meslo%20LG%20L%20Regular%20for%20Powerline.otf" -o "Meslo LG L Regular for Powerline.otf"
     curl -L "https://github.com/Lokaltog/powerline-fonts/raw/master/Meslo/Meslo%20LG%20L%20DZ%20Regular%20for%20Powerline.otf" -o "Meslo LG L DZ Regular for Powerline.otf"
   fi
-popd -q
+popd
 
 # Kill affected applications
 for app in Safari Finder Dock Mail SystemUIServer; do killall $app >/dev/null 2>&1; done
