@@ -3,6 +3,6 @@ export SHELL=/bin/zsh
 
 . ~/.zsh/colors.zsh
 . ~/.zsh/completion.zsh
-for file (~/.zsh/secrets.d/*.zsh) . $file
 for file (~/.zsh/rc.d/*.zsh) . $file
+for file (~/.zsh/rc.local.d/*.zsh) . $file
 

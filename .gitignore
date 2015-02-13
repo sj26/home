@@ -3,4 +3,4 @@
 
 # Zsh locals
 /.zsh/env.local.d/*
-/.zsh/secrets.d/*
+/.zsh/rc.local.d/*
