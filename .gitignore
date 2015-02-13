@@ -1,5 +1,6 @@
 # Vim junk
 /.vim/.netrwhist
 
-# Zsh secrets
+# Zsh locals
+/.zsh/env.local.d/*
 /.zsh/secrets.d/*

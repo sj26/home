@@ -7,3 +7,7 @@ export EDITOR=vim
 # Add depot tools to path if present
 [[ -d /usr/local/depot_tools ]] && export PATH="/usr/local/depot_tools:$PATH"
 
+# Load any additional enviroment files.
+for file (~/.zsh/env.d/*.zsh) . $file
+for file (~/.zsh/env.local.d/*.zsh) . $file
+
