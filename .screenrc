@@ -1,0 +1,2 @@
+unsetenv SSH_AUTH_SOCK
+setenv SSH_AUTH_SOCK "/var/run/screen/S-$USER/.ssh-agent"
