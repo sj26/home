@@ -30,6 +30,9 @@ set smartcase
 color solarized
 set bg=dark
 
+set autoread
+nmap <F5> :checktime<CR>
+
 " Clear highlighted search items by pressing space
 nmap <SPACE> <SPACE>:noh<CR>
 
