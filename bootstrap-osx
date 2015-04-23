@@ -8,6 +8,10 @@ if [ ! -d /usr/local/Library/Taps/homebrew/homebrew-dupes ]; then
   brew tap homebrew/dupes
 fi
 
+if [ ! -d /usr/local/Library/Taps/homebrew/homebrew-services ]; then
+  brew tap homebrew/services
+fi
+
 brew update
 
 for formula in \
