@@ -1,10 +1,12 @@
 #!/usr/bin/env zsh
 
-[ -d /usr/local/Cellar ] ||
+if [ ! -d /usr/local/Cellar ]; then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
 
-[ -d /usr/local/Library/Taps/homebrew/homebrew-dupes ] ||
+if [ ! -d /usr/local/Library/Taps/homebrew/homebrew-dupes ]; then
   brew tap homebrew/dupes
+fi
 
 brew update
 
@@ -22,35 +24,38 @@ for formula in \
   rbenv rbenv-default-gems rbenv-communal-gems rbenv-gem-rehash rbenv-vars ruby-build \
   imagemagick json-c libffi libmaxminddb sqlite3 exiv2; do
 
-  [ -d "$(brew --prefix $formula)" ] ||
+  if [ ! -d "$(brew --prefix $formula)" ]; then
     brew install $formula
-
-done
-
-eval "$(rbenv init -)"
-
-mkdir -p ~/.rbenv/cache
-
-for gem in gem-open bundler foreman; do
-  if ! grep -q $gem $(rbenv root)/default-gems; then
-    echo $gem >> ~/.rbenv/default-gems
   fi
 done
 
-[ -d ~/.rbenv/versions/2.1.2 ] ||
-  rbenv install 2.1.2
+if ! whence -w rbenv | grep -q "rbenv: function"; then
+  eval "$(rbenv init -)"
+fi
 
-rbenv global 2.1.2
+mkdir -p "$(rbenv root)/cache"
+
+for gem in gem-open bundler foreman github-mark{up,down}; do
+  if ! grep -q "$gem" "$(rbenv root)/default-gems"; then
+    echo "$gem" >> "$(rbenv root)/default-gems"
+  fi
+done
 
 for version in \
-  1.8.7-p375 1.9.3-p547 2.0.0-p481 \
-  jruby-1.6.8 jruby-1.7.12 \
-  rbx-1.2.4 rbx-2.2.6; do
+  2.2.2 2.1.6 2.0.0-p645 1.9.3-p551 1.8.7-p375 \
+  jruby-1.6.8 jruby-1.7.19 \
+  rbx-1.2.4 rbx-2.5.2; do
 
-  [ -d ~/.rbenv/versions/$version ] ||
+if [ ! -d "$(rbenv root)/versions/$version" ]; then
     rbenv install $version
+  fi
 
-  # Sometimes the hook fails, do it again
-  rbenv communize $version
-
+  # jruby doesn't work with communized gems
+  if grep -q jruby <<< "$version" && [ -L "$(rbenv root)/versions/$version/lib/ruby/gems" ]; then
+    rbenv sequester "$version"
+  fi
 done
+
+if [ "$(rbenv global)" != "2.2.2" ]; then
+  rbenv global 2.2.2
+fi
