@@ -147,6 +147,10 @@ defaults write com.apple.menuextra.clock DateFormat "EEE d MMM  h:mm a"
 
 defaults write com.googlecode.iterm2 NSUserKeyEquivalents -dict-add "Toggle Full Screen" "@^f"
 
+# Mailbox.app
+
+defaults write "com.dropbox.mbd.external-beta" NSUserKeyEquivalents -dict-add "Toggle Full Screen" "@^f"
+
 # Fonts
 
 # Make sure we have a fonts directory
