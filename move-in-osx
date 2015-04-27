@@ -157,7 +157,7 @@ defaults write com.googlecode.iterm2 NSUserKeyEquivalents -dict-add "Toggle Full
 
 # Mailbox.app
 
-defaults write "com.dropbox.mbd.external-beta" NSUserKeyEquivalents -dict-add "Toggle Full Screen" "@^f"
+defaults write "com.dropbox.mbd.external-beta" NSUserKeyEquivalents -dict "Enter Full Screen" "@^f" "Exit Full Screen" "@^f"
 
 # Fonts
 
