@@ -18,7 +18,7 @@ for formula in \
   brew-gem \
   curl git gh gnupg2 psgrep pstree pv tree watch wget \
   vim \
-  apple-gcc42 automake autoconf \
+  apple-gcc42 automake autoconf llvm \
   mysql \
   postgresql geos postgis geoip \
   elasticsearch \
