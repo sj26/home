@@ -12,6 +12,10 @@ if [ ! -d /usr/local/Library/Taps/homebrew/homebrew-services ]; then
   brew tap homebrew/services
 fi
 
+if [ ! -d /usr/local/Library/Taps/caskroom/homebrew-cask ]; then
+  brew tap caskroom/cask
+fi
+
 brew update
 
 for formula in \
