@@ -18,6 +18,12 @@ fi
 
 brew update
 
+for formula in iterm2 java slate; do
+  if !; then
+    brew install "caskroom/cask/$formula"
+  fi
+done
+
 for formula in \
   brew-gem \
   curl git gh gnupg2 psgrep pstree pv tree watch wget \
