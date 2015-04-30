@@ -19,8 +19,8 @@ fi
 brew update
 
 for formula in iterm2 java slate; do
-  if !; then
-    brew install "caskroom/cask/$formula"
+  if [ ! -d "/opt/homebrew-cask/Caskroom/$formula" ]; then
+    brew cask install "$formula"
   fi
 done
 
