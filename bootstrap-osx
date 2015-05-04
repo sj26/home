@@ -45,6 +45,10 @@ for formula in \
   fi
 done
 
+if [ ! -f /usr/local/bin/ack ]; then
+  ln -s /usr/local/bin/ag /usr/local/bin/ack
+fi
+
 if ! whence -w rbenv | grep -q "rbenv: function"; then
   eval "$(rbenv init -)"
 fi
