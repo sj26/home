@@ -134,3 +134,6 @@
 [submodule ".vim/bundle/gnupg"]
 	path = .vim/bundle/gnupg
 	url = git://github.com/jamessan/vim-gnupg.git
+[submodule ".vim/bundle/puppet"]
+	path = .vim/bundle/puppet
+	url = git://github.com/puppetlabs/puppet-syntax-vim.git
