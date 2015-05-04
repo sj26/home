@@ -1,3 +1,3 @@
 if which hub > /dev/null; then
-  eval "$(hub alias)"
+  eval "$(hub alias -s)"
 fi
