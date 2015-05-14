@@ -46,9 +46,6 @@
 [submodule ".vim/bundle/javascript"]
 	path = .vim/bundle/javascript
 	url = git://github.com/pangloss/vim-javascript.git
-[submodule ".vim/bundle/ack"]
-	path = .vim/bundle/ack
-	url = https://github.com/mileszs/ack.vim.git
 [submodule ".vim/bundle/textile"]
 	path = .vim/bundle/textile
 	url = https://github.com/timcharper/textile.vim.git
@@ -137,3 +134,6 @@
 [submodule ".vim/bundle/puppet"]
 	path = .vim/bundle/puppet
 	url = git://github.com/puppetlabs/puppet-syntax-vim.git
+[submodule ".vim/bundle/ag"]
+	path = .vim/bundle/ag
+	url = git://github.com/rking/ag.vim.git
