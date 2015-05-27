@@ -36,5 +36,10 @@ nmap <F5> :checktime<CR>
 " Clear highlighted search items by pressing space
 nmap <SPACE> <SPACE>:noh<CR>
 
+" Allow per-project .vimrc
+set exrc
+" Only execute safe per-project vimrc commands
+set secure
+
 " Load other rc files
 runtime! rc.d/**/*.vim
