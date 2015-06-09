@@ -30,11 +30,20 @@ set smartcase
 color solarized
 set bg=dark
 
+" Reset leader (default \), lower leader+<key> timeout
+let mapleader=","
+set timeoutlen=500
+
+" Clear search highlight with F1
+nmap <F1> :noh<CR>
+
+" Check for file updates with F5
 set autoread
 nmap <F5> :checktime<CR>
 
-" Clear highlighted search items by pressing space
-nmap <SPACE> <SPACE>:noh<CR>
+" Inserts the path of the currently edited file into a command
+" Command mode: Ctrl+P
+cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
 " Allow per-project .vimrc
 set exrc
