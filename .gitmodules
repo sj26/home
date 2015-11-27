@@ -143,3 +143,6 @@
 [submodule ".vim/bundle/coloresque"]
 	path = .vim/bundle/coloresque
 	url = git://github.com/gorodinskiy/vim-coloresque.git
+[submodule ".vim/bundle/hasicorp"]
+	path = .vim/bundle/hasicorp
+	url = git://github.com/markcornick/vim-hashicorp-tools.git
