@@ -210,15 +210,11 @@ defaults write com.apple.menuextra.clock DateFormat "EEE d MMM  h:mm a"
 
 defaults write com.googlecode.iterm2 NSUserKeyEquivalents -dict-add "Toggle Full Screen" "@^f"
 
-# Mailbox.app
-
-defaults write "com.dropbox.mbd.external-beta" NSUserKeyEquivalents -dict "Enter Full Screen" "@^f" "Exit Full Screen" "@^f"
-
 # Transmission.app
 
 # Use `~/Documents/Torrents` to store incomplete downloads
 defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
-defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Documents/Torrents"
+defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Downloads/Torrents"
 
 # Don’t prompt for confirmation before downloading
 defaults write org.m0k.transmission DownloadAsk -bool false
@@ -275,8 +271,6 @@ popd
 for app in Safari Finder Dock Mail SystemUIServer; do killall $app >/dev/null 2>&1; done
 
 # Setup mac-specific parts of ~/.home
-
-[ -L "$HOME/Library/Application Support/Sublime Text 3" ] || ln -fs "$HOME/.home/Sublime Text 3" "$HOME/Library/Application Support/Sublime Text 3"
 
 for file in .powconfig .slate.js; do
   [ -L $file ] || ln -fs .home/$file
