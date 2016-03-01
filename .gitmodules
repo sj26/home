@@ -146,3 +146,6 @@
 [submodule ".vim/bundle/hasicorp"]
 	path = .vim/bundle/hasicorp
 	url = git://github.com/markcornick/vim-hashicorp-tools.git
+[submodule ".vim/bundle/elixir"]
+	path = .vim/bundle/elixir
+	url = git://github.com/elixir-lang/vim-elixir.git
