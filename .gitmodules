@@ -152,3 +152,6 @@
 [submodule ".vim/bundle/base16"]
 	path = .vim/bundle/base16
 	url = git://github.com/chriskempson/base16-vim.git
+[submodule ".vim/bundle/go"]
+	path = .vim/bundle/go
+	url = git://github.com/fatih/vim-go.git
