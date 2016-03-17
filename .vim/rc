@@ -27,6 +27,7 @@ set ignorecase
 set smartcase
 
 " Color scheme
+let base16colorspace=256
 colorscheme base16-solarized
 
 " Reset leader (default \), lower leader+<key> timeout
