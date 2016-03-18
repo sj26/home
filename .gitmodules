@@ -155,3 +155,6 @@
 [submodule ".vim/bundle/go"]
 	path = .vim/bundle/go
 	url = git://github.com/fatih/vim-go.git
+[submodule ".vim/bundle/cjsx"]
+	path = .vim/bundle/cjsx
+	url = git://github.com/mtscout6/vim-cjsx.git
