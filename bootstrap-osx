@@ -20,7 +20,7 @@ fi
 
 brew update
 
-for formula in java slate vagrant virtualbox; do
+for formula in java slate; do
   if [ ! -d "/opt/homebrew-cask/Caskroom/$formula" ]; then
     brew cask install "$formula"
   fi
