@@ -35,6 +35,7 @@ for formula in \
   postgresql geos postgis geoip \
   elasticsearch \
   redis \
+  memcached \
   ffmpeg \
   docker dlite \
   rbenv rbenv-default-gems rbenv-communal-gems rbenv-vars ruby-build \
