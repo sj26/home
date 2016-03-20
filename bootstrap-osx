@@ -39,6 +39,7 @@ for formula in \
   ffmpeg \
   docker dlite \
   rbenv rbenv-default-gems rbenv-communal-gems rbenv-vars ruby-build \
+  nodenv node-build \
   imagemagick json-c libffi libmaxminddb sqlite3 exiv2; do
 
   if [ ! -d "$(brew --prefix $formula)" ]; then
@@ -75,4 +76,14 @@ done
 
 if [ "$(rbenv global)" != "2.3.0" ]; then
   rbenv global 2.3.0
+fi
+
+for version in 4.4.0 5.9.0; do
+  if [ ! -d "$(nodenv root)/versions/$version" ]; then
+    nodenv install $version
+  fi
+done
+
+if [ "$(nodenv global)" != "5.9.0" ]; then
+  nodenv global 5.9.0
 fi
