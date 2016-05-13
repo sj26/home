@@ -77,12 +77,12 @@ if [ "$(rbenv global)" != "2.3.1" ]; then
   rbenv global 2.3.1
 fi
 
-for version in 4.4.0 5.9.0; do
+for version in 4.4.4 5.11.1 6.1.0; do
   if [ ! -d "$(nodenv root)/versions/$version" ]; then
     nodenv install $version
   fi
 done
 
-if [ "$(nodenv global)" != "5.9.0" ]; then
-  nodenv global 5.9.0
+if [ "$(nodenv global)" != "6.1.0" ]; then
+  nodenv global 6.1.0
 fi
