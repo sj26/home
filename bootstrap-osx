@@ -39,6 +39,7 @@ for formula in \
   ffmpeg \
   rbenv rbenv-default-gems rbenv-communal-gems rbenv-vars ruby-build \
   nodenv node-build \
+  go \
   imagemagick json-c libffi libmaxminddb sqlite3 exiv2; do
 
   if [ ! -d "$(brew --prefix $formula)" ]; then
