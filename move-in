@@ -2,6 +2,12 @@
 
 pushd $HOME
 
+  if [ -f /usr/bin/git ]; then
+    echo "Requesting install for Command Line Tools, press ENTER to continue."
+    /usr/bin/xcode-select --install
+    read
+  fi
+
   if [ -e $HOME/.home ]; then
     pushd $HOME/.home
       git pull
