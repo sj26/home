@@ -62,7 +62,7 @@ for gem in gem-open bundler foreman github-mark{up,down}; do
   fi
 done
 
-for version in 2.3.0 2.2.4 2.2.3 2.1.8 2.0.0-p648 1.9.3-p551 1.8.7-p375; do
+for version in 2.3.1 2.2.5 2.1.10 2.0.0-p648 1.9.3-p551 1.8.7-p375; do
   if [ ! -d "$(rbenv root)/versions/$version" ]; then
     rbenv install $version
   fi
@@ -73,8 +73,8 @@ for version in 2.3.0 2.2.4 2.2.3 2.1.8 2.0.0-p648 1.9.3-p551 1.8.7-p375; do
   fi
 done
 
-if [ "$(rbenv global)" != "2.3.0" ]; then
-  rbenv global 2.3.0
+if [ "$(rbenv global)" != "2.3.1" ]; then
+  rbenv global 2.3.1
 fi
 
 for version in 4.4.0 5.9.0; do
