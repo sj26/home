@@ -37,7 +37,6 @@ for formula in \
   redis \
   memcached \
   ffmpeg \
-  docker dlite \
   rbenv rbenv-default-gems rbenv-communal-gems rbenv-vars ruby-build \
   nodenv node-build \
   imagemagick json-c libffi libmaxminddb sqlite3 exiv2; do
