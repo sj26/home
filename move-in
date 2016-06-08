@@ -11,7 +11,7 @@ pushd $HOME
   if git --version | grep -vq license; then
     echo "You need to accept the Xcode license, press ENTER to continue."
     read
-    sudo /usr/bin/xcode-select
+    sudo xcodebuild -license
   fi
 
   if [ -e $HOME/.home ]; then
