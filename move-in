@@ -2,7 +2,7 @@
 
 pushd $HOME
 
-  if [ -f /usr/bin/git ]; then
+  if ! xcode-select --print-path > /dev/null; then
     echo "Requesting install for Command Line Tools, press ENTER to continue."
     /usr/bin/xcode-select --install
     read
