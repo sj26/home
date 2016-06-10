@@ -119,3 +119,6 @@
 [submodule ".vim/bundle/polyglot"]
 	path = .vim/bundle/polyglot
 	url = git://github.com/sheerun/vim-polyglot.git
+[submodule ".vim/bundle/dispatch"]
+	path = .vim/bundle/dispatch
+	url = git://github.com/tpope/vim-dispatch.git
