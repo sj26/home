@@ -7,6 +7,6 @@ let g:ctrlp_max_files = 0
 " If ag is available use it as filename list generator instead of 'find'
 if executable("ag")
   set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore .git --hidden -g ""'
+  let g:ctrlp_user_command = 'ag %s --ignore-case --nocolor --nogroup --ignore .git --hidden -g ""'
 endif
 
