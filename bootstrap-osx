@@ -24,7 +24,7 @@ fi
 
 brew update
 
-for formula in java slate; do
+for formula in gpgtools java slate; do
   if [ ! -d "/opt/homebrew-cask/Caskroom/$formula" ]; then
     brew cask install "$formula"
   fi
@@ -32,7 +32,7 @@ done
 
 for formula in \
   brew-gem \
-  curl git hub gist gnupg2 psgrep pstree pv tree watch wget jq \
+  curl git hub gist psgrep pstree pv tree watch wget jq \
   vim the_silver_searcher \
   apple-gcc42 automake autoconf llvm \
   mysql \
