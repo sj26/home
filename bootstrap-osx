@@ -41,7 +41,7 @@ for formula in \
   redis \
   memcached \
   ffmpeg \
-  rbenv rbenv-default-gems rbenv-communal-gems rbenv-vars ruby-build \
+  rbenv rbenv-aliases rbenv-default-gems rbenv-communal-gems rbenv-vars ruby-build \
   nodenv nodenv-aliases nodenv-default-packages nodenv-package-rehash node-build \
   go \
   imagemagick json-c libffi libmaxminddb sqlite3 exiv2; do
@@ -77,6 +77,8 @@ for version in 2.3.1 2.2.5 2.1.10 2.0.0-p648 1.9.3-p551 1.8.7-p375; do
     rbenv sequester "$version"
   fi
 done
+
+rbenv alias --auto
 
 if [ "$(rbenv global)" != "2.3.1" ]; then
   rbenv global 2.3.1
