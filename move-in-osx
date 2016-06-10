@@ -89,6 +89,12 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 25
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
+# I always hit this by accident
+/usr/libexec/PlistBuddy \
+  -c 'Set :NSServicesStatus:"com.apple.Safari - Search With %WebSearchProvider@ - searchWithWebSearchProvider:enabled_context_menu" 0' \
+  -c 'Set :NSServicesStatus:"com.apple.Safari - Search With %WebSearchProvider@ - searchWithWebSearchProvider:enabled_services_menu" 0' \
+  ~/Library/Preferences/pbs.plist
+
 # Trackpad
 
 # Trackpad: enable tap to click for this user and for the login screen
