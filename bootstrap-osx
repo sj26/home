@@ -84,6 +84,12 @@ if [ "$(rbenv global)" != "2.3.1" ]; then
   rbenv global 2.3.1
 fi
 
+if ! whence -w nodenv | grep -q "nodenv: function"; then
+  eval "$(nodenv init -)"
+fi
+
+mkdir -p "$(nodenv root)/cache"
+
 for version in 4.4.4 5.11.1 6.1.0; do
   if [ ! -d "$(nodenv root)/versions/$version" ]; then
     nodenv install $version
