@@ -14,7 +14,7 @@ pushd $HOME
     sudo xcodebuild -license
   fi
 
-  if [ -e $HOME/.home ]; then
+  if [[ -e $HOME/.home ]]; then
     pushd $HOME/.home
       git pull
       git submodule update --init --recursive
@@ -28,14 +28,14 @@ pushd $HOME
   fi
 
   for file in .ackrc .bin .gemrc .gitconfig .js .pryrc .railsrc .tmux.conf .vim .zsh
-    [ -L $file ] || ln -fs .home/$file
+    [[ -L $file ]] || ln -fs .home/$file
   for file in .config/git/{ignore,attributes}
     mkdir -p "${file%/*}" && [ -L "$file" ] || ln -fs "$HOME/.home/$file" "$HOME/$file"
   for suffix in rc
-    [ -L .vim$suffix ] || ln -fs .vim/$suffix .vim$suffix
+    [[ -L .vim$suffix ]] || ln -fs .vim/$suffix .vim$suffix
   for suffix in env profile rc
-    [ -L .zsh$suffix ] || ln -fs .zsh/$suffix .zsh$suffix
+    [[ -L .zsh$suffix ]] || ln -fs .zsh/$suffix .zsh$suffix
 
-  [ "$(uname -s)" = "Darwin" ] && .home/move-in-osx
+  [[ "$(uname -s)" = "Darwin" ]] && .home/move-in-osx
 
 popd
