@@ -55,6 +55,10 @@ if [ ! -f /usr/local/bin/ack ]; then
   ln -s /usr/local/bin/ag /usr/local/bin/ack
 fi
 
+if [[ ! -d /usr/local/opt/aws-vault ]]; then
+  brew install https://github.com/createdbypete/homebrew-binary/raw/add-aws-vault/aws-vault.rb
+fi
+
 if ! whence -w rbenv | grep -q "rbenv: function"; then
   eval "$(rbenv init -)"
 fi
