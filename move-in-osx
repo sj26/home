@@ -232,38 +232,11 @@ defaults write org.m0k.transmission WarningLegal -bool false
 # Make sure we have a fonts directory
 mkdir -p ~/Library/Fonts
 
-# Download Meslo font
-pushd /tmp
-  if [ ! -f "$HOME/Library/Fonts/MesloLGM-Regular.ttf" ]; then
-    curl -L "https://github.com/andreberg/Meslo-Font/raw/master/dist/v1.2.1/Meslo%20LG%20v1.2.1.zip" -o "Meslo LG v1.2.1.zip"
-    unzip -j "Meslo LG v1.2.1.zip" "*.ttf" -d "$HOME/Library/Fonts"
-  fi
-
-  if [ ! -f "$HOME/Library/Fonts/MesloLGM-Regular.ttf" ]; then
-    curl -L "https://github.com/andreberg/Meslo-Font/raw/master/dist/v1.2.1/Meslo%20LG%20DZ%20v1.2.1.zip" -o "Meslo LG DZ v1.2.1.zip"
-    unzip -j "Meslo LG DZ v1.2.1.zip" "*.ttf" -d "$HOME/Library/Fonts"
-  fi
-popd
-
-# Add patched Menlo and Meslo for vim powerline awesomeness
-mkdir -p ~/Library/Fonts
+# Download Fira Code font
 pushd ~/Library/Fonts
-
-  if [ ! -f "Monaco for Powerline.otf" ]; then
-    curl -L "https://github.com/supermarin/powerline-fonts/raw/master/Monaco/Monaco%20for%20Powerline.otf" -o "Monaco for Powerline.otf"
-  fi
-
-  if [ ! -f "Menlo for Powerline.otf" ]; then
-    curl -L "https://gist.github.com/raw/1595572/417a3fa36e35ca91d6d23ac961071094c26e5fad/Menlo-Powerline.otf" -o "Menlo for Powerline.otf"
-  fi
-
-  if [ ! -f "Meslo LG M Regular for Powerline.otf" ]; then
-    curl -L "https://github.com/Lokaltog/powerline-fonts/raw/master/Meslo/Meslo%20LG%20S%20Regular%20for%20Powerline.otf" -o "Meslo LG S Regular for Powerline.otf"
-    curl -L "https://github.com/Lokaltog/powerline-fonts/raw/master/Meslo/Meslo%20LG%20S%20DZ%20Regular%20for%20Powerline.otf" -o "Meslo LG S DZ Regular for Powerline.otf"
-    curl -L "https://github.com/Lokaltog/powerline-fonts/raw/master/Meslo/Meslo%20LG%20M%20Regular%20for%20Powerline.otf" -o "Meslo LG M Regular for Powerline.otf"
-    curl -L "https://github.com/Lokaltog/powerline-fonts/raw/master/Meslo/Meslo%20LG%20M%20DZ%20Regular%20for%20Powerline.otf" -o "Meslo LG M DZ Regular for Powerline.otf"
-    curl -L "https://github.com/Lokaltog/powerline-fonts/raw/master/Meslo/Meslo%20LG%20L%20Regular%20for%20Powerline.otf" -o "Meslo LG L Regular for Powerline.otf"
-    curl -L "https://github.com/Lokaltog/powerline-fonts/raw/master/Meslo/Meslo%20LG%20L%20DZ%20Regular%20for%20Powerline.otf" -o "Meslo LG L DZ Regular for Powerline.otf"
+  if [[ ! -f FiraCode-Regular.otf ]]; then
+    curl -sL https://github.com/tonsky/FiraCode/archive/master.tar.gz | \
+      tar -zx --keep-newer-files "*.otf"
   fi
 popd
 
