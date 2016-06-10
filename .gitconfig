@@ -14,6 +14,9 @@
 [column]
   ui = auto,dense
 
+[commit]
+  gpgSign = true
+
 [diff]
   submodule = log
 
@@ -34,5 +37,6 @@
     end\n\
     File.open(%(%A), %(w)) {|f| f.write(b)}\n\
     exit 1 if b.include?(%(<)*%L)'"
+
 [url "git@github.com:"]
-	insteadOf = https://github.com/
+  insteadOf = https://github.com/
