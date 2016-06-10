@@ -27,6 +27,12 @@ pushd $HOME
     echo doc/tags >> .git/modules/.vim/bundle/camelcasemotion/info/exclude
   fi
 
+  if [[ ! -e .vim/bundle/ctrlp-cmatcher/autoload/fuzzycomt.so ]]; then
+    pushd .vim/bundle/ctrlp-cmatcher
+    ./install.sh
+    popd
+  fi
+
   for file in .ackrc .bin .gemrc .gitconfig .js .pryrc .railsrc .tmux.conf .vim .zsh
     [[ -L $file ]] || ln -fs .home/$file
   for file in .config/git/{ignore,attributes}
