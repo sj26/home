@@ -1,6 +1,3 @@
-# Hitch if already hitched
-[[ -s "$HOME/.hitch_export_authors" ]] && . "$HOME/.hitch_export_authors"
-
 # rbenv, if we rbenv (the interactive part)
 if which "rbenv" > /dev/null; then
   eval "$(rbenv init -)"
