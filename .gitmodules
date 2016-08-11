@@ -122,3 +122,6 @@
 [submodule ".vim/bundle/dispatch"]
 	path = .vim/bundle/dispatch
 	url = git://github.com/tpope/vim-dispatch.git
+[submodule ".vim/bundle/graphql"]
+	path = .vim/bundle/graphql
+	url = git://github.com/jparise/vim-graphql.git
