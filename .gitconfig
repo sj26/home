@@ -24,6 +24,9 @@
 [push]
 	default = simple
 
+[submodule]
+	fetchJobs = 4
+
 [merge "bundleinstall"]
 	name = bundle install
 	driver = bundle install
