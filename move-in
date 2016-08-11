@@ -2,16 +2,18 @@
 
 pushd $HOME
 
-  if ! xcode-select --print-path > /dev/null; then
-    echo "Requesting install for Command Line Tools, press ENTER to continue."
-    /usr/bin/xcode-select --install
-    read
-  fi
+  if [[ "$(uname -s)" = "Darwin" ]]; then
+    if ! xcode-select --print-path > /dev/null; then
+      echo "Requesting install for Command Line Tools, press ENTER to continue."
+      /usr/bin/xcode-select --install
+      read
+    fi
 
-  if git --version | grep -vq license; then
-    echo "You need to accept the Xcode license, press ENTER to continue."
-    read
-    sudo xcodebuild -license
+    if git --version | grep -vq license; then
+      echo "You need to accept the Xcode license, press ENTER to continue."
+      read
+      sudo xcodebuild -license
+    fi
   fi
 
   if [[ -e $HOME/.home ]]; then
