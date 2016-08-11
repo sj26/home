@@ -20,6 +20,7 @@
 [diff]
 	submodule = log
 	word-diff = color
+	compactionHeuristic = true
 
 [push]
 	default = simple
