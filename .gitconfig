@@ -19,6 +19,7 @@
 
 [diff]
 	submodule = log
+	word-diff = color
 
 [push]
 	default = simple
