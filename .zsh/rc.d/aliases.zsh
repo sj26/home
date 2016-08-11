@@ -132,3 +132,6 @@ ssh-btmm() {
 
 # Pretty colours
 alias tmux="TERM=screen-256color-bce tmux"
+
+# Ooher
+alias lockscreen="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
