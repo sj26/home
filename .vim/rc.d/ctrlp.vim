@@ -10,5 +10,5 @@ if executable("ag")
   let g:ctrlp_user_command = 'ag %s --ignore-case --nocolor --nogroup --ignore .git --hidden -g ""'
 endif
 
-" Make most `gem open <gem>` and `bundle open <gem>` commands find a correct root
-let g:ctrlp_root_markers = ['*.gemspec']
+" Just use the cwd all the time
+let g:ctrlp_working_path_mode = ''
