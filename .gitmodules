@@ -45,7 +45,7 @@
 	url = https://github.com/ctrlpvim/ctrlp.vim
 [submodule ".vim/bundle/camelcasemotion"]
 	path = .vim/bundle/camelcasemotion
-	url = git://github.com/vim-scripts/camelcasemotion.git
+	url = git://github.com/sj26/vim-camelcasemotion.git
 [submodule ".vim/bundle/bundler"]
 	path = .vim/bundle/bundler
 	url = https://github.com/tpope/vim-bundler.git
