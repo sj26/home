@@ -25,6 +25,9 @@
 [push]
 	default = simple
 
+[rebase]
+	autosquash = true
+
 [submodule]
 	fetchJobs = 4
 
