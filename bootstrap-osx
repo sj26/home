@@ -24,7 +24,7 @@ fi
 
 brew update
 
-for formula in gpgtools java slack slate; do
+for formula in aws-vault gpgtools java slack slate; do
   if [ ! -d "/opt/homebrew-cask/Caskroom/$formula" ]; then
     brew cask install "$formula"
   fi
@@ -53,10 +53,6 @@ done
 
 if [ ! -f /usr/local/bin/ack ]; then
   ln -s /usr/local/bin/ag /usr/local/bin/ack
-fi
-
-if [[ ! -d /usr/local/opt/aws-vault ]]; then
-  brew install https://github.com/createdbypete/homebrew-binary/raw/add-aws-vault/aws-vault.rb
 fi
 
 if ! whence -w rbenv | grep -q "rbenv: function"; then
