@@ -59,6 +59,8 @@ if ! whence -w rbenv | grep -q "rbenv: function"; then
   eval "$(rbenv init -)"
 fi
 
+# /usr/local is owned by root now, using /usr/local/rbenv as rbenv root fails without sudo
+sudo install -d -o "$USER" -g admin -m 0775 "$(rbenv root)"
 mkdir -p "$(rbenv root)/cache"
 
 for gem in gem-browse bundler foreman github-mark{up,down}; do
