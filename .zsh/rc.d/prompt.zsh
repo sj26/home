@@ -20,21 +20,17 @@ fi
 
 function prompt_git {
   git_status="$(git status 2> /dev/null)"
-  if [[ $git_status =~ "working directory clean" ]]; then
+  if [[ "$git_status" =~ "working (directory|tree) clean" ]]; then
     color=%F{148} # green
   else
     color=%F{220} # yellow (not red = bad, just yellow = caution)
   fi
-  # add an else if or two here if you want to get more specific
-  if [[ ${git_status} =~ "Your branch is (.*) of" ]]; then
-    if [[ ${BASH_REMATCH[1]} == "ahead" ]]; then
-      remote=" ↑"
-    else
-      remote=""
-    fi
-  fi
-  if [[ ${git_status} =~ "Your branch and (.*) have diverged" ]]; then
+  if [[ ${git_status} =~ "Your branch is ahead of" ]]; then
+    remote=" ↑"
+  elif [[ ${git_status} =~ "Your branch and (.*) have diverged" ]]; then
     remote=" ↕"
+  else
+    remote=""
   fi
   if [[ ${git_status} =~ $'On branch ([^ \t\r\n]+)' ]]; then
     branch=${match[1]}
