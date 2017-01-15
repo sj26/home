@@ -38,11 +38,6 @@ alias gs="git status -sb"
 alias gu="git pull"
 alias gup="git smart-pull"
 
-# Derail
-function derail() {
-  rails new $1 --skip-test-unit --skip-bundle --database=postgresql --template ~/Projects/Derail/lib/generators/derail/app/bootstrap.rb $@[2,-1]
-}
-
 # You've got the powah!
 function powify() {
   host="${1:-$(basename $PWD | tr A-Z a-z)}"
