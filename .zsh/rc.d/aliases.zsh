@@ -19,9 +19,6 @@ alias back=bag
 # so I can `be migrated`
 alias migrated="rake db:migrate"
 
-alias fuspec="rspec --require fuubar --format Fuubar --color"
-alias fucumber="cucumber --require fuubar --format fuubar"
-
 # Git aliases
 alias ga="git add"
 alias gap="git add -p"
