@@ -27,7 +27,7 @@ alias gba="git branch -av"
 alias gc="git commit -v"
 alias gd="git diff"
 alias gd.="git diff --color-words=."
-function gde() { git diff $* | $EDITOR }
+function gde() { git diff "$@" | $EDITOR }
 alias gf="git flow"
 alias gl="git log --pretty='format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset' --graph"
 alias gm="git smart-merge"
