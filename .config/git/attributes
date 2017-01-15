@@ -1,2 +1,0 @@
-Gemfile.lock merge=bundleinstall
-db/schema.rb merge=railsschema
