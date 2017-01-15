@@ -66,19 +66,7 @@ function power_sword() {
   \ '-} /} '_}     | }-`}| } \/  /\  \`-\ }.-._} }| . \ \ `-' /} '--.} '--.
    `---' `--'      `----'`-'-'`-'  `-'  `-'`----' `-'`-` `---' `----'`----'
 BANNER
-  psql --username=develop $1_development $@[2,-1]
-}
-
-function using_64() {
-  env ARCHFLAGS="-arch x86_64" ARCHS="x86_64" $*
-}
-
-function using_gcc() {
-  env CC="gcc-4.2" CPP="cpp-4.2" CXX="g++-4.2" $*
-}
-
-function using_gcc_64() {
-  env CC="gcc-4.2" CPP="cpp-4.2" CXX="g++-4.2" ARCHFLAGS="-arch x86_64" ARCHS="x86_64" $*
+  psql --username=postgres $1_development "$@[2,-1]"
 }
 
 function killdb() {
