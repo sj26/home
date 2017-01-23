@@ -34,9 +34,6 @@
 [submodule ".vim/bundle/ragtag"]
 	path = .vim/bundle/ragtag
 	url = https://github.com/tpope/vim-ragtag.git
-[submodule ".vim/bundle/hammer"]
-	path = .vim/bundle/hammer
-	url = https://github.com/trapd00r/hammer.vim.git
 [submodule ".vim/bundle/tcomment"]
 	path = .vim/bundle/tcomment
 	url = https://github.com/tomtom/tcomment_vim
