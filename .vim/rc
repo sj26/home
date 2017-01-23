@@ -28,7 +28,7 @@ set smartcase
 
 " Color scheme
 let base16colorspace=256
-colorscheme base16-solarized
+colorscheme base16-solarized-dark
 
 " Reset leader (default \), lower leader+<key> timeout
 let mapleader=","
