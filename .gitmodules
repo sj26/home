@@ -122,3 +122,6 @@
 [submodule ".vim/bundle/graphql"]
 	path = .vim/bundle/graphql
 	url = git://github.com/jparise/vim-graphql.git
+[submodule ".vim/bundle/airline-themes"]
+	path = .vim/bundle/airline-themes
+	url = git://github.com/vim-airline/vim-airline-themes.git
