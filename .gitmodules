@@ -89,9 +89,6 @@
 [submodule ".vim/bundle/haystack"]
 	path = .vim/bundle/haystack
 	url = git://github.com/tpope/vim-haystack.git
-[submodule ".vim/bundle/gnupg"]
-	path = .vim/bundle/gnupg
-	url = git://github.com/jamessan/vim-gnupg.git
 [submodule ".vim/bundle/ag"]
 	path = .vim/bundle/ag
 	url = git://github.com/rking/ag.vim.git
