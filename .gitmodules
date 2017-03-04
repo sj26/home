@@ -122,3 +122,6 @@
 [submodule ".vim/bundle/airline-themes"]
 	path = .vim/bundle/airline-themes
 	url = git://github.com/vim-airline/vim-airline-themes.git
+[submodule ".vim/bundle/sensible"]
+	path = .vim/bundle/sensible
+	url = git://github.com/tpope/vim-sensible.git

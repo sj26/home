@@ -16,13 +16,11 @@ set nowrap
 set tabstop=2
 set shiftwidth=2
 set expandtab
-set autoindent
 " Show trailing whitespace
 set list listchars=tab:\ \ ,trail:·
 
 " Searching
 set hlsearch
-set incsearch
 set ignorecase
 set smartcase
 
@@ -33,13 +31,6 @@ colorscheme base16-solarized-dark
 " Reset leader (default \), lower leader+<key> timeout
 let mapleader=","
 set timeoutlen=500
-
-" Clear search highlight with F1
-nmap <F1> :noh<CR>
-
-" Check for file updates with F5
-set autoread
-nmap <F5> :checktime<CR>
 
 " Inserts the path of the currently edited file into a command
 " Command mode: Ctrl+P
