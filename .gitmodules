@@ -125,3 +125,6 @@
 [submodule ".vim/bundle/sensible"]
 	path = .vim/bundle/sensible
 	url = git://github.com/tpope/vim-sensible.git
+[submodule ".vim/bundle/ruby-heredoc-syntax"]
+	path = .vim/bundle/ruby-heredoc-syntax
+	url = git://github.com/joker1007/vim-ruby-heredoc-syntax.git
