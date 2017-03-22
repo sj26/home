@@ -128,3 +128,6 @@
 [submodule ".vim/bundle/ruby-heredoc-syntax"]
 	path = .vim/bundle/ruby-heredoc-syntax
 	url = git://github.com/joker1007/vim-ruby-heredoc-syntax.git
+[submodule ".vim/bundle/keepcase"]
+	path = .vim/bundle/keepcase
+	url = git://github.com/vim-scripts/keepcase.vim.git
