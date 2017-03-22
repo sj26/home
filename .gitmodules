@@ -131,3 +131,6 @@
 [submodule ".vim/bundle/keepcase"]
 	path = .vim/bundle/keepcase
 	url = git://github.com/vim-scripts/keepcase.vim.git
+[submodule ".vim/bundle/eunuch"]
+	path = .vim/bundle/eunuch
+	url = git://github.com/tpope/vim-eunuch.git
