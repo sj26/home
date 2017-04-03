@@ -63,7 +63,7 @@ fi
 sudo install -d -o "$USER" -g admin -m 0775 "$(rbenv root)"
 mkdir -p "$(rbenv root)/cache"
 
-for gem in gem-browse bundler foreman github-mark{up,down}; do
+for gem in gem-browse gem-ctags bundler foreman github-mark{up,down}; do
   if ! grep -q "$gem" "$(rbenv root)/default-gems"; then
     echo "$gem" >> "$(rbenv root)/default-gems"
   fi
