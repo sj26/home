@@ -134,3 +134,15 @@
 [submodule ".vim/bundle/eunuch"]
 	path = .vim/bundle/eunuch
 	url = git://github.com/tpope/vim-eunuch.git
+[submodule ".vim/bundle/textobj-rubyblock"]
+	path = .vim/bundle/textobj-rubyblock
+	url = git://github.com/nelstrom/vim-textobj-rubyblock.git
+[submodule ".vim/bundle/textobj-function"]
+	path = .vim/bundle/textobj-function
+	url = git://github.com/kana/vim-textobj-function.git
+[submodule ".vim/bundle/textobj-user"]
+	path = .vim/bundle/textobj-user
+	url = git://github.com/kana/vim-textobj-user.git
+[submodule ".vim/bundle/textobj-function-ruby"]
+	path = .vim/bundle/textobj-function-ruby
+	url = git://github.com/t9md/vim-textobj-function-ruby.git
