@@ -25,9 +25,11 @@ pushd $HOME
     git clone --recursive https://github.com/sj26/home .home
   fi
 
-  if ! grep -q doc/tags .git/modules/.vim/bundle/camelcasemotion/info/exclude; then
-    echo doc/tags >> .git/modules/.vim/bundle/camelcasemotion/info/exclude
-  fi
+  for bundle in camelcasemotion textobj-function textobj-user; do
+    if ! grep -q doc/tags .git/modules/.vim/bundle/$bundle/info/exclude; then
+      echo doc/tags >> .git/modules/.vim/bundle/$bundle/info/exclude
+    fi
+  done
 
   if [[ ! -e .vim/bundle/ctrlp-cmatcher/autoload/fuzzycomt.so ]]; then
     pushd .vim/bundle/ctrlp-cmatcher
