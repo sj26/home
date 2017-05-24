@@ -25,17 +25,19 @@ pushd $HOME
     git clone --recursive https://github.com/sj26/home .home
   fi
 
-  for bundle in camelcasemotion textobj-function textobj-user; do
-    if ! grep -q doc/tags .git/modules/.vim/bundle/$bundle/info/exclude; then
-      echo doc/tags >> .git/modules/.vim/bundle/$bundle/info/exclude
-    fi
-  done
+  pushd .home
+    for bundle in camelcasemotion textobj-function textobj-user; do
+      if ! grep -q doc/tags .git/modules/.vim/bundle/$bundle/info/exclude; then
+        echo doc/tags >> .git/modules/.vim/bundle/$bundle/info/exclude
+      fi
+    done
 
-  if [[ ! -e .vim/bundle/ctrlp-cmatcher/autoload/fuzzycomt.so ]]; then
-    pushd .vim/bundle/ctrlp-cmatcher
-    ./install.sh
-    popd
-  fi
+    if [[ ! -e .vim/bundle/ctrlp-cmatcher/autoload/fuzzycomt.so ]]; then
+      pushd .vim/bundle/ctrlp-cmatcher
+      ./install.sh
+      popd
+    fi
+  popd
 
   for file in .ackrc .bin .gemrc .gitconfig .js .pryrc .railsrc .tmux.conf .vim .zsh
     [[ -L $file ]] || ln -fs .home/$file
