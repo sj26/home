@@ -32,7 +32,9 @@
 [submodule]
 	fetchJobs = 4
 
-[url "git@github.com:"]
-	insteadOf = https://github.com/
 [http "https://gopkg.in"]
 	followRedirects = true
+[url "https://github.com/"]
+	insteadOf = git://github.com/
+	insteadOf = git@github.com:
+	insteadOf = http://github.com/
