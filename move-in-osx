@@ -100,6 +100,11 @@ new["com.apple.Safari - Search With %WebSearchProvider@ - searchWithWebSearchPro
 CFPreferencesSetAppValue("NSServicesStatus", new, "pbs")
 END
 
+# Rebind Caps Lock to Escape
+# (found by modifying in preference pane and capturing change in defaults)
+defaults -currentHost write -globalDomain com.apple.keyboard.modifiermapping.alt_handler_id-49 \
+  '({HIDKeyboardModifierMappingDst = 30064771113; HIDKeyboardModifierMappingSrc = 30064771129;})'
+
 # Trackpad
 
 # Trackpad: enable tap to click for this user and for the login screen
