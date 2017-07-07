@@ -101,9 +101,8 @@ CFPreferencesSetAppValue("NSServicesStatus", new, "pbs")
 END
 
 # Rebind Caps Lock to Escape
-# (found by modifying in preference pane and capturing change in defaults)
-defaults -currentHost write -globalDomain com.apple.keyboard.modifiermapping.alt_handler_id-49 \
-  '({HIDKeyboardModifierMappingDst = 30064771113; HIDKeyboardModifierMappingSrc = 30064771129;})'
+# https://developer.apple.com/library/content/technotes/tn2450/_index.html
+hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x700000029}]}'
 
 # Trackpad
 
