@@ -87,11 +87,18 @@ defaults write NSGlobalDomain KeyRepeat -int 2
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
-# I always hit this by accident
-/usr/libexec/PlistBuddy \
-  -c 'Set :NSServicesStatus:"com.apple.Safari - Search With %WebSearchProvider@ - searchWithWebSearchProvider:enabled_context_menu" 0' \
-  -c 'Set :NSServicesStatus:"com.apple.Safari - Search With %WebSearchProvider@ - searchWithWebSearchProvider:enabled_services_menu" 0' \
-  ~/Library/Preferences/pbs.plist
+# I always hit Command+Options+L by accident which launches Safari. Disable it.
+/usr/bin/python <<END
+from Foundation import NSMutableDictionary
+from CoreFoundation import CFPreferencesCopyAppValue, CFPreferencesSetAppValue
+existing = CFPreferencesCopyAppValue("NSServicesStatus", "pbs")
+if existing is not None:
+  new = dict(existing)
+else:
+  new = dict()
+new["com.apple.Safari - Search With %WebSearchProvider@ - searchWithWebSearchProvider"] = ""
+CFPreferencesSetAppValue("NSServicesStatus", new, "pbs")
+END
 
 # Trackpad
 
