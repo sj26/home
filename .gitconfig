@@ -38,3 +38,5 @@
 	insteadOf = git://github.com/
 	insteadOf = git@github.com:
 	insteadOf = http://github.com/
+[credential]
+	helper = osxkeychain
