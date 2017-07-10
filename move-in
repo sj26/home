@@ -16,11 +16,8 @@ pushd $HOME
     fi
   fi
 
-  if [[ -e $HOME/.home ]]; then
-    pushd $HOME/.home
-      git pull
-      git submodule update --init --recursive
-    popd
+  if [[ -d $HOME/.home ]]; then
+    ( cd .home && git pull --recuse-submodules=on-demand )
   else
     git clone --recursive https://github.com/sj26/home .home
   fi
