@@ -32,7 +32,7 @@ done
 
 for formula in \
   brew-gem \
-  curl git hub gist psgrep pstree pv tree watch wget jq \
+  curl git hub gist psgrep pstree pv rename tree watch wget jq \
   vim the_silver_searcher \
   apple-gcc42 automake autoconf llvm \
   mysql \
