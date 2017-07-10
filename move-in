@@ -4,15 +4,15 @@ pushd $HOME
 
   if [[ "$(uname -s)" = "Darwin" ]]; then
     if ! xcode-select --print-path > /dev/null; then
-      echo "Requesting install for Command Line Tools, press ENTER to continue."
-      /usr/bin/xcode-select --install
-      read
-    fi
-
-    if git --version | grep -vq license; then
-      echo "You need to accept the Xcode license, press ENTER to continue."
-      read
-      sudo xcodebuild -license
+      echo "Installing Command Line Tools..."
+      # https://apple.stackexchange.com/questions/107307/how-can-i-install-the-command-line-tools-completely-from-the-command-line
+      touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
+      command_line_tools=$(softwareupdate -l |
+        grep "\*.*Command Line" |
+        head -n 1 | awk -F"*" '{print $2}' |
+        sed -e 's/^ *//' |
+        tr -d '\n')
+      softwareupdate --install "$command_line_tools" --verbose
     fi
   fi
 

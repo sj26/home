@@ -25,8 +25,8 @@ set ignorecase
 set smartcase
 
 " Color scheme
-let base16colorspace=256
-colorscheme base16-solarized-dark
+"let base16colorspace=256
+"colorscheme base16-railscasts
 
 " Reset leader (default \), lower leader+<key> timeout
 let mapleader=","
