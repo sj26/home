@@ -34,7 +34,7 @@ for formula in \
   brew-gem \
   curl git hub gist psgrep pstree pv rename tree watch wget jq \
   vim the_silver_searcher \
-  apple-gcc42 automake autoconf llvm \
+  automake autoconf llvm \
   mysql \
   postgresql geos postgis geoip \
   elasticsearch \
