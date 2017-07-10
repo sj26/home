@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/bin/bash
 
 pushd $HOME
 
@@ -39,14 +39,18 @@ pushd $HOME
     fi
   popd
 
-  for file in .ackrc .bin .gemrc .gitconfig .js .pryrc .railsrc .tmux.conf .vim .zsh
+  for file in .ackrc .bin .gemrc .gitconfig .js .pryrc .railsrc .tmux.conf .vim .zsh; do
     [[ -L $file ]] || ln -fs .home/$file
-  for file in .config/git/{ignore,attributes}
+  done
+  for file in .config/git/{ignore,attributes}; do
     mkdir -p "${file%/*}" && [ -L "$file" ] || ln -fs "$HOME/.home/$file" "$HOME/$file"
-  for suffix in rc
+  done
+  for suffix in rc; do
     [[ -L .vim$suffix ]] || ln -fs .vim/$suffix .vim$suffix
-  for suffix in env profile rc
+  done
+  for suffix in env profile rc; do
     [[ -L .zsh$suffix ]] || ln -fs .zsh/$suffix .zsh$suffix
+  done
 
   [[ "$(uname -s)" = "Darwin" ]] && .home/move-in-osx
 
