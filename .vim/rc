@@ -27,6 +27,7 @@ set smartcase
 " Color scheme
 "let base16colorspace=256
 "colorscheme base16-railscasts
+colorscheme jellybeans
 
 " Reset leader (default \), lower leader+<key> timeout
 let mapleader=","

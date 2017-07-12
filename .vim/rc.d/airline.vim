@@ -1,3 +1,2 @@
-"let g:airline_powerline_fonts=1
-"let g:airline_theme = 'base16_railscasts'
+let g:airline_theme = "jellybeans"
 set laststatus=2
