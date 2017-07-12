@@ -1,0 +1,16 @@
+# If set to ‘on’ (the default), Readline attempts to bind the control
+# characters treated specially by the kernel’s terminal driver to their
+# Readline equivalents.
+# (But it breaks backwards-kill-word.)
+# https://superuser.com/questions/212446/binding-backward-kill-word-to-ctrlw
+set bind-tty-special-chars off
+"\C-w": backward-kill-word
+
+# If set to ‘on’, Readline performs filename matching and completion in a
+# case-insensitive fashion. The default value is ‘off’.
+set completion-ignore-case on
+
+# This alters the default behavior of the completion functions. If set to ‘on’,
+# words which have more than one possible completion cause the matches to be
+# listed immediately instead of ringing the bell. The default value is ‘off’.
+set show-all-if-ambiguous on
