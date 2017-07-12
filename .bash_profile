@@ -17,7 +17,8 @@ alias gl="git log --pretty='format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an,
 alias gco="git checkout"
 alias gs="git status -sb"
 
-source /usr/local/share/autojump/autojump.bash
+[ -f /usr/local/etc/autojump.sh ] && . /usr/local/etc/autojump.sh
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
 ### Colours #################################################################
 
