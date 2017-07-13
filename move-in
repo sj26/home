@@ -45,7 +45,7 @@ pushd $HOME
   for suffix in rc; do
     [[ -L .vim$suffix ]] || ln -fs .vim/$suffix .vim$suffix
   done
-  for suffix in env profile rc; do
+  for suffix in env rc; do
     [[ -L .zsh$suffix ]] || ln -fs .zsh/$suffix .zsh$suffix
   done
 
