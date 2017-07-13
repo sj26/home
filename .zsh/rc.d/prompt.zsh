@@ -1,28 +1,19 @@
-prompt_host() {
-  if [[ -n "$SSH_CONNECTION" ]]; then
-    echo -n "%n@%m "
-  fi
-}
-
 prompt_git() {
-  local branch
-  if branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null) && [[ "$branch" != "HEAD" ]]; then
+  local branch="$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
+  if [[ -n "$branch" && "$branch" != "HEAD" ]]; then
     if [[ "$(git status --porcelain 2> /dev/null)" != "" ]]; then
-      branch="$branch*"
+      branch="$branch$txtred*$txtblu"
     fi
-    echo -n " $txtblu($branch)$txtrst"
+    echo " %F{blue}($branch)%f"
   fi
 }
 
-prompt_status() {
-  if [[ $? -eq 0 ]]; then
-    echo -n "\$"
-  else
-    echo -n "\!"
-  fi
-}
-
+# Perform parameter & command substitution in prompt
 setopt PROMPT_SUBST
 
-PROMPT="\$(prompt_host)%1/\$(prompt_git) \$(prompt_status) "
+PROMPT="%1/\$(prompt_git) %(?.%F{green}.%F{red})%(#.#.%%)%f "
 
+# If we're on a remote connection, prefix with host details
+if [[ -n "$SSH_CONNECTION" ]]; then
+  PROMPT="%n@%m $PROMPT"
+fi
