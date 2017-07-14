@@ -37,6 +37,9 @@ set timeoutlen=500
 " Command mode: Ctrl+P
 cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
+" Allow per-file modeline
+set modeline
+
 " Allow per-project .vimrc
 set exrc
 " Only execute safe per-project vimrc commands
@@ -44,3 +47,5 @@ set secure
 
 " Load other rc files
 runtime! rc.d/**/*.vim
+
+" vim: ft=vim
