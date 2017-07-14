@@ -2,105 +2,60 @@
 
 set -e -x
 
+### homebrew #################################################################
+
+# Make sure homebrew is installed
 if [ ! -f /usr/local/bin/brew ]; then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-if [ ! -d /usr/local/Library/Taps/homebrew/homebrew-dupes ]; then
-  brew tap homebrew/dupes
-fi
+# Install all brews from the Brewfile
+( cd ~/.home && brew bundle )
 
-if [ ! -d /usr/local/Library/Taps/homebrew/homebrew-services ]; then
-  brew tap homebrew/services
-fi
+### rbenv ####################################################################
 
-if [ ! -d /usr/local/Library/Taps/nodenv/homebrew-nodenv ]; then
-  brew tap nodenv/homebrew-nodenv
-fi
+# Keep binaries outta my homedir
+export RBENV_ROOT="/usr/local/rbenv"
 
-if [ ! -d /usr/local/Library/Taps/caskroom/homebrew-cask ]; then
-  brew tap caskroom/cask
-fi
+# /usr/local is owned by root now, so sudo mkdir
+[[ -d "$RBENV_ROOT" ]] ||
+  sudo install -d -o "$USER" -g admin -m 0775 "$RBENV_ROOT"
 
-brew update
+# Make a cache dir so we keep source tarballs
+mkdir -p "$RBENV_ROOT/cache"
 
-for formula in aws-vault gpgtools java slack slate; do
-  if [ ! -d "/opt/homebrew-cask/Caskroom/$formula" ]; then
-    brew cask install "$formula"
-  fi
+# Make sure we always install these gems
+for gem in gem-browse bundler; do
+  grep -q "$gem" "$RBENV_ROOT/default-gems" ||
+    echo "$gem" >> "$RBENV_ROOT/default-gems"
 done
 
-for formula in \
-  brew-gem \
-  curl git hub gist psgrep pstree pv rename tree watch wget jq \
-  vim the_silver_searcher \
-  automake autoconf llvm \
-  mysql \
-  postgresql geos postgis geoip \
-  elasticsearch \
-  redis \
-  memcached \
-  ffmpeg \
-  rbenv rbenv-aliases rbenv-default-gems rbenv-communal-gems rbenv-vars ruby-build \
-  nodenv nodenv-aliases nodenv-default-packages nodenv-package-rehash node-build \
-  go \
-  imagemagick json-c libffi libmaxminddb sqlite3 exiv2; do
+# Install a standard version of rbenv
+rbenv install --skip-existing --keep 2.4.1
 
-  if [ ! -d "$(brew --prefix $formula)" ]; then
-    brew install $formula
-  fi
+# Use it as the default global version
+rbenv global 2.4.1
+
+### nodenv ###################################################################
+
+# Keep binaries outta my homedir
+export NODENV_ROOT="/usr/local/rbenv"
+
+# /usr/local is owned by root now, so sudo mkdir
+[[ -d "$NODENV_ROOT" ]] ||
+  sudo install -d -o "$USER" -g admin -m 0775 "$NODENV_ROOT"
+
+# Make a cache dir so we keep source tarballs
+mkdir -p "$NODENV_ROOT/cache"
+
+# Make sure we always install these packages
+for package in yarn; do
+  grep -q "$package" "$RBENV_ROOT/default-packages" ||
+    echo "$package" >> "$RBENV_ROOT/default-packages"
 done
 
-if [ ! -f /usr/local/bin/ack ]; then
-  ln -s /usr/local/bin/ag /usr/local/bin/ack
-fi
+# Install a standard version of nodenv
+nodenv install --skip-existing --keep 8.1.4
 
-if ! whence -w rbenv | grep -q "rbenv: function"; then
-  eval "$(rbenv init -)"
-fi
-
-# /usr/local is owned by root now, using /usr/local/rbenv as rbenv root fails without sudo
-sudo install -d -o "$USER" -g admin -m 0775 "$(rbenv root)"
-mkdir -p "$(rbenv root)/cache"
-
-for gem in gem-browse gem-ctags bundler foreman github-mark{up,down}; do
-  if ! grep -q "$gem" "$(rbenv root)/default-gems"; then
-    echo "$gem" >> "$(rbenv root)/default-gems"
-  fi
-done
-
-for version in 2.4.1 2.3.1 2.2.5 2.1.10 2.0.0-p648 1.9.3-p551 1.8.7-p375; do
-  if [ ! -d "$(rbenv root)/versions/$version" ]; then
-    rbenv install $version
-  fi
-
-  # jruby doesn't work with communized gems
-  if grep -q jruby <<< "$version" && [ -L "$(rbenv root)/versions/$version/lib/ruby/gems" ]; then
-    rbenv sequester "$version"
-  fi
-done
-
-rbenv alias --auto
-
-if [ "$(rbenv global)" != "2.4.1" ]; then
-  rbenv global 2.4.1
-fi
-
-if ! whence -w nodenv | grep -q "nodenv: function"; then
-  eval "$(nodenv init -)"
-fi
-
-sudo install -d -o "$USER" -g admin -m 0775 "$(nodenv root)"
-mkdir -p "$(nodenv root)/cache"
-
-for version in 4.4.4 5.11.1 6.1.0; do
-  if [ ! -d "$(nodenv root)/versions/$version" ]; then
-    nodenv install $version
-  fi
-done
-
-nodenv alias --auto
-
-if [ "$(nodenv global)" != "6.1.0" ]; then
-  nodenv global 6.1.0
-fi
+# Use it as the default global version
+nodenv global 8.1.4
