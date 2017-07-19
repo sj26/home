@@ -10,7 +10,7 @@ brew "autojump"
 brew "automake"
 brew "curl"
 brew "git"
-brew "gist"
+brew "sj26/forks/gist", args: ["HEAD"]
 brew "hub"
 brew "jq"
 brew "pv"
