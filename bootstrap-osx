@@ -10,7 +10,7 @@ if [ ! -f /usr/local/bin/brew ]; then
 fi
 
 # Install all brews from the Brewfile
-( cd ~/.home && brew bundle )
+brew bundle --file="$HOME/.home/Brewfile"
 
 ### rbenv ####################################################################
 
