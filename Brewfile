@@ -44,6 +44,7 @@ cask "gpgtools"
 cask "iterm2"
 cask "scroll-reverser"
 cask "slate"
+cask "transmit"
 
 tap "puma/puma"
 brew "puma/puma/puma-dev"
