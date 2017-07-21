@@ -50,8 +50,8 @@ mkdir -p "$NODENV_ROOT/cache"
 
 # Make sure we always install these packages
 for package in yarn; do
-  grep -q "$package" "$RBENV_ROOT/default-packages" ||
-    echo "$package" >> "$RBENV_ROOT/default-packages"
+  grep -q "$package" "$NODENV_ROOT/default-packages" ||
+    echo "$package" >> "$NODENV_ROOT/default-packages"
 done
 
 # Install a standard version of nodenv
