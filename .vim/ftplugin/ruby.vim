@@ -4,13 +4,5 @@
 " Align blocks with the opening `do` line
 let g:ruby_indent_block_style = 'do'
 
-" Strip trailing empty newlines
-function TrimTrailingLines()
-  let lastLine = line('$')
-  let lastNonblankLine = prevnonblank(lastLine)
-  if lastLine > 0 && lastNonblankLine != lastLine
-    silent! execute lastNonblankLine + 1 . ',$delete _'
-  endif
-endfunction
-
+" Trim blank lines from the end of ruby files
 autocmd BufWritePre <buffer> call TrimTrailingLines()
