@@ -6,10 +6,11 @@ let g:ruby_indent_block_style = 'do'
 
 " Strip trailing empty newlines
 function TrimTrailingLines()
-  let l:save_cursor = getpos('.')
-  :silent! %s#\($\n\s*\)\+\%$##
-  call histdel('search', -1)
-  call setpos('.', l:save_cursor)
+  let lastLine = line('$')
+  let lastNonblankLine = prevnonblank(lastLine)
+  if lastLine > 0 && lastNonblankLine != lastLine
+    silent! execute lastNonblankLine + 1 . ',$delete _'
+  endif
 endfunction
 
 autocmd BufWritePre <buffer> call TrimTrailingLines()
