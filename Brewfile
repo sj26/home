@@ -1,6 +1,7 @@
 tap "homebrew/core"
 tap "homebrew/bundle"
 tap "homebrew/services"
+tap "sj26/forks"
 
 tap "caskroom/cask"
 cask "java"
