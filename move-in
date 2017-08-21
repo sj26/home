@@ -23,7 +23,7 @@ pushd $HOME
   fi
 
   pushd .home
-    for bundle in camelcasemotion textobj-function textobj-user; do
+    for bundle in camelcasemotion; do
       if ! grep -q doc/tags .git/modules/.vim/bundle/$bundle/info/exclude; then
         echo doc/tags >> .git/modules/.vim/bundle/$bundle/info/exclude
       fi
