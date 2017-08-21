@@ -49,6 +49,6 @@ pushd $HOME
     [[ -L .zsh$suffix ]] || ln -fs .zsh/$suffix .zsh$suffix
   done
 
-  [[ "$(uname -s)" = "Darwin" ]] && .home/move-in-osx
+  # [[ "$(uname -s)" = "Darwin" ]] && .home/move-in-osx
 
 popd
