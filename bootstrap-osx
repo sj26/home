@@ -39,7 +39,7 @@ rbenv global 2.4.1
 ### nodenv ###################################################################
 
 # Keep binaries outta my homedir
-export NODENV_ROOT="/usr/local/rbenv"
+export NODENV_ROOT="/usr/local/nodenv"
 
 # /usr/local is owned by root now, so sudo mkdir
 [[ -d "$NODENV_ROOT" ]] ||
