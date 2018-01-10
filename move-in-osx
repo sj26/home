@@ -8,21 +8,33 @@
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
 
-# Global
+# Ask for the administrator password upfront
+sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until `.macos` has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+#############################################################################
+
+# Set computer name (as done via System Preferences → Sharing)
+#sudo scutil --set ComputerName "Ironhide"
+#sudo scutil --set HostName "Ironhide"
+#sudo scutil --set LocalHostName "Ironhide"
+#sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "Ironhide"
 
 # Increase window resize speed for Cocoa applications
-defaults write -globalDomain NSWindowResizeTime -float 0.001
+defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
 
 # Expand save panel by default
-defaults write -globalDomain NSNavPanelExpandedStateForSaveMode -bool true
-defaults write -globalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
 
 # Expand print panel by default
-defaults write -globalDomain PMPrintingExpandedStateForPrint -bool true
-defaults write -globalDomain PMPrintingExpandedStateForPrint2 -bool true
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
 
 # Save to disk (not to iCloud) by default
-defaults write -globalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
 # Automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
@@ -30,16 +42,11 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 # Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
-# Disable opening and closing window animations
-defaults write -globalDomain NSAutomaticWindowAnimationsEnabled -bool false
-
-# Require password immediately after sleep or screen saver begins
-defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 0
-
 # Reveal IP address, hostname, OS version, etc. when clicking the clock
 # in the login window
 sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+
+### Keyboard & Trackpad ######################################################
 
 # Disable automatic capitalization as it’s annoying when typing code
 defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
@@ -56,57 +63,51 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
-# Keyboard
-
-# Use all F1, F2, etc. keys as standard function keys
-defaults write -globalDomain com.apple.keyboard.fnState -int 1
-
 # Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)
-defaults write -globalDomain AppleKeyboardUIMode -int 3
+defaults write -globalDomain AppleKeyboardUIMode -integer 3
+
+# Enable tap to click for this user and for the login screen
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -integer 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -integer 1
 
 # Disable press-and-hold for keys in favor of key repeat
 defaults write -globalDomain ApplePressAndHoldEnabled -bool false
 
 # Set a shorter Delay until key repeat and faster rate
-defaults write -globalDomain InitialKeyRepeat -int 15
-defaults write -globalDomain KeyRepeat -int 2
+defaults write -globalDomain InitialKeyRepeat -integer 15
+defaults write -globalDomain KeyRepeat -integer 2
 
 # Use scroll gesture with the Ctrl (^) modifier key to zoom
 defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
-defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
+defaults write com.apple.universalaccess HIDScrollZoomModifierMask -integer 262144
+
 # Follow the keyboard focus while zoomed in
 defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
 
-# I always hit Command+Options+L by accident which launches Safari. Disable it.
-/usr/bin/python <<END
-from Foundation import NSMutableDictionary
-from CoreFoundation import CFPreferencesCopyAppValue, CFPreferencesSetAppValue
-existing = CFPreferencesCopyAppValue("NSServicesStatus", "pbs")
-if existing is not None:
-  new = dict(existing)
-else:
-  new = dict()
-new["com.apple.Safari - Search With %WebSearchProvider@ - searchWithWebSearchProvider"] = ""
-CFPreferencesSetAppValue("NSServicesStatus", new, "pbs")
-END
+# Re-map caps lock to escape
+VENDORID="$(ioreg -n IOHIDKeyboard -r | awk '$2 == "\"VendorID\"" { print $4 }')"
+PRODUCTID="$(ioreg -n IOHIDKeyboard -r | awk '$2 == "\"ProductID\"" { print $4 }')"
+defaults -currentHost write -globalDomain \
+  "com.apple.keyboard.modifiermapping.${VENDORID}-${PRODUCTID}-0" \
+  '<array><dict><key>HIDKeyboardModifierMappingSrc</key><integer>30064771129</integer><key>HIDKeyboardModifierMappingDst</key><integer>30064771113</integer></dict></array>'
 
-# Trackpad
+# Disable "Search with Safari" keybinding
+defaults write pbs NSServicesStatus '<dict><key>com.apple.Safari - Search With %WebSearchProvider@ - searchWithWebSearchProvider</key><dict><key>enabled_context_menu</key><integer>0</integer><key>enabled_services_menu</key><integer>0</integer></dict></dict>'
 
-# Trackpad: enable tap to click for this user and for the login screen
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults -currentHost write -globalDomain com.apple.mouse.tapBehavior -int 1
-defaults write -globalDomain com.apple.mouse.tapBehavior -int 1
-
-# Bluetooth headphones
-
-# Allow Bluetooth devices to use aptX
-sudo defaults write bluetoothaudiod "Disable AptX codec" 0
-sudo defaults write bluetoothaudiod "Enable AptX codec" 1
+### Bluetooth headphones #####################################################
 
 # Increase sound quality for Bluetooth headphones/headsets
-defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
+defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -integer 40
 
-# Dock
+# Allow Bluetooth devices to use aptX
+sudo defaults write bluetoothaudiod "Disable AptX codec" -integer 0
+sudo defaults write bluetoothaudiod "Enable AptX codec" -integer 1
+
+### Dock, Mission Control and Spaces #########################################
+
+# Show indicator lights for open applications in the Dock
+defaults write com.apple.dock show-process-indicators -bool true
 
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
@@ -114,10 +115,9 @@ defaults write com.apple.dock autohide -bool true
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
 
-# Disable Dashboard
-defaults write com.apple.dashboard mcx-disabled -bool true
-
-# Mission Control
+# Speed up Dock animations
+defaults write com.apple.Dock autohide-delay -float 0.1
+defaults write com.apple.dock autohide-time-modifier -float 0.5
 
 # Speed up Mission Control animations
 defaults write com.apple.dock expose-animation-duration -float 0.1
@@ -134,20 +134,50 @@ defaults write com.apple.dock expose-animation-duration -float 0.1
 # 10: Put display to sleep
 # 11: Launchpad
 # 12: Notification Center
+
 # Top left screen corner → Put display to sleep
 defaults write com.apple.dock wvous-tl-corner -int 2
 defaults write com.apple.dock wvous-tl-modifier -int 0
 
-# Finder.app
+# Don’t automatically rearrange Spaces based on most recent use
+defaults write com.apple.dock mru-spaces -bool false
+
+### Security & Privacy #######################################################
+
+# Require password immediately after sleep or screen saver begins
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+### Login ####################################################################
+
+# Reveal IP address, hostname, OS version, etc. when clicking the clock
+# in the login window
+sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+
+### Finder ###################################################################
 
 # Disable window animations and Get Info animations in Finder
 defaults write com.apple.finder DisableAllAnimations -bool true
 
+# Disable the warning when changing a file extension
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
 # Use current directory as default search scope in Finder
-defaults write com.apple.finder FXDefaultSearchScope -string SCcf
+defaults write com.apple.finder FXDefaultSearchScope SCcf
 
 # Open new finder windows in home folder
 defaults write com.apple.finder NewWindowTarget PfHm
+
+# Allow quitting Finder via ⌘ + Q; doing so will also hide desktop icons
+defaults write com.apple.finder QuitMenuItem -bool true
+
+# Sort and group by name, and show item info
+plutil -replace StandardViewSettings.IconViewSettings.arrangeBy -string name ~/Library/Preferences/com.apple.finder.plist 
+defaults write com.apple.finder FXPreferredGroupBy Name
+plutil -replace StandardViewSettings.IconViewSettings.showItemInfo -integer 1 ~/Library/Preferences/com.apple.finder.plist 
+
+# Show item info on desktop, too
+plutil -replace DesktopViewSettings.IconViewSettings.showItemInfo -integer 1 ~/Library/Preferences/com.apple.finder.plist 
 
 # Enable AirDrop over Ethernet and on unsupported Macs running Lion
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
@@ -162,29 +192,23 @@ defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
 defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
 defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 
-# Allow quitting Finder via ⌘ + Q; doing so will also hide desktop icons
-defaults write com.apple.finder QuitMenuItem -bool true
-
 # Show the ~/Library folder
 chflags nohidden ~/Library
 
 # Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
-# Disable the warning when changing a file extension
-defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
-
-# Show item info below desktop icons
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:showItemInfo true" ~/Library/Preferences/com.apple.finder.plist
-
-# Enable snap-to-grid for desktop icons
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-
-# Safari
+### Safari ###################################################################
 
 # Enable Safari’s Develop and Debug menus
 defaults write com.apple.Safari IncludeDevelopMenu -bool true
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+
+# Show status bar
+defaults write com.apple.Safari ShowOverlayStatusBar -bool true
+
+# Show full URL in location bar
+defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
 
 # Make Safari’s search banners default to Contains instead of Starts With
 defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
@@ -192,36 +216,47 @@ defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
 # Add a context menu item for showing the Web Inspector in web views
 defaults write -globalDomain WebKitDeveloperExtras -bool true
 
-# Terminal.app
+# Auto-fill with 1Password, disable Safari's auto-fill
+defaults write com.apple.Safari AutoFillCreditCardData -bool false
+defaults write com.apple.Safari AutoFillMiscellaneousForms -bool false
+defaults write com.apple.Safari AutoFillPasswords -bool false
 
-# Only use UTF-8 in Terminal.app
+# Re-open windows/tabs on launch
+defaults write com.apple.Safari AlwaysRestoreSessionAtLaunch -bool true
+
+# Make Command+Shift+F toggle toolbar in full screen like Chrome
+defaults write com.apple.Safari NSUserKeyEquivalents -dict-add "Always Show Toolbar in Full Screen" "@\$f"
+
+### Terminal #################################################################
+
+# Only use UTF-8 in Terminal
 defaults write com.apple.terminal StringEncodings -array 4
 
-# iTunes.app
+### iTunes ###################################################################
 
 # Make ⌘ + F focus the search input in iTunes
 defaults write com.apple.iTunes NSUserKeyEquivalents -dict-add "Target Search Field" "@F"
 
-# Mail.app
+### Mail #####################################################################
 
-# Disable send and reply animations in Mail.app
+# Disable send and reply animations in Mail
 defaults write com.apple.Mail DisableReplyAnimations -bool true
 defaults write com.apple.Mail DisableSendAnimations -bool true
 
-# Menu Extras
+### Menu Extras ##############################################################
 
 # Make sure we're displaying these menu extra
-defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.bluetooth" -int 1
-defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.volume" -int 1
+defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.bluetooth" -bool true
+defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.volume" -bool true
 
 # Add the date to the clock
 defaults write com.apple.menuextra.clock DateFormat "EEE d MMM  h:mm a"
 
-# iTerm.app
+### iTerm ####################################################################
 
 defaults write com.googlecode.iterm2 NSUserKeyEquivalents -dict-add "Toggle Full Screen" "@^f"
 
-# Transmission.app
+### Transmission #############################################################
 
 # Use `~/Documents/Torrents` to store incomplete downloads
 defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
@@ -262,13 +297,16 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
 defaults write com.apple.ActivityMonitor SortDirection -int 0
 
-### Fonts #####################################################################
+### Photos #####################################################################
 
-# Make sure we have a fonts directory
-mkdir -p ~/Library/Fonts
+# Prevent Photos from opening automatically when devices are plugged in
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
-# Copy in SF Mono
-cp -n /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SFMono-*.otf ~/Library/Fonts/
+### Google Chrome ##############################################################
+
+# Use the system-native print preview dialog
+defaults write com.google.Chrome DisablePrintPreview -bool true
+defaults write com.google.Chrome.canary DisablePrintPreview -bool true
 
 ### Mac App Store #############################################################
 
@@ -296,30 +334,24 @@ defaults write com.apple.commerce AutoUpdate -bool true
 # Allow the App Store to reboot machine on macOS updates
 defaults write com.apple.commerce AutoUpdateRestartRequired -bool true
 
-### Photos #####################################################################
-
-# Prevent Photos from opening automatically when devices are plugged in
-defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
-
-### Google Chrome ##############################################################
-
-# Use the system-native print preview dialog
-defaults write com.google.Chrome DisablePrintPreview -bool true
-defaults write com.google.Chrome.canary DisablePrintPreview -bool true
-
 # Expand the print dialog by default
 defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
 defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
 
+### Fonts #####################################################################
+
+# Copy SF Mono into system fonts
+cp -n /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SFMono-*.otf /Library/Fonts/
+
 ### ~/.home ###################################################################
 
 for file in .slate.js; do
-  [[ -L $file ]] || ln -fs .home/$file
+  [[ -L ~/$file ]] || ln -fs .home/$file ~/$file
 done
 
 ###############################################################################
 
 # Kill affected applications
-for app in Safari Finder Dock Mail SystemUIServer; do
+for app in blued Safari Finder Dock Mail SystemUIServer; do
   killall $app >/dev/null 2>&1
 done
