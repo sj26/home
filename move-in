@@ -28,25 +28,13 @@ pushd $HOME
         echo doc/tags >> .git/modules/.vim/bundle/$bundle/info/exclude
       fi
     done
-
-    if [[ ! -e .vim/bundle/ctrlp-cmatcher/autoload/fuzzycomt.so ]]; then
-      pushd .vim/bundle/ctrlp-cmatcher
-      ./install.sh
-      popd
-    fi
   popd
 
-  for file in .ackrc .bin .gemrc .gitconfig .js .pryrc .psqlrc .railsrc .tmux.conf .vim .zsh; do
+  for file in .ackrc .bin .gemrc .gitconfig .js .pryrc .psqlrc .railsrc .tmux.conf .vim .zsh .zshrc .zshenv; do
     [[ -L $file ]] || ln -fs .home/$file
   done
   for file in .config/git/{ignore,attributes}; do
     mkdir -p "${file%/*}" && [ -L "$file" ] || ln -fs "$HOME/.home/$file" "$HOME/$file"
-  done
-  for suffix in rc; do
-    [[ -L .vim$suffix ]] || ln -fs .vim/$suffix .vim$suffix
-  done
-  for suffix in env rc; do
-    [[ -L .zsh$suffix ]] || ln -fs .zsh/$suffix .zsh$suffix
   done
 
   # [[ "$(uname -s)" = "Darwin" ]] && .home/move-in-osx

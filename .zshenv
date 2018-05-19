@@ -4,9 +4,6 @@ export HISTTIMEFORMAT='%Y-%b-%d %a %H:%M:%S - '
 # Use vim, always vim, forever vim. Forgive me.
 export EDITOR=vim
 
-# Add depot tools to path if present
-[[ -d /usr/local/depot_tools ]] && export PATH="/usr/local/depot_tools:$PATH"
-
 # Load any additional enviroment files.
 for file in ~/.zsh/env.d/*.zsh(N); source $file
 for file in ~/.zsh/env.local.d/*.zsh(N); source $file

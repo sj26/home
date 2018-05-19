@@ -3,37 +3,37 @@
 	url = https://github.com/bling/vim-airline
 [submodule ".vim/bundle/rails"]
 	path = .vim/bundle/rails
-	url = http://github.com/tpope/vim-rails.git
+	url = git://github.com/tpope/vim-rails.git
 [submodule ".vim/bundle/surround"]
 	path = .vim/bundle/surround
-	url = https://github.com/tpope/vim-surround.git
+	url = git://github.com/tpope/vim-surround.git
 [submodule ".vim/bundle/fugitive"]
 	path = .vim/bundle/fugitive
-	url = http://github.com/tpope/vim-fugitive.git
+	url = git://github.com/tpope/vim-fugitive.git
 [submodule ".vim/bundle/endwise"]
 	path = .vim/bundle/endwise
-	url = https://github.com/tpope/vim-endwise.git
+	url = git://github.com/tpope/vim-endwise.git
 [submodule ".vim/bundle/abolish"]
 	path = .vim/bundle/abolish
-	url = https://github.com/tpope/vim-abolish.git
+	url = git://github.com/tpope/vim-abolish.git
 [submodule ".vim/bundle/rake"]
 	path = .vim/bundle/rake
-	url = https://github.com/tpope/vim-rake.git
+	url = git://github.com/tpope/vim-rake.git
 [submodule ".vim/bundle/unimpaired"]
 	path = .vim/bundle/unimpaired
-	url = https://github.com/tpope/vim-unimpaired.git
+	url = git://github.com/tpope/vim-unimpaired.git
 [submodule ".vim/bundle/speeddating"]
 	path = .vim/bundle/speeddating
-	url = https://github.com/tpope/vim-speeddating.git
+	url = git://github.com/tpope/vim-speeddating.git
 [submodule ".vim/bundle/repeat"]
 	path = .vim/bundle/repeat
-	url = https://github.com/tpope/vim-repeat.git
+	url = git://github.com/tpope/vim-repeat.git
 [submodule ".vim/bundle/rspec"]
 	path = .vim/bundle/rspec
 	url = https://github.com/taq/vim-rspec.git
 [submodule ".vim/bundle/ragtag"]
 	path = .vim/bundle/ragtag
-	url = https://github.com/tpope/vim-ragtag.git
+	url = git://github.com/tpope/vim-ragtag.git
 [submodule ".vim/bundle/tcomment"]
 	path = .vim/bundle/tcomment
 	url = https://github.com/tomtom/tcomment_vim
@@ -45,7 +45,7 @@
 	url = git://github.com/sj26/vim-camelcasemotion.git
 [submodule ".vim/bundle/bundler"]
 	path = .vim/bundle/bundler
-	url = https://github.com/tpope/vim-bundler.git
+	url = git://github.com/tpope/vim-bundler.git
 [submodule ".vim/bundle/vroom"]
 	path = .vim/bundle/vroom
 	url = git://github.com/skalnik/vim-vroom.git
@@ -137,3 +137,63 @@
 [submodule ".vim/bundle/javascript"]
 	path = .vim/bundle/javascript
 	url = git://github.com/pangloss/vim-javascript.git
+[submodule ".vim/bundle/markdown"]
+	path = .vim/bundle/markdown
+	url = git://github.com/tpope/vim-markdown.git
+[submodule ".vim/bundle/commentary"]
+	path = .vim/bundle/commentary
+	url = git://github.com/tpope/vim-commentary.git
+[submodule ".vim/bundle/haml"]
+	path = .vim/bundle/haml
+	url = git://github.com/tpope/vim-haml.git
+[submodule ".vim/bundle/git"]
+	path = .vim/bundle/git
+	url = git://github.com/tpope/vim-git.git
+[submodule ".vim/bundle/obsession"]
+	path = .vim/bundle/obsession
+	url = git://github.com/tpope/vim-obsession.git
+[submodule ".vim/bundle/scriptease"]
+	path = .vim/bundle/scriptease
+	url = git://github.com/tpope/vim-scriptease.git
+[submodule ".vim/bundle/rsi"]
+	path = .vim/bundle/rsi
+	url = git://github.com/tpope/vim-rsi.git
+[submodule ".vim/bundle/rhubarb"]
+	path = .vim/bundle/rhubarb
+	url = git://github.com/tpope/vim-rhubarb.git
+[submodule ".vim/bundle/flagship"]
+	path = .vim/bundle/flagship
+	url = git://github.com/tpope/vim-flagship.git
+[submodule ".vim/bundle/dotenv"]
+	path = .vim/bundle/dotenv
+	url = git://github.com/tpope/vim-dotenv.git
+[submodule ".vim/bundle/tbone"]
+	path = .vim/bundle/tbone
+	url = git://github.com/tpope/vim-tbone.git
+[submodule ".vim/bundle/characterize"]
+	path = .vim/bundle/characterize
+	url = git://github.com/tpope/vim-characterize.git
+[submodule ".vim/bundle/camcelcasemotion"]
+	path = .vim/bundle/camcelcasemotion
+	url = git://github.com/bkad/CamelCaseMotion.git
+[submodule ".vim/bundle/fzf"]
+	path = .vim/bundle/fzf
+	url = git://github.com/junegunn/fzf.vim.git
+[submodule ".vim/bundle/indent-object"]
+	path = .vim/bundle/indent-object
+	url = git://github.com/michaeljsmith/vim-indent-object.git
+[submodule ".vim/bundle/jdaddy"]
+	path = .vim/bundle/jdaddy
+	url = git://github.com/tpope/vim-jdaddy.git
+[submodule ".vim/bundle/apathy"]
+	path = .vim/bundle/apathy
+	url = git://github.com/tpope/vim-apathy.git
+[submodule ".vim/bundle/dadbod"]
+	path = .vim/bundle/dadbod
+	url = git://github.com/tpope/vim-dadbod.git
+[submodule ".vim/bundle/jsx"]
+	path = .vim/bundle/jsx
+	url = git://github.com/mxw/vim-jsx.git
+[submodule ".vim/bundle/splitjoin"]
+	path = .vim/bundle/splitjoin
+	url = git://github.com/AndrewRadev/splitjoin.vim.git

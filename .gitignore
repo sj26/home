@@ -1,5 +1,6 @@
 # Vim junk
 /.vim/.netrwhist
+/.vim/undo
 
 # Zsh locals
 /.zsh/env.local.d/*
