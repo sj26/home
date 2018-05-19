@@ -4,6 +4,9 @@
 .*.sw?
 .sw?
 
+# Visual Studio Code junk
+.vscode
+
 # OS junk
 .DS_Store*
 ehthumbs.db
