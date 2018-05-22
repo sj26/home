@@ -11,7 +11,8 @@ colors jellybeans
 
 let mapleader = ','
 
-nmap <Leader>v :e $MYVIMRC<CR>
+nmap <Leader>v :tabe $MYVIMRC<CR>
+nmap <Leader>V :source $MYVIMRC<CR>
 
 " Format lists within comments
 " https://stackoverflow.com/a/37172060/158252
@@ -24,15 +25,30 @@ if has("autocmd")
     \| exe "normal g'\"" | endif
 endif
 
-" netrw
-" <Ctrl-^> should go to the last file, not to netrw.
-" https://github.com/tpope/vim-vinegar/issues/25#issuecomment-42727977
-let g:netrw_altfile = 1
+" camelcasemotion (TODO)
+"call camelcasemotion#CreateMotionMappings('<leader>')
 
 " fzf
 nmap ; :Windows<CR>
 nmap <Leader>f :Files<CR>
 nmap <Leader>t :Tags<CR>
+
+" :GGrep - fzf from git grep
+command! -bang -nargs=* GGrep
+      \ call fzf#vim#grep('git grep --line-number '.shellescape(<q-args>), 0, <bang>0)
+
+" :Ag  - Start fzf with hidden preview window that can be enabled with "?" key
+" :Ag! - Start fzf in fullscreen and display the preview window above
+command! -bang -nargs=* Ag
+      \ call fzf#vim#ag(<q-args>,
+      \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+      \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+      \                 <bang>0)
+
+" netrw
+" <Ctrl-^> should go to the last file, not to netrw.
+" https://github.com/tpope/vim-vinegar/issues/25#issuecomment-42727977
+let g:netrw_altfile = 1
 
 " rails
 if !exists('g:rails_projections')
@@ -53,3 +69,9 @@ call extend(g:rails_gem_projections, {
       \    "spec/support/*.rb": {
       \      "command": "support"}},
       \ }, 'keep')
+
+" test
+let test#strategy = "vimterminal"
+nmap <silent> <Leader>t :TestFile<CR>
+nmap <silent> <Leader>T :TestNearest<CR>
+nmap <silent> <Leader>a :TestSuite<CR>
