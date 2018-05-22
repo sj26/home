@@ -70,6 +70,9 @@ call extend(g:rails_gem_projections, {
       \      "command": "support"}},
       \ }, 'keep')
 
+" terraform + commentary
+autocmd FileType terraform setlocal commentstring=#%s
+
 " test
 let test#strategy = "vimterminal"
 nmap <silent> <Leader>t :TestFile<CR>

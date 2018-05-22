@@ -83,9 +83,6 @@
 [submodule ".vim/bundle/tabular"]
 	path = .vim/bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
-[submodule ".vim/bundle/hasicorp"]
-	path = .vim/bundle/hasicorp
-	url = git://github.com/markcornick/vim-hashicorp-tools.git
 [submodule ".vim/bundle/base16"]
 	path = .vim/bundle/base16
 	url = git://github.com/chriskempson/base16-vim.git
@@ -197,6 +194,12 @@
 [submodule ".vim/bundle/test"]
 	path = .vim/bundle/test
 	url = git://github.com/janko-m/vim-test.git
-[submodule ".vim/bundle/rspec"]
+[submodule ".vim/bundle/ruby-rspec"]
 	path = .vim/bundle/ruby-rspec
 	url = git://github.com/vim-scripts/rspec.vim.git
+[submodule ".vim/bundle/packer"]
+	path = .vim/bundle/packer
+	url = git://github.com/hashivim/vim-packer.git
+[submodule ".vim/bundle/terraform"]
+	path = .vim/bundle/terraform
+	url = git://github.com/hashivim/vim-terraform.git
