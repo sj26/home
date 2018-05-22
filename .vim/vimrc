@@ -25,9 +25,6 @@ if has("autocmd")
     \| exe "normal g'\"" | endif
 endif
 
-" camelcasemotion (TODO)
-"call camelcasemotion#CreateMotionMappings('<leader>')
-
 " fzf
 nmap ; :Windows<CR>
 nmap <Leader>f :Files<CR>
