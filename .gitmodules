@@ -194,12 +194,15 @@
 [submodule ".vim/bundle/test"]
 	path = .vim/bundle/test
 	url = git://github.com/janko-m/vim-test.git
-[submodule ".vim/bundle/ruby-rspec"]
-	path = .vim/bundle/ruby-rspec
-	url = git://github.com/vim-scripts/rspec.vim.git
 [submodule ".vim/bundle/packer"]
 	path = .vim/bundle/packer
 	url = git://github.com/hashivim/vim-packer.git
 [submodule ".vim/bundle/terraform"]
 	path = .vim/bundle/terraform
 	url = git://github.com/hashivim/vim-terraform.git
+[submodule ".vim/bundle/textobj-rubyblock"]
+	path = .vim/bundle/textobj-rubyblock
+	url = git://github.com/nelstrom/vim-textobj-rubyblock.git
+[submodule ".vim/bundle/textobj-user"]
+	path = .vim/bundle/textobj-user
+	url = git://github.com/kana/vim-textobj-user.git
