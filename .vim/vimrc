@@ -29,9 +29,6 @@ endif
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
-for command in ['Ack', 'AckAdd', 'AckFromSearch', 'LAck', 'LAckAdd', 'AckFile', 'AckHelp', 'LAckHelp', 'AckWindow', 'LAckWindow']
-  exe 'command ' . substitute(command, 'Ack', 'Ag', "") . ' ' . command
-endfor
 
 " fzf
 nmap ; :Windows<CR>
