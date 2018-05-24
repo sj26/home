@@ -187,7 +187,7 @@
 	url = git://github.com/chr4/nginx.vim.git
 [submodule ".vim/bundle/ack"]
 	path = .vim/bundle/ack
-	url = git://github.com/mileszs/ack.vim.git
+	url = git://github.com/sj26/ack.vim.git
 [submodule ".vim/bundle/matchit"]
 	path = .vim/bundle/matchit
 	url = git://github.com/vim-scripts/matchit.zip.git
