@@ -79,7 +79,7 @@ call extend(g:rails_gem_projections, {
 autocmd FileType terraform setlocal commentstring=#%s
 
 " test
-let test#strategy = "vimterminal"
+let test#strategy = "myvimterminal#Run"
 nmap <silent> <Leader>t :TestFile<CR>
 nmap <silent> <Leader>T :TestNearest<CR>
 nmap <silent> <Leader>a :TestSuite<CR>
