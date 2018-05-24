@@ -1,0 +1,1 @@
+au! railsPluginDetect Syntax
