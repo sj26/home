@@ -28,27 +28,18 @@
 [submodule ".vim/bundle/ragtag"]
 	path = .vim/bundle/ragtag
 	url = git://github.com/tpope/vim-ragtag.git
-[submodule ".vim/bundle/tcomment"]
-	path = .vim/bundle/tcomment
-	url = https://github.com/tomtom/tcomment_vim
 [submodule ".vim/bundle/camelcasemotion"]
 	path = .vim/bundle/camelcasemotion
 	url = git://github.com/sj26/vim-camelcasemotion.git
 [submodule ".vim/bundle/bundler"]
 	path = .vim/bundle/bundler
 	url = git://github.com/tpope/vim-bundler.git
-[submodule ".vim/bundle/vroom"]
-	path = .vim/bundle/vroom
-	url = git://github.com/skalnik/vim-vroom.git
 [submodule ".vim/bundle/supertab"]
 	path = .vim/bundle/supertab
 	url = git://github.com/ervandew/supertab.git
 [submodule ".vim/bundle/sleuth"]
 	path = .vim/bundle/sleuth
 	url = git://github.com/tpope/vim-sleuth.git
-[submodule ".vim/bundle/ctrlp-cmatcher"]
-	path = .vim/bundle/ctrlp-cmatcher
-	url = git://github.com/JazzCore/ctrlp-cmatcher.git
 [submodule ".vim/bundle/vinegar"]
 	path = .vim/bundle/vinegar
 	url = git://github.com/tpope/vim-vinegar.git
@@ -64,42 +55,27 @@
 [submodule ".vim/bundle/haystack"]
 	path = .vim/bundle/haystack
 	url = git://github.com/tpope/vim-haystack.git
-[submodule ".vim/bundle/ag"]
-	path = .vim/bundle/ag
-	url = git://github.com/rking/ag.vim.git
 [submodule ".vim/bundle/tabular"]
 	path = .vim/bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
 [submodule ".vim/bundle/base16"]
 	path = .vim/bundle/base16
 	url = git://github.com/chriskempson/base16-vim.git
-[submodule ".vim/bundle/hardmode"]
-	path = .vim/bundle/hardmode
-	url = git://github.com/wikitopian/hardmode.git
 [submodule ".vim/bundle/automkdir"]
 	path = .vim/bundle/automkdir
 	url = git://github.com/DataWraith/auto_mkdir.git
-[submodule ".vim/bundle/polyglot"]
-	path = .vim/bundle/polyglot
-	url = git://github.com/sheerun/vim-polyglot.git
 [submodule ".vim/bundle/dispatch"]
 	path = .vim/bundle/dispatch
 	url = git://github.com/tpope/vim-dispatch.git
 [submodule ".vim/bundle/graphql"]
 	path = .vim/bundle/graphql
 	url = git://github.com/jparise/vim-graphql.git
-[submodule ".vim/bundle/airline-themes"]
-	path = .vim/bundle/airline-themes
-	url = git://github.com/vim-airline/vim-airline-themes.git
 [submodule ".vim/bundle/sensible"]
 	path = .vim/bundle/sensible
 	url = git://github.com/tpope/vim-sensible.git
 [submodule ".vim/bundle/ruby-heredoc-syntax"]
 	path = .vim/bundle/ruby-heredoc-syntax
 	url = git://github.com/joker1007/vim-ruby-heredoc-syntax.git
-[submodule ".vim/bundle/keepcase"]
-	path = .vim/bundle/keepcase
-	url = git://github.com/vim-scripts/keepcase.vim.git
 [submodule ".vim/bundle/eunuch"]
 	path = .vim/bundle/eunuch
 	url = git://github.com/tpope/vim-eunuch.git
