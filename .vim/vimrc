@@ -81,4 +81,6 @@ autocmd FileType terraform setlocal commentstring=#%s
 let test#strategy = "myvimterminal#Run"
 nmap <silent> <Leader>t :TestFile<CR>
 nmap <silent> <Leader>T :TestNearest<CR>
+nmap <silent> <Leader>r :TestLast<CR>
+nmap <silent> <Leader>R :TestVisit<CR>
 nmap <silent> <Leader>a :TestSuite<CR>
