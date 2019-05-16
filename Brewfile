@@ -62,12 +62,9 @@ brew "nodenv/nodenv/nodenv-default-packages"
 brew "nodenv/nodenv/nodenv-package-rehash"
 
 brew "mas"
-mas "Affinity Designer", id: 824171161
 mas "DaisyDisk", id: 411643860
 mas "Keynote", id: 409183694
 mas "Microsoft Remote Desktop", id: 1295203466
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Pixelmator", id: 407963104
-mas "Things3", id: 904280696
-mas "Tweetbot", id: 557168941
