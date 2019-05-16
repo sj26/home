@@ -14,6 +14,16 @@ alias gl="git log --pretty='format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an,
 alias gco="git checkout"
 alias gs="git status -sb"
 
+# Shamelessly copied from @plasticine <3
+# https://gist.github.com/plasticine/0953b7114060c34b5d122cdb48a151dd
+gcob() {
+  local format branch branches
+  format="%(committerdate:relative)\\%(color:green)%(refname:short)%(color:reset)\\%(HEAD)\\%(color:yellow)%(objectname:short)%(color:reset) %(upstream:trackshort)\\%(contents:subject)"
+  branches=$(git for-each-ref --format="$format" --sort=-committerdate refs/heads/ | column -t -s "\\") &&
+  branch=$(echo "$branches" | fzf --ansi --height=15 --border) &&
+  git checkout $(echo "$branch" | awk '{print $4}')
+}
+
 btmm-domain() {
   scutil <<< "show Setup:/Network/BackToMyMac" | sed -n 's/.* : *\(.*\).$/\1/p'
 }
