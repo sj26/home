@@ -22,6 +22,7 @@ brew "autoconf"
 brew "autojump"
 brew "automake"
 brew "curl"
+brew "fzf"
 brew "git"
 brew "sj26/forks/gist", args: ["HEAD"]
 brew "hub"

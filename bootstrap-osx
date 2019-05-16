@@ -12,6 +12,18 @@ fi
 # Install all brews from the Brewfile
 brew bundle --file="$HOME/.home/Brewfile"
 
+### fzf + vim ################################################################
+
+# Add `fzf` as an autoload-able vim library -- I don't know why this isn't the
+# default setup
+if [[ -d /usr/local/opt/fzf && -d /usr/local/share/vim ]]; then
+  for autoload in /usr/local/share/vim/*/autoload; do
+    if [[ ! -s $autoload/fzf.vim ]]; then
+      ln -s /usr/local/opt/fzf/plugin/fzf.vim $autoload/fzf.vim
+    fi
+  done
+fi
+
 ### rbenv ####################################################################
 
 # Keep binaries outta my homedir
