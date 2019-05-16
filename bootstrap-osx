@@ -67,7 +67,7 @@ for package in yarn; do
 done
 
 # Install a standard version of nodenv
-nodenv install --skip-existing --keep 8.1.4
+nodenv install --skip-existing --keep 11.1.0
 
 # Use it as the default global version
-nodenv global 8.1.4
+nodenv global 11.1.0
