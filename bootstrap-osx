@@ -43,10 +43,10 @@ for gem in gem-browse bundler; do
 done
 
 # Install a standard version of rbenv
-rbenv install --skip-existing --keep 2.4.1
+rbenv install --skip-existing --keep 2.6.2
 
 # Use it as the default global version
-rbenv global 2.4.1
+rbenv global 2.6.2
 
 ### nodenv ###################################################################
 
