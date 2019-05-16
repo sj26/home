@@ -1,4 +1,4 @@
-prompt_git() {
+update_prompt_git() {
   local branch="$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
   if [[ -n "$branch" && "$branch" != "HEAD" ]]; then
     if [[ "$(git status --porcelain 2> /dev/null)" != "" ]]; then
@@ -9,7 +9,8 @@ prompt_git() {
     PS1_GIT=""
   fi
 }
-precmd () { prompt_git }
+autoload add-zsh-hook
+add-zsh-hook precmd update_prompt_git
 
 # Perform parameter & command substitution in prompt
 setopt PROMPT_SUBST
