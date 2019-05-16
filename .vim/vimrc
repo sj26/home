@@ -46,6 +46,9 @@ command! -bang -nargs=* Ag
       \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
       \                 <bang>0)
 
+" markdown
+let g:markdown_fenced_languages = ['html', 'javascript', 'ruby', 'bash=sh']
+
 " netrw
 " <Ctrl-^> should go to the last file, not to netrw.
 " https://github.com/tpope/vim-vinegar/issues/25#issuecomment-42727977
