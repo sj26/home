@@ -1,6 +1,7 @@
 # Vim junk
 /.vim/.netrwhist
 /.vim/undo
+/.vim/bundle/*/doc/tags
 
 # Zsh locals
 /.zsh/env.local.d/*
