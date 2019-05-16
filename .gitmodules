@@ -172,3 +172,12 @@
 [submodule ".vim/bundle/coffee"]
 	path = .vim/bundle/coffee
 	url = git://github.com/kchmck/vim-coffee-script.git
+[submodule ".vim/bundle/toml"]
+	path = .vim/bundle/toml
+	url = git://github.com/cespare/vim-toml.git
+[submodule ".vim/bundle/typescript"]
+	path = .vim/bundle/typescript
+	url = git://github.com/leafgarland/typescript-vim.git
+[submodule ".vim/bundle/bracketed-paste"]
+	path = .vim/bundle/bracketed-paste
+	url = git://github.com/ConradIrwin/vim-bracketed-paste.git
