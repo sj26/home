@@ -50,7 +50,6 @@ brew "ruby-build"
 brew "rbenv-aliases"
 brew "rbenv-communal-gems"
 brew "rbenv-default-gems"
-brew "rbenv-vars"
 
 tap "puma/puma"
 brew "puma/puma/puma-dev"
