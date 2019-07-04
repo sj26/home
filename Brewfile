@@ -7,7 +7,6 @@ tap "caskroom/cask"
 cask "1password"
 cask "aws-vault"
 cask "bonjour-browser"
-cask "caffeine"
 cask "docker"
 cask "dropbox"
 cask "gpg-suite"
@@ -63,6 +62,7 @@ brew "nodenv/nodenv/nodenv-default-packages"
 brew "nodenv/nodenv/nodenv-package-rehash"
 
 brew "mas"
+mas "Amphetamine", id: 937984704
 mas "DaisyDisk", id: 411643860
 mas "Keynote", id: 409183694
 mas "Microsoft Remote Desktop", id: 1295203466
