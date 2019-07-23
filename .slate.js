@@ -7,6 +7,11 @@ var resizeSmall = slate.operation("move", {
     width: "1600", height: "1000"
   }),
 
+  fill = slate.operation("move", {
+    x: "(screenOriginX)", y: "(screenOriginY)",
+    width: "(screenSizeX)", height: "(screenSizeY)"
+  }),
+
   fillTopHalf = slate.operation("move", {
     x: "(screenOriginX)", y: "(screenOriginY)",
     width: "(screenSizeX)", height: "(screenSizeY / 2)"
@@ -93,6 +98,8 @@ var resizeSmall = slate.operation("move", {
 slate.bindAll({
   "-:ctrl,alt,cmd": resizeSmall,
   "=:ctrl,alt,cmd": resizeBig,
+
+  "backslash:ctrl,alt,cmd": fill,
 
   "p:ctrl,alt,cmd": fillTopHalf,
   ";:ctrl,alt,cmd": fillBottomHalf,
