@@ -184,3 +184,12 @@
 [submodule ".vim/bundle/go"]
 	path = .vim/bundle/go
 	url = git://github.com/fatih/vim-go.git
+[submodule ".vim/bundle/undotree"]
+	path = .vim/bundle/undotree
+	url = git://github.com/mbbill/undotree.git
+[submodule ".vim/bundle/vim-textobj-user"]
+	path = .vim/bundle/vim-textobj-user
+	url = git://github.com/kana/vim-textobj-user.git
+[submodule ".vim/bundle/vim-textobj-quotes"]
+	path = .vim/bundle/vim-textobj-quotes
+	url = git://github.com/beloglazov/vim-textobj-quotes.git
