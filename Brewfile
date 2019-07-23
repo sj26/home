@@ -66,10 +66,16 @@ brew "nodenv/nodenv/nodenv-default-packages"
 brew "nodenv/nodenv/nodenv-package-rehash"
 
 brew "mas"
+mas "Affinity Designer", id: 824171161
 mas "Amphetamine", id: 937984704
 mas "DaisyDisk", id: 411643860
 mas "Keynote", id: 409183694
+mas "Keynote", id: 409183694
+mas "Kindle", id: 405399194
 mas "Microsoft Remote Desktop", id: 1295203466
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
-mas "Pixelmator", id: 407963104
+mas "Paprika Recipe Manager 3", id: 1303222628
+mas "Pixelmator Pro", id: 1289583905
+mas "Reeder", id: 880001334
+mas "Telegram", id: 747648890
