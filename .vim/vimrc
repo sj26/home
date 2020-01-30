@@ -17,9 +17,8 @@ else
   colors tango-dark
 end
 
-" Make sure syntax highlighting is on
-syntax on
-highlight Comment cterm=italic
+" Make comments italic
+highlight Comment cterm=italic gui=italic
 
 let mapleader = ','
 
