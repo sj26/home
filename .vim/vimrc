@@ -7,7 +7,15 @@ if has('persistent_undo')
   set undodir=$HOME/.vim/undo
 endif
 
-colors jellybeans
+if has("mac")
+  if system("defaults read -g AppleInterfaceStyle") =~ "Dark"
+    colors tango-dark
+  else
+    colors tango-morning
+  end
+else
+  colors tango-dark
+end
 
 let mapleader = ','
 
