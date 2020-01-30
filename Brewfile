@@ -8,14 +8,9 @@ cask "1password"
 cask "aws-vault"
 cask "bonjour-browser"
 cask "docker"
-cask "dropbox"
 cask "gpg-suite"
-cask "iterm2"
-cask "java"
-cask "scroll-reverser"
 cask "slate"
 cask "transmit"
-cask "virtualbox"
 
 cask "qlmarkdown"
 cask "qlstephen"
@@ -36,15 +31,14 @@ brew "psgrep"
 brew "pstree"
 brew "rename"
 brew "ripgrep"
-brew "the_silver_searcher"
 brew "tree"
 brew "vim"
 brew "watch"
 brew "wget"
 
-brew "elasticsearch", restart_service: :changed
+#brew "elasticsearch", restart_service: :changed
 brew "memcached", restart_service: :changed
-brew "mysql", restart_service: :changed
+#brew "mysql", restart_service: :changed
 brew "postgresql", restart_service: :changed
 brew "postgis"
 brew "redis", restart_service: :changed
@@ -66,10 +60,9 @@ brew "nodenv/nodenv/nodenv-default-packages"
 brew "nodenv/nodenv/nodenv-package-rehash"
 
 brew "mas"
-mas "Affinity Designer", id: 824171161
+#mas "Affinity Designer", id: 824171161
 mas "Amphetamine", id: 937984704
 mas "DaisyDisk", id: 411643860
-mas "Keynote", id: 409183694
 mas "Keynote", id: 409183694
 mas "Kindle", id: 405399194
 mas "Microsoft Remote Desktop", id: 1295203466
