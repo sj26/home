@@ -1,9 +1,6 @@
 [submodule ".vim/bundle/abolish"]
 	path = .vim/bundle/abolish
 	url = git://github.com/tpope/vim-abolish.git
-[submodule ".vim/bundle/ack"]
-	path = .vim/bundle/ack
-	url = git://github.com/sj26/ack.vim.git
 [submodule ".vim/bundle/apathy"]
 	path = .vim/bundle/apathy
 	url = git://github.com/tpope/vim-apathy.git
@@ -188,8 +185,11 @@
 	path = .vim/bundle/undotree
 	url = git://github.com/mbbill/undotree.git
 [submodule ".vim/bundle/vim-textobj-user"]
-	path = .vim/bundle/vim-textobj-user
+	path = .vim/bundle/textobj-user/vim-textobj-user
 	url = git://github.com/kana/vim-textobj-user.git
 [submodule ".vim/bundle/vim-textobj-quotes"]
-	path = .vim/bundle/vim-textobj-quotes
+	path = .vim/bundle/textobj-quotes
 	url = git://github.com/beloglazov/vim-textobj-quotes.git
+[submodule ".vim/bundle/mascara"]
+	path = .vim/bundle/mascara
+	url = https://github.com/codehearts/mascara-vim
