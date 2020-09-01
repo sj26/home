@@ -7,6 +7,9 @@
 # Visual Studio Code junk
 .vscode
 
+# Nova junk
+.nova
+
 # OS junk
 .DS_Store*
 ehthumbs.db
