@@ -94,6 +94,9 @@ call extend(g:rails_gem_projections, {
       \      "command": "support"}},
       \ }, 'keep')
 
+" terraform
+let g:terraform_align=1
+
 " terraform + commentary
 autocmd FileType terraform setlocal commentstring=#%s
 
