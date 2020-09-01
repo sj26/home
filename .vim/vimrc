@@ -52,7 +52,7 @@ endif
 
 " fzf
 nmap <Leader>f :Files<CR>
-nmap <Leader>t :Tags<CR>
+nmap <Leader>T :Tags<CR>
 
 " :GGrep - fzf from git grep
 command! -bang -nargs=* GGrep
