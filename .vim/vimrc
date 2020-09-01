@@ -45,8 +45,9 @@ if has("autocmd")
 endif
 
 " ack/ag
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
+if executable("ag")
+  set grepprg=ag\ --vimgrep\ $*
+  set grepformat=%f:%l:%c:%m
 endif
 
 " fzf
