@@ -28,9 +28,6 @@
 [submodule ".vim/bundle/dispatch"]
 	path = .vim/bundle/dispatch
 	url = git://github.com/tpope/vim-dispatch.git
-[submodule ".vim/bundle/dotenv"]
-	path = .vim/bundle/dotenv
-	url = git://github.com/tpope/vim-dotenv.git
 [submodule ".vim/bundle/endwise"]
 	path = .vim/bundle/endwise
 	url = git://github.com/tpope/vim-endwise.git
