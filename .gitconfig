@@ -42,3 +42,5 @@
 	insteadOf = git://github.com/
 	insteadOf = git@github.com:
 	insteadOf = http://github.com/
+[advice]
+	detachedHead = false
