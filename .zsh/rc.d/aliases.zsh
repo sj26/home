@@ -1,5 +1,5 @@
 bag() {
-  ag "$@" $(bundle show --paths)
+  ag "$@" $(bundle list --paths)
 }
 
 # Git aliases
