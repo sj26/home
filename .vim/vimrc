@@ -55,18 +55,6 @@ nmap <Leader>f :Files<CR>
 nmap <Leader>F :GitFiles<CR>
 nmap <Leader>T :Tags<CR>
 
-" :GGrep - fzf from git grep
-command! -bang -nargs=* GGrep
-      \ call fzf#vim#grep('git grep --line-number '.shellescape(<q-args>), 0, <bang>0)
-
-" :Ag  - Start fzf with hidden preview window that can be enabled with "?" key
-" :Ag! - Start fzf in fullscreen and display the preview window above
-command! -bang -nargs=* Ag
-      \ call fzf#vim#ag(<q-args>,
-      \                 <bang>0 ? fzf#vim#with_preview('up:60%')
-      \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
-      \                 <bang>0)
-
 " markdown
 let g:markdown_fenced_languages = ['html', 'javascript', 'ruby', 'bash=sh']
 
