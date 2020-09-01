@@ -33,6 +33,11 @@ nmap <Leader>v :tabe $MYVIMRC<CR>
 nmap <Leader>V :source $MYVIMRC<CR>
 autocmd BufEnter * if $MYVIMRC == expand("%:p") | silent! lcd %:p:h | endif
 
+" Don't output strange characters in command line when pasting through
+" Terminal.app
+cnoremap <F28> <Nop>
+cnoremap <F29> <Nop>
+
 " Format lists within comments
 " https://stackoverflow.com/a/37172060/158252
 set formatoptions+=n
