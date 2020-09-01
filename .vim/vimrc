@@ -9,16 +9,22 @@ endif
 
 if has("mac")
   if system("defaults read -g AppleInterfaceStyle") =~ "Dark"
-    colors tango-dark
+    set background=dark
   else
-    colors tango-morning
+    set background=light
   end
+elseif has("gui")
+  set background=light
 else
-  colors tango-dark
+  set background=dark
 end
 
-" Make comments italic
-highlight Comment cterm=italic gui=italic
+hi clear
+hi Comment cterm=italic ctermfg=DarkBlue
+hi Constant ctermfg=DarkRed
+hi Ignore ctermfg=LightGrey
+hi Statement cterm=bold ctermfg=Brown
+hi Special ctermfg=DarkMagenta
 
 let mapleader = ','
 
