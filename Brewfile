@@ -70,3 +70,4 @@ mas "Paprika Recipe Manager 3", id: 1303222628
 mas "Pixelmator Pro", id: 1289583905
 mas "Reeder", id: 880001334
 mas "Telegram", id: 747648890
+mas "Userscripts", id: 1463298887
