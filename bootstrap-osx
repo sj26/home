@@ -4,9 +4,19 @@ set -e -x
 
 ### homebrew #################################################################
 
+# Figure out homebrew prefix (amd64 vs arm64)
+if [[ -z "$HOMEBREW_PREFIX" ]]; then
+  UNAME_MACHINE="$(uname -m)"
+  if [[ "$UNAME_MACHINE" == "arm64" ]]; then
+    HOMEBREW_PREFIX="/opt/homebrew"
+  else
+    HOMEBREW_PREFIX="/usr/local"
+  fi
+fi
+
 # Make sure homebrew is installed
-if [ ! -f /usr/local/bin/brew ]; then
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+if [[ ! -f "$HOMEBREW_PREFIX/bin/brew" ]]; then
+  bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
 # Install all brews from the Brewfile
@@ -16,10 +26,10 @@ brew bundle --file="$HOME/.home/Brewfile"
 
 # Add `fzf` as an autoload-able vim library -- I don't know why this isn't the
 # default setup
-if [[ -d /usr/local/opt/fzf && -d /usr/local/share/vim ]]; then
-  for autoload in /usr/local/share/vim/*/autoload; do
-    if [[ ! -s $autoload/fzf.vim ]]; then
-      ln -s /usr/local/opt/fzf/plugin/fzf.vim $autoload/fzf.vim
+if [[ -d "$HOMEBREW_PREFIX/opt/fzf" && -d "$HOMEBREW_PREFIX/share/vim" ]]; then
+  for autoload in "$HOMEBREW_PREFIX"/share/vim/*/autoload; do
+    if [[ ! -L "$autoload/fzf.vim" ]]; then
+      ln -s "/usr/local/opt/fzf/plugin/fzf.vim" "$autoload/fzf.vim"
     fi
   done
 fi
@@ -27,11 +37,10 @@ fi
 ### rbenv ####################################################################
 
 # Keep binaries outta my homedir
-export RBENV_ROOT="/usr/local/rbenv"
+export RBENV_ROOT="/opt/rbenv"
 
-# /usr/local is owned by root now, so sudo mkdir
 [[ -d "$RBENV_ROOT" ]] ||
-  sudo install -d -o "$USER" -g admin -m 0775 "$RBENV_ROOT"
+  sudo install -d -o "$USER" -g staff -m 0775 "$RBENV_ROOT"
 
 # Make a cache dir so we keep source tarballs
 mkdir -p "$RBENV_ROOT/cache"
@@ -51,11 +60,10 @@ rbenv global 2.6.2
 ### nodenv ###################################################################
 
 # Keep binaries outta my homedir
-export NODENV_ROOT="/usr/local/nodenv"
+export NODENV_ROOT="/opt/nodenv"
 
-# /usr/local is owned by root now, so sudo mkdir
 [[ -d "$NODENV_ROOT" ]] ||
-  sudo install -d -o "$USER" -g admin -m 0775 "$NODENV_ROOT"
+  sudo install -d -o "$USER" -g staff -m 0775 "$NODENV_ROOT"
 
 # Make a cache dir so we keep source tarballs
 mkdir -p "$NODENV_ROOT/cache"
