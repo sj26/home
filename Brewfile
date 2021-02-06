@@ -42,7 +42,6 @@ brew "redis", restart_service: :changed
 brew "rbenv"
 brew "ruby-build"
 brew "rbenv-aliases"
-brew "rbenv-communal-gems"
 brew "rbenv-default-gems"
 
 tap "sj26/forks"
