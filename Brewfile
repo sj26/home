@@ -1,7 +1,6 @@
 tap "homebrew/core"
 tap "homebrew/bundle"
 tap "homebrew/services"
-tap "sj26/forks"
 
 tap "caskroom/cask"
 cask "1password"
@@ -23,7 +22,6 @@ brew "automake"
 brew "curl"
 brew "fzf"
 brew "git"
-brew "sj26/forks/gist", args: ["HEAD"]
 brew "hub"
 brew "jq"
 brew "pv"
@@ -48,6 +46,9 @@ brew "ruby-build"
 brew "rbenv-aliases"
 brew "rbenv-communal-gems"
 brew "rbenv-default-gems"
+
+tap "sj26/forks"
+brew "sj26/forks/gist", args: ["HEAD"]
 
 tap "puma/puma"
 brew "puma/puma/puma-dev"
