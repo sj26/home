@@ -7,6 +7,7 @@ cask "1password"
 cask "aws-vault"
 cask "docker"
 cask "gpg-suite"
+cask "signal"
 cask "transmit"
 
 cask "qlmarkdown"
