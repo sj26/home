@@ -19,6 +19,13 @@ else
   set background=dark
 end
 
+if $TERM_PROGRAM == "Apple_Terminal"
+  " Fix italics in Apple Terminal
+  " https://stackoverflow.com/questions/1326998/enabling-italics-in-vim-syntax-highlighting-for-mac-terminal/53625973#53625973
+  let &t_ZH="\e[3m"
+  let &t_ZR="\e[23m"
+endif
+
 hi clear
 hi Comment cterm=italic ctermfg=DarkBlue
 hi Constant ctermfg=DarkRed
