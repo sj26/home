@@ -1,6 +1,5 @@
-[user]
-	name = Samuel Cochran
-	email = sj26@sj26.com
+[advice]
+	detachedHead = false
 
 [alias]
 	blame = blame --abbrev=6
@@ -9,22 +8,43 @@
 	fff = pull --ff-only
 	subup = submodule update --init --recursive
 
-[credential]
-	helper = osxkeychain
-
 [color]
 	ui = auto
 
 [column]
 	ui = auto,dense
 
-[commit]
-	gpgSign = true
+[core]
+	pager = delta
+
+[credential]
+	helper = osxkeychain
+
+[delta]
+	light = true
+	line-numbers = true
+	side-by-side = true
 
 [diff]
 	submodule = log
 	word-diff = color
 	compactionHeuristic = true
+	colorMoved = default
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[http "https://gopkg.in"]
+	followRedirects = true
+
+[hub]
+	protocol = https
+
+[interactive]
+	diffFilter = delta --color-only
 
 [push]
 	default = simple
@@ -35,12 +55,11 @@
 [submodule]
 	fetchJobs = 4
 
-[http "https://gopkg.in"]
-	followRedirects = true
-
 [url "https://github.com/"]
 	insteadOf = git://github.com/
 	insteadOf = git@github.com:
 	insteadOf = http://github.com/
-[advice]
-	detachedHead = false
+
+[user]
+	name = Samuel Cochran
+	email = sj26@sj26.com
