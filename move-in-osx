@@ -341,7 +341,7 @@ defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool t
 ### Fonts #####################################################################
 
 # Copy SF Mono into system fonts
-cp -n /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SFMono-*.otf /Library/Fonts/
+cp -n /System/Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SF-Mono-*.otf /Library/Fonts/
 
 ### ~/.home ###################################################################
 
