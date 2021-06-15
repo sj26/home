@@ -29,7 +29,7 @@ brew bundle --file="$HOME/.home/Brewfile"
 if [[ -d "$HOMEBREW_PREFIX/opt/fzf" && -d "$HOMEBREW_PREFIX/share/vim" ]]; then
   for autoload in "$HOMEBREW_PREFIX"/share/vim/*/autoload; do
     if [[ ! -L "$autoload/fzf.vim" ]]; then
-      ln -s "/usr/local/opt/fzf/plugin/fzf.vim" "$autoload/fzf.vim"
+      ln -s "$HOMEBREW_PREFIX/opt/fzf/plugin/fzf.vim" "$autoload/fzf.vim"
     fi
   done
 fi
