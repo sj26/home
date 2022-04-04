@@ -95,6 +95,10 @@ defaults -currentHost write -globalDomain \
 # Disable "Search with Safari" keybinding
 defaults write pbs NSServicesStatus '<dict><key>com.apple.Safari - Search With %WebSearchProvider@ - searchWithWebSearchProvider</key><dict><key>enabled_context_menu</key><integer>0</integer><key>enabled_services_menu</key><integer>0</integer></dict></dict>'
 
+# Make window title proxy icons appear instantly
+# https://tidbits.com/2022/03/26/tipbits-always-show-window-proxy-icons/
+defaults write -globalDomain NSToolbarTitleViewRolloverDelay -float 0
+
 ### Bluetooth headphones #####################################################
 
 # Increase sound quality for Bluetooth headphones/headsets
