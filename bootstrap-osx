@@ -27,11 +27,10 @@ brew bundle --file="$HOME/.home/Brewfile"
 # Add `fzf` as an autoload-able vim library -- I don't know why this isn't the
 # default setup
 if [[ -d "$HOMEBREW_PREFIX/opt/fzf" && -d "$HOMEBREW_PREFIX/share/vim" ]]; then
-  for autoload in "$HOMEBREW_PREFIX"/share/vim/*/autoload; do
-    if [[ ! -L "$autoload/fzf.vim" ]]; then
-      ln -s "$HOMEBREW_PREFIX/opt/fzf/plugin/fzf.vim" "$autoload/fzf.vim"
-    fi
-  done
+  mkdir -p "$HOMEBREW_PREFIX/share/vim/vimfiles/autoload"
+  if [[ ! -L "$HOMEBREW_PREFIX/share/vim/vimfiles/autoload/fzf.vim" ]]; then
+    ln -s "$HOMEBREW_PREFIX/opt/fzf/plugin/fzf.vim" "$HOMEBREW_PREFIX/share/vim/vimfiles/autoload/fzf.vim"
+  fi
 fi
 
 ### rbenv ####################################################################
