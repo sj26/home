@@ -51,9 +51,9 @@ if has("autocmd")
     \| exe "normal g'\"" | endif
 endif
 
-" ack/ag
-if executable("ag")
-  set grepprg=ag\ --vimgrep\ $*
+" ripgrep
+if executable("rg")
+  set grepprg=rg\ --vimgrep\ $*
   set grepformat=%f:%l:%c:%m
 endif
 
@@ -61,6 +61,8 @@ endif
 nmap <Leader>f :Files<CR>
 nmap <Leader>F :GitFiles<CR>
 nmap <Leader>T :Tags<CR>
+" fix my fingers
+cnoreabbrev Ag Rg
 
 " markdown
 let g:markdown_fenced_languages = ['html', 'javascript', 'ruby', 'bash=sh']
