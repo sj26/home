@@ -78,3 +78,25 @@ nodenv install --skip-existing --keep 11.1.0
 
 # Use it as the default global version
 nodenv global 11.1.0
+
+### pyenv #####################################################################
+
+# Keep binaries outta my homedir
+export PYENV_ROOT="/opt/pyenv"
+
+[[ -d "$PYENV_ROOT" ]] ||
+  sudo install -d -o "$USER" -g staff -m 0775 "$PYENV_ROOT"
+
+# Make a cache dir so we keep source tarballs
+mkdir -p "$PYENV_ROOT/cache"
+
+### goenv #####################################################################
+
+# Keep binaries outta my homedir
+export GOENV_ROOT="/opt/goenv"
+
+[[ -d "$GOENV_ROOT" ]] ||
+  sudo install -d -o "$USER" -g staff -m 0775 "$GOENV_ROOT"
+
+# Make a cache dir so we keep source tarballs
+mkdir -p "$GOENV_ROOT/cache"
