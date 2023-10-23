@@ -49,7 +49,7 @@
 	url = git://github.com/tpope/vim-git.git
 [submodule ".vim/bundle/graphql"]
 	path = .vim/bundle/graphql
-	url = git://github.com/jparise/vim-graphql.git
+	url = https://github.com/jparise/vim-graphql.git
 [submodule ".vim/bundle/haml"]
 	path = .vim/bundle/haml
 	url = git://github.com/tpope/vim-haml.git
