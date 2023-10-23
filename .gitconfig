@@ -49,6 +49,16 @@
 [interactive]
 	diffFilter = delta --color-only
 
+# https://github.com/deliciousinsights/rails-schema-merge-driver
+[merge "rails-db-schema"]
+	name = Rails db/schema.rb merge driver
+	driver = git-merge-rails-db-schema %O %A %B %L %P
+
+# https://github.com/knu/git-merge-structure-sql
+[merge "rails-db-structure"]
+	name = Rails db/structure.sql merge driver
+	driver = git-merge-structure-sql %A %O %B
+
 [push]
 	default = simple
 
