@@ -43,6 +43,9 @@
 [hub]
 	protocol = https
 
+[init]
+	defaultBranch = main
+
 [interactive]
 	diffFilter = delta --color-only
 
