@@ -6,6 +6,7 @@
 	ctags = !.git/hooks/ctags
 	ff = -c "merge.defaultToUpstream=true" merge --ff-only
 	fff = pull --ff-only
+	fixup = !git log -n 50 --pretty=format:'%h %s' --no-merges | fzf --ansi --height=15 --border | awk '{ print $1 }' | xargs -o git commit --fixup
 	subup = submodule update --init --recursive
 
 [color]
